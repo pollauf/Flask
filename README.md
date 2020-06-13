@@ -1,2 +1,2 @@
 # Flask
- C#.NET chemistry lab software designed to manage reagents, perform titration analysis, et cetera
+ C#.NET chemistry lab software designed to manage reagents, perform titration analysis, et cetera (under development)
