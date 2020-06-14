@@ -41,8 +41,14 @@ namespace Flask.TELAS.CONTROLES
         public void LimparSelecoes()
         {
             foreach (Control item in flowLayoutPanel1.Controls)
+            {
                 if (item is Button)
+                {
                     item.BackColor = Color.Transparent;
+                    item.ForeColor = Color.LightGray;
+                    ((Button)item.Controls[0]).ForeColor = Color.LightGray;
+                }
+            }                    
         }
 
         public void Aba_Click(object sender, EventArgs e)
@@ -74,6 +80,8 @@ namespace Flask.TELAS.CONTROLES
             LimparSelecoes();
 
             button.BackColor = Color.FromArgb(45, 54, 76);
+            button.ForeColor = Color.White;
+            ((Button)button.Controls[0]).ForeColor = Color.White;
             abaSelecionada = (Aba)button.Tag;
 
             abaSelecionada.Tela.Show();
@@ -115,7 +123,7 @@ namespace Flask.TELAS.CONTROLES
                 TextAlign = ContentAlignment.MiddleLeft,
                 BackColor = Color.FromArgb(45, 54, 76),
                 ForeColor = Color.White,
-                Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold),
+                Font = new Font("Calibri", 9, FontStyle.Bold),
                 MaximumSize = new Size(0, 30),
                 MinimumSize = new Size(10, 30),
                 Margin = new Padding(0, 0, 0, 0),
@@ -132,7 +140,7 @@ namespace Flask.TELAS.CONTROLES
             Button btnFechar = new Button
             {
                 Text = "X",
-                Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold),
+                Font = new Font("Calibri", 9, FontStyle.Bold),
                 FlatStyle = FlatStyle.Flat,
                 BackColor = Color.Transparent,
                 ForeColor = Color.White,
@@ -140,8 +148,8 @@ namespace Flask.TELAS.CONTROLES
                 MaximumSize = new Size(30, 30),
                 Dock = DockStyle.Right,
                 Margin = new Padding(0, 0, 3, 0),
-                Cursor = Cursors.Hand,
                 Tag = aba.Tela.Name,
+                Cursor = Cursors.Hand,
             };
 
             btnFechar.FlatAppearance.BorderSize = 0;

@@ -57,8 +57,14 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TELAS\CONTROLES\Aba.cs" />
-    <Compile Include="TELAS\CONTROLES\ButtonTest.cs">
+    <Compile Include="TELAS\CONTROLES\COMPONENTES\FlaskTextBox.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TELAS\CONTROLES\FrmPadrao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TELAS\CONTROLES\FrmPadrao.Designer.cs">
+      <DependentUpon>FrmPadrao.cs</DependentUpon>
     </Compile>
     <Compile Include="TELAS\CONTROLES\UcAbas.cs">
       <SubType>UserControl</SubType>
@@ -87,9 +93,10 @@
     <Compile Include="TELAS\FrmTeste.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TELAS\FrmTeste.Designer.cs">
+    <Compile Include="TELAS\FrmTeste.designer.cs">
       <DependentUpon>FrmTeste.cs</DependentUpon>
     </Compile>
+    <Compile Include="TELAS\METODOS\EXTENSORES\ExtForm.cs" />
     <Compile Include="TELAS\METODOS\Tela.cs" />
     <Compile Include="TELAS\Reagentes\FrmCadastroReagente.cs">
       <SubType>Form</SubType>
@@ -106,8 +113,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TELAS\CONTROLES\ButtonTest.resx">
-      <DependentUpon>ButtonTest.cs</DependentUpon>
+    <EmbeddedResource Include="TELAS\CONTROLES\FrmPadrao.resx">
+      <DependentUpon>FrmPadrao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TELAS\CONTROLES\UcAbas.resx">
       <DependentUpon>UcAbas.cs</DependentUpon>
