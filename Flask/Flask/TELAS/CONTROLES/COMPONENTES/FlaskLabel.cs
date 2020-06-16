@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace Flask.TELAS.CONTROLES.COMPONENTES
 {
-    public partial class FlaskTextBox : TextBox
+    public partial class FlaskLabel : Label
     {
-        public bool CampoObrigatorio { get; set; }
-        public FlaskTextBox()
+        public FlaskLabel()
         {
             InitializeComponent();
-            this.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);            
+            this.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+            this.TextAlign = ContentAlignment.MiddleRight;
         }
 
         protected override void OnPaint(PaintEventArgs pe)

@@ -54,7 +54,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmTeste";
-            this.Text = "FrmTeste";
+            this.Text = "Teste";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 

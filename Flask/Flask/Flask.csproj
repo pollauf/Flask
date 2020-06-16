@@ -57,8 +57,23 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TELAS\CONTROLES\Aba.cs" />
+    <Compile Include="TELAS\CONTROLES\COMPONENTES\FlaskButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TELAS\CONTROLES\COMPONENTES\FlaskButton.Designer.cs">
+      <DependentUpon>FlaskButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TELAS\CONTROLES\COMPONENTES\FlaskLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TELAS\CONTROLES\COMPONENTES\FlaskLabel.Designer.cs">
+      <DependentUpon>FlaskLabel.cs</DependentUpon>
+    </Compile>
     <Compile Include="TELAS\CONTROLES\COMPONENTES\FlaskTextBox.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TELAS\CONTROLES\COMPONENTES\FlaskTextBox.Designer.cs">
+      <DependentUpon>FlaskTextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="TELAS\CONTROLES\FrmPadrao.cs">
       <SubType>Form</SubType>
@@ -104,6 +119,12 @@
     <Compile Include="TELAS\Reagentes\FrmCadastroReagente.Designer.cs">
       <DependentUpon>FrmCadastroReagente.cs</DependentUpon>
     </Compile>
+    <Compile Include="TELAS\Reagentes\FrmCadastroUnidadeMedida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TELAS\Reagentes\FrmCadastroUnidadeMedida.Designer.cs">
+      <DependentUpon>FrmCadastroUnidadeMedida.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -133,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TELAS\Reagentes\FrmCadastroReagente.resx">
       <DependentUpon>FrmCadastroReagente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TELAS\Reagentes\FrmCadastroUnidadeMedida.resx">
+      <DependentUpon>FrmCadastroUnidadeMedida.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

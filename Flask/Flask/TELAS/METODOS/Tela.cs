@@ -29,16 +29,7 @@ namespace Flask.TELAS.METODOS
             FormPrincipal.pnlMain.Controls.Add(janela);
             janela.Show();
 
-            string textoFormAberto = "Sem Título";
-
-            foreach (Control item in janela.Controls)
-            {
-                if (item is UcHeader)
-                {
-                    textoFormAberto = ((UcHeader)item).Titulo;
-                    break;
-                }
-            }
+            string textoFormAberto = janela.Text;
 
             FormPrincipal.ucAbas.AdicionarAba(new Aba(janela, textoFormAberto));
         }

@@ -125,7 +125,7 @@ namespace Flask.TELAS.CONTROLES
                 ForeColor = Color.White,
                 Font = new Font("Calibri", 9, FontStyle.Bold),
                 MaximumSize = new Size(0, 30),
-                MinimumSize = new Size(10, 30),
+                MinimumSize = new Size(120, 30),
                 Margin = new Padding(0, 0, 0, 0),
                 AutoSize = true,
                 AutoSizeMode = AutoSizeMode.GrowOnly,

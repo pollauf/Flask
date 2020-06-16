@@ -49,7 +49,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(54)))), ((int)(((byte)(76)))));
             this.Controls.Add(this.lblTitulo);
             this.MaximumSize = new System.Drawing.Size(0, 40);
-            this.MinimumSize = new System.Drawing.Size(400, 40);
+            this.MinimumSize = new System.Drawing.Size(0, 40);
             this.Name = "UcHeader";
             this.Size = new System.Drawing.Size(400, 40);
             this.ResumeLayout(false);

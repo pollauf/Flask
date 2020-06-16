@@ -52,7 +52,7 @@
             this.Controls.Add(this.ucHeader1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCadastroReagente";
-            this.Text = "FrmCadastroReagente";
+            this.Text = "Cadastro de Reagente";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 

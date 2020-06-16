@@ -43,7 +43,9 @@ namespace Flask.TELAS
                         {
                             "CADASTRO",
                             "CONSULTA",
+                            "ENTRADA/SAÍDA",
                             "RASTREIO",
+                            "UNIDADE DE MEDIDA"
                         });
                         btnReagentes.BackColor = Color.FromArgb(90, 59, 137);
                         break;
@@ -113,6 +115,9 @@ namespace Flask.TELAS
                 {
                     case "CADASTRO":
                         Tela.Abrir(new FrmCadastroReagente(), janelaAbrir);
+                        break;
+                    case "UNIDADE DE MEDIDA":
+                        Tela.Abrir(new FrmCadastroUnidadeMedida(), janelaAbrir);
                         break;
                     default:
                         break;
