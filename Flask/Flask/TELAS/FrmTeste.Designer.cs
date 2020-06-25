@@ -39,7 +39,7 @@
             this.ucHeader1.MaximumSize = new System.Drawing.Size(0, 40);
             this.ucHeader1.MinimumSize = new System.Drawing.Size(400, 40);
             this.ucHeader1.Name = "ucHeader1";
-            this.ucHeader1.Size = new System.Drawing.Size(544, 40);
+            this.ucHeader1.Size = new System.Drawing.Size(700, 40);
             this.ucHeader1.TabIndex = 3;
             this.ucHeader1.Titulo = "Teste";
             // 
@@ -48,14 +48,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
-            this.ClientSize = new System.Drawing.Size(544, 611);
+            this.ClientSize = new System.Drawing.Size(700, 500);
             this.Controls.Add(this.ucHeader1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmTeste";
             this.Text = "Teste";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }

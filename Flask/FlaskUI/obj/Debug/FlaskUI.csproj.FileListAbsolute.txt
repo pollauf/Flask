@@ -1,0 +1,9 @@
+C:\Users\mathe\Desktop\FLASK_dotNET\Flask\FlaskUI\obj\Debug\FlaskUI.Properties.Resources.resources
+C:\Users\mathe\Desktop\FLASK_dotNET\Flask\FlaskUI\obj\Debug\FlaskUI.csproj.GenerateResource.cache
+C:\Users\mathe\Desktop\FLASK_dotNET\Flask\FlaskUI\obj\Debug\FlaskUI.csproj.CoreCompileInputs.cache
+C:\Users\mathe\Desktop\FLASK_dotNET\Flask\FlaskUI\bin\Debug\FlaskUI.dll.config
+C:\Users\mathe\Desktop\FLASK_dotNET\Flask\FlaskUI\bin\Debug\FlaskUI.dll
+C:\Users\mathe\Desktop\FLASK_dotNET\Flask\FlaskUI\bin\Debug\FlaskUI.pdb
+C:\Users\mathe\Desktop\FLASK_dotNET\Flask\FlaskUI\obj\Debug\FlaskUI.dll
+C:\Users\mathe\Desktop\FLASK_dotNET\Flask\FlaskUI\obj\Debug\FlaskUI.pdb
+C:\Users\mathe\Desktop\FLASK_dotNET\Flask\FlaskUI\obj\Debug\FlaskUI.FlaskForm.resources

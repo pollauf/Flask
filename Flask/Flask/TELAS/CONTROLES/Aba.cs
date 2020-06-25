@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FlaskUI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,13 +10,13 @@ namespace Flask.TELAS.CONTROLES
 {
     public class Aba
     {
-        public Aba(Form tela, string titulo)
+        public Aba(FlaskForm tela, string titulo)
         {
             Tela = tela;
             Titulo = titulo;
         }
 
-        public Form Tela { get; set; }
+        public FlaskForm Tela { get; set; }
         public string Titulo { get; set; }
     }
 }

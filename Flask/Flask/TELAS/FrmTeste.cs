@@ -1,4 +1,5 @@
 ﻿using Flask.TELAS.METODOS;
+using FlaskUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Flask.TELAS
 {
-    public partial class FrmTeste : Form
+    public partial class FrmTeste : FlaskForm
     {
         public FrmTeste()
         {

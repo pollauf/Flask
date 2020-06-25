@@ -1,5 +1,5 @@
 ﻿using Flask.TELAS.CONTROLES;
-using Flask.TELAS.CONTROLES.COMPONENTES;
+using FlaskUI;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -13,7 +13,7 @@ namespace Flask.TELAS.METODOS
     public static class Tela
     {
         public static FrmPrincipal FormPrincipal { get; set; }
-        public static void Abrir(Form janela, string nomeJanela)
+        public static void Abrir(FlaskForm janela, string nomeJanela)
         {
             if (FormPrincipal == null)
                 return;
@@ -28,23 +28,64 @@ namespace Flask.TELAS.METODOS
             janela.AutoScroll = true;
             FormPrincipal.pnlMain.Controls.Add(janela);
             janela.Show();
+            janela.Centralizar();
 
             string textoFormAberto = janela.Text;
 
             FormPrincipal.ucAbas.AdicionarAba(new Aba(janela, textoFormAberto));
+
+            AtualizarPlanoFundo();
         }
 
         public static void Fechar()
         {
-            if (FormPrincipal == null)
-                return;
-
-            if (FormPrincipal.ucAbas.AbaSelecionada == null)
+            if (VerificarCondicoesParaProsseguir())
                 return;
 
             FormPrincipal.StrJanelaAberta = string.Empty;
 
             FormPrincipal.ucAbas.RemoverAba(FormPrincipal.ucAbas.AbaSelecionada.Tela.Name);
+        }
+
+        public static void AtualizarPlanoFundo()
+        {
+            if (FormPrincipal == null)
+                return;
+
+            if (FormPrincipal.ucAbas.Abas.Count > 0)
+            {
+                FormPrincipal.pnlMain.BackColor = Color.FromArgb(195, 195, 200);
+                FormPrincipal.pictureBox1.Visible = false;
+            }
+            else
+            {
+                FormPrincipal.pnlMain.BackColor = FormPrincipal.BackColor;
+                FormPrincipal.pictureBox1.Visible = true;
+            }
+        }
+
+        /* public static void EnviarComando(ref Message m)
+         {
+             FormPrincipal.ucAbas.AbaSelecionada.Tela.SendWndProcCommand(ref m);
+         }*/
+
+        public static void Centralizar()
+        {
+            if (VerificarCondicoesParaProsseguir())
+                return;
+
+            FormPrincipal.ucAbas.AbaSelecionada.Tela.Centralizar();
+        }
+
+        private static bool VerificarCondicoesParaProsseguir()
+        {
+            if (FormPrincipal == null)
+                return true;
+
+            if (FormPrincipal.ucAbas.AbaSelecionada == null)
+                return true;
+
+            return false;
         }
     }
 }

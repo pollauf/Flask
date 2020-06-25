@@ -36,8 +36,8 @@
             this.btnReagentes = new System.Windows.Forms.Button();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.MenuLateral = new Flask.TELAS.CONTROLES.UcMenuLateral();
             this.ucAbas = new Flask.TELAS.CONTROLES.UcAbas();
+            this.MenuLateral = new Flask.TELAS.CONTROLES.UcMenuLateral();
             this.pnlMenu.SuspendLayout();
             this.pnlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -143,6 +143,16 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // ucAbas
+            // 
+            this.ucAbas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(59)))), ((int)(((byte)(137)))));
+            this.ucAbas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ucAbas.Location = new System.Drawing.Point(390, 0);
+            this.ucAbas.MinimumSize = new System.Drawing.Size(200, 30);
+            this.ucAbas.Name = "ucAbas";
+            this.ucAbas.Size = new System.Drawing.Size(544, 30);
+            this.ucAbas.TabIndex = 3;
+            // 
             // MenuLateral
             // 
             this.MenuLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(59)))), ((int)(((byte)(137)))));
@@ -160,16 +170,6 @@
             this.MenuLateral.TabIndex = 3;
             this.MenuLateral.Titulo = "teste";
             this.MenuLateral.ButtonClick += new System.EventHandler(this.MenuLateral_ButtonClick);
-            // 
-            // ucAbas
-            // 
-            this.ucAbas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(59)))), ((int)(((byte)(137)))));
-            this.ucAbas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ucAbas.Location = new System.Drawing.Point(390, 0);
-            this.ucAbas.MinimumSize = new System.Drawing.Size(200, 30);
-            this.ucAbas.Name = "ucAbas";
-            this.ucAbas.Size = new System.Drawing.Size(544, 30);
-            this.ucAbas.TabIndex = 3;
             // 
             // FrmPrincipal
             // 
@@ -202,8 +202,8 @@
         private System.Windows.Forms.Button btnAnalises;
         private System.Windows.Forms.Button btnInfo;
         private CONTROLES.UcMenuLateral MenuLateral;
-        private System.Windows.Forms.PictureBox pictureBox1;
         internal System.Windows.Forms.Panel pnlMain;
         internal CONTROLES.UcAbas ucAbas;
+        internal System.Windows.Forms.PictureBox pictureBox1;
     }
 }

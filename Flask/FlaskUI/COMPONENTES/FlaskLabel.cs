@@ -1,22 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Windows.Forms;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace Flask.TELAS.CONTROLES.COMPONENTES
+namespace FlaskUI.COMPONENTES
 {
     public partial class FlaskLabel : Label
     {
         public FlaskLabel()
         {
-            InitializeComponent();
+            InitializeComponent();            
             this.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
-            this.TextAlign = ContentAlignment.MiddleRight;
+            
         }
 
         protected override void OnPaint(PaintEventArgs pe)

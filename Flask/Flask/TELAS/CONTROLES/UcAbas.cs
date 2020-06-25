@@ -48,7 +48,7 @@ namespace Flask.TELAS.CONTROLES
                     item.ForeColor = Color.LightGray;
                     ((Button)item.Controls[0]).ForeColor = Color.LightGray;
                 }
-            }                    
+            }
         }
 
         public void Aba_Click(object sender, EventArgs e)
@@ -85,8 +85,12 @@ namespace Flask.TELAS.CONTROLES
             abaSelecionada = (Aba)button.Tag;
 
             abaSelecionada.Tela.Show();
-            abaSelecionada.Tela.WindowState = FormWindowState.Normal;
-            abaSelecionada.Tela.WindowState = FormWindowState.Maximized;
+            abaSelecionada.Tela.BringToFront();
+            if (abaSelecionada.Tela.WindowState == FormWindowState.Maximized)
+            {
+                abaSelecionada.Tela.WindowState = FormWindowState.Normal;
+                abaSelecionada.Tela.WindowState = FormWindowState.Maximized;
+            }
 
             Tela.FormPrincipal.StrJanelaAberta = ((Aba)button.Tag).Titulo;
         }
@@ -156,6 +160,9 @@ namespace Flask.TELAS.CONTROLES
             btnFechar.FlatAppearance.MouseDownBackColor =
                  btnFechar.FlatAppearance.MouseOverBackColor = Color.Transparent;
 
+            btnFechar.MouseHover += BtnFechar_Hover;
+            btnFechar.MouseLeave += BtnFechar_Leave;
+
             btnAba.Controls.Add(btnFechar);
 
             btnAba.Tag = aba;
@@ -167,6 +174,18 @@ namespace Flask.TELAS.CONTROLES
             btnFechar.Click += BtnFecharAba_Click;
 
             abaSelecionada = aba;
+        }
+
+        private void BtnFechar_Hover(object sender, EventArgs e)
+        {
+            var btn = (Button)sender;
+            btn.ForeColor = Color.Gray;
+        }
+
+        private void BtnFechar_Leave(object sender, EventArgs e)
+        {
+            var btn = (Button)sender;
+            btn.ForeColor = ((Button)btn.Parent).ForeColor;
         }
 
         public void RemoverAba(string formName)
@@ -185,6 +204,8 @@ namespace Flask.TELAS.CONTROLES
 
             if (flowLayoutPanel1.Controls.Count > 0)
                 SelecionarUltimaAba();
+
+            Tela.AtualizarPlanoFundo();
         }
 
         public void BtnFecharAba_Click(object sender, EventArgs e)

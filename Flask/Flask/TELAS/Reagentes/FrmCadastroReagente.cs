@@ -1,4 +1,5 @@
 ﻿using Flask.TELAS.METODOS;
+using FlaskUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,11 +12,16 @@ using System.Windows.Forms;
 
 namespace Flask.TELAS.Reagentes
 {
-    public partial class FrmCadastroReagente : Form
+    public partial class FrmCadastroReagente : FlaskForm
     {
         public FrmCadastroReagente()
         {
             InitializeComponent();
+        }
+
+        private void flaskTextBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
