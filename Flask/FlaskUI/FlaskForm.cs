@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FlaskUI.CLASSES;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace FlaskUI
 {
     public partial class FlaskForm : Form
     {
+        public Modo Modo { get; set; } = Modo.Novo;
         public FlaskForm()
         {
             this.FormBorderStyle = FormBorderStyle.None;

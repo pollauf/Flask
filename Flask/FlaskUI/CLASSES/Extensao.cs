@@ -24,5 +24,10 @@ namespace FlaskUI.CLASSES
                 column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             }
         }
+
+        public static string FormatarString(this double str)
+        {
+            return str.ToString("0.00000");
+        }
     }
 }

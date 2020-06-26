@@ -12,4 +12,9 @@ namespace FlaskUI.CLASSES
         NumeroInteiro = 1,
         NumeroReal = 2,
     }
+    public enum Modo
+    {
+        Novo = 0,
+        Alteracao = 1,
+    }
 }

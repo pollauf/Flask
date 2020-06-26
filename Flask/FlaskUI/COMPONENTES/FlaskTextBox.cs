@@ -13,13 +13,44 @@ namespace FlaskUI.COMPONENTES
 {
     public partial class FlaskTextBox : TextBox
     {
+        private bool erro;
+
+        public bool Erro
+        {
+            get { return erro; }
+            set
+            {
+                erro = value;
+                AtualizarCores();
+            }
+        }
+
+        private bool ativo = true;
+
+        public bool Ativo
+        {
+            get { return ativo; }
+            set
+            {
+                ativo = value;
+                this.ReadOnly = !Ativo;
+                AtualizarCores();
+            }
+        }
+
+
         public bool CampoObrigatorio { get; set; } = false;
         public DefinicaoCampo DefinicaoCampo { get; set; } = DefinicaoCampo.Texto;
+
+        private readonly Color corDesativo = Color.LightGray;
+        private readonly Color corAtivo = Color.White;
+        private readonly Color corErro = Color.Red;
 
         public FlaskTextBox()
         {
             InitializeComponent();
             this.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+            this.BackColor = corAtivo;
         }
 
         protected override void OnPaint(PaintEventArgs pe)
@@ -27,10 +58,20 @@ namespace FlaskUI.COMPONENTES
             base.OnPaint(pe);
         }
 
+        protected void AtualizarCores()
+        {
+            if (this.ReadOnly)
+                this.BackColor = corDesativo;
+            else if (Erro)
+                this.BackColor = corErro;
+            else
+                this.BackColor = corAtivo;
+        }
+
         protected override void OnKeyDown(KeyEventArgs e)
         {
             base.OnKeyDown(e);
-            this.BackColor = Color.White;
+            Erro = false;
         }
 
         protected override void OnKeyPress(KeyPressEventArgs e)
@@ -40,7 +81,7 @@ namespace FlaskUI.COMPONENTES
             {
                 if ((!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',') ||
                     (e.KeyChar == ',' && string.IsNullOrEmpty(Text)) ||
-                    (e.KeyChar == ',' && DefinicaoCampo == DefinicaoCampo.NumeroInteiro) ||                    
+                    (e.KeyChar == ',' && DefinicaoCampo == DefinicaoCampo.NumeroInteiro) ||
                     (e.KeyChar == ',' && Text.IndexOf(',') > -1 && DefinicaoCampo == DefinicaoCampo.NumeroReal))
                     e.Handled = true;
             }
@@ -50,12 +91,12 @@ namespace FlaskUI.COMPONENTES
         {
             base.OnLeave(e);
 
-            if (!Enabled)
+            if (this.ReadOnly)
                 return;
 
             if (DefinicaoCampo == DefinicaoCampo.NumeroReal)
             {
-               if (double.TryParse(Text, out double result))
+                if (double.TryParse(Text, out double result))
                 {
                     Text = result.ToString("0.00000");
                 }

@@ -23,7 +23,7 @@ namespace Flask.TELAS.METODOS.EXTENSORES
                 {
                     if (flaskTextBox.CampoObrigatorio && flaskTextBox.Visible && string.IsNullOrEmpty(flaskTextBox.Text))
                     {
-                        flaskTextBox.BackColor = Color.Red;
+                        flaskTextBox.Erro = true;
                         flaskTextBox.Focus();
                         return false;
                     }
@@ -42,6 +42,7 @@ namespace Flask.TELAS.METODOS.EXTENSORES
                 if (control is FlaskTextBox flaskTextBox)
                 {
                     ((FlaskTextBox)control).Text = string.Empty;
+                    ((FlaskTextBox)control).Erro = false;
                 }
             }
         }

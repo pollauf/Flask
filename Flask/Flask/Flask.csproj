@@ -121,6 +121,8 @@
     <Compile Include="TELAS\Reagentes\FrmCadastroReagente.Designer.cs">
       <DependentUpon>FrmCadastroReagente.cs</DependentUpon>
     </Compile>
+    <Compile Include="TELAS\REGRAS\TITULACAO\ITitulacao.cs" />
+    <Compile Include="TELAS\REGRAS\TITULACAO\Titulacao.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

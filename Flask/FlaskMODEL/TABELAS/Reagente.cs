@@ -16,7 +16,7 @@ namespace FlaskMODEL
         public string Descricao { get; set; }
         public TipoReagente Tipo { get; set; }
         public ForcaReagente Forca { get; set; }
-        public ClasseReagente Valencia { get; set; }
+        public ClasseReagente Classe { get; set; }
         public double Concentracao { get; set; }
         public double KI1 { get; set; }
         public double KI2 { get; set; }

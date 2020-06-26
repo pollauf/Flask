@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace FlaskMODEL.CONSULTAS
 {
@@ -13,16 +14,15 @@ namespace FlaskMODEL.CONSULTAS
         public string Nome { get; set; } = "Consulta de Reagente";
         public List<ConfiguracaoCabecalho> Cabecalhos { get; set; }
 
-        //public string Cabecalhos { get; set; } = "ID,Nome,Tipo,Força,Classe,Concentração (mol/L)";
         public ConsultaReagente()
         {
             Cabecalhos = new List<ConfiguracaoCabecalho>();
-            Cabecalhos.Add(new ConfiguracaoCabecalho{ Nome = "ID", Alinhamento = Alinhamento.Centro });
-            Cabecalhos.Add(new ConfiguracaoCabecalho { Nome = "Nome" });
-            Cabecalhos.Add(new ConfiguracaoCabecalho { Nome = "Tipo", Alinhamento = Alinhamento.Centro });
-            Cabecalhos.Add(new ConfiguracaoCabecalho { Nome = "Força", Alinhamento = Alinhamento.Centro });
-            Cabecalhos.Add(new ConfiguracaoCabecalho { Nome = "Classe", Alinhamento = Alinhamento.Centro });
-            Cabecalhos.Add(new ConfiguracaoCabecalho { Nome = "Concentração (mol/L)", Alinhamento = Alinhamento.Direita });
+            Cabecalhos.Add(new ConfiguracaoCabecalho("ID", DataGridViewContentAlignment.MiddleCenter));
+            Cabecalhos.Add(new ConfiguracaoCabecalho("Nome"));
+            Cabecalhos.Add(new ConfiguracaoCabecalho("Tipo"));
+            Cabecalhos.Add(new ConfiguracaoCabecalho("Força"));
+            Cabecalhos.Add(new ConfiguracaoCabecalho("Classe"));
+            Cabecalhos.Add(new ConfiguracaoCabecalho("Concentração (mol/L)", DataGridViewContentAlignment.MiddleRight));
         }
         public object Pesquisar()
         {
@@ -38,7 +38,7 @@ namespace FlaskMODEL.CONSULTAS
                     {
                         ID = item.ID,
                         Nome = item.Nome,
-                        Classe = Metodos.ObterDescricao(item.Valencia),
+                        Classe = Metodos.ObterDescricao(item.Classe),
                         Concentracao = item.Concentracao == 0 ? "Desconhecida" : item.Concentracao.ToString("0.00000"),
                         Forca = Metodos.ObterDescricao(item.Forca),
                         Tipo = Metodos.ObterDescricao(item.Tipo),

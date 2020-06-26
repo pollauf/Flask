@@ -63,3 +63,4 @@ C:\Users\mathe\Desktop\FLASK_dotNET\Flask\FlaskMODEL\bin\Debug\System.Threading.
 C:\Users\mathe\Desktop\FLASK_dotNET\Flask\FlaskMODEL\obj\Debug\FlaskMODEL.Migrations.first.resources
 C:\Users\mathe\Desktop\FLASK_dotNET\Flask\FlaskMODEL\obj\Debug\FlaskMODEL.Migrations.second.resources
 C:\Users\mathe\Desktop\FLASK_dotNET\Flask\FlaskMODEL\obj\Debug\FlaskMODEL.csprojAssemblyReference.cache
+C:\Users\mathe\Desktop\FLASK_dotNET\Flask\FlaskMODEL\obj\Debug\FlaskMODEL.Migrations.third.resources

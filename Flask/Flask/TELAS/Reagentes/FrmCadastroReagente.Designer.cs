@@ -67,10 +67,10 @@
             this.rbClasseDi = new System.Windows.Forms.RadioButton();
             this.rbClasseMono = new System.Windows.Forms.RadioButton();
             this.rbClasseDesconhecida = new System.Windows.Forms.RadioButton();
-            this.flaskButton1 = new FlaskUI.COMPONENTES.FlaskButton();
-            this.flaskButton2 = new FlaskUI.COMPONENTES.FlaskButton();
-            this.flaskButton3 = new FlaskUI.COMPONENTES.FlaskButton();
-            this.ucHeader1 = new UcHeader();
+            this.btnSalvar = new FlaskUI.COMPONENTES.FlaskButton();
+            this.btnLimpar = new FlaskUI.COMPONENTES.FlaskButton();
+            this.btnExcluir = new FlaskUI.COMPONENTES.FlaskButton();
+            this.ucHeader1 = new Flask.UcHeader();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -133,8 +133,11 @@
             // 
             // txtConcentracao
             // 
+            this.txtConcentracao.Ativo = true;
+            this.txtConcentracao.BackColor = System.Drawing.Color.White;
             this.txtConcentracao.CampoObrigatorio = false;
             this.txtConcentracao.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.NumeroReal;
+            this.txtConcentracao.Erro = false;
             this.txtConcentracao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtConcentracao.Location = new System.Drawing.Point(245, 111);
             this.txtConcentracao.Name = "txtConcentracao";
@@ -217,8 +220,11 @@
             // 
             // txtDescricao
             // 
+            this.txtDescricao.Ativo = true;
+            this.txtDescricao.BackColor = System.Drawing.Color.White;
             this.txtDescricao.CampoObrigatorio = false;
             this.txtDescricao.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.Texto;
+            this.txtDescricao.Erro = false;
             this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtDescricao.Location = new System.Drawing.Point(107, 141);
             this.txtDescricao.Multiline = true;
@@ -240,8 +246,11 @@
             // 
             // txtNome
             // 
+            this.txtNome.Ativo = true;
+            this.txtNome.BackColor = System.Drawing.Color.White;
             this.txtNome.CampoObrigatorio = true;
             this.txtNome.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.Texto;
+            this.txtNome.Erro = false;
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtNome.Location = new System.Drawing.Point(107, 52);
             this.txtNome.Name = "txtNome";
@@ -278,17 +287,22 @@
             this.flaskSearchButton1.TabIndex = 1;
             this.flaskSearchButton1.TabStop = false;
             this.flaskSearchButton1.UseVisualStyleBackColor = false;
-            this.flaskSearchButton1.Click += new System.EventHandler(this.flaskSearchButton1_Click);
+            this.flaskSearchButton1.Click += new System.EventHandler(this.FlaskSearchButton1_Click);
             // 
             // txtID
             // 
+            this.txtID.Ativo = true;
+            this.txtID.BackColor = System.Drawing.Color.White;
             this.txtID.CampoObrigatorio = false;
-            this.txtID.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.Texto;
+            this.txtID.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.NumeroInteiro;
+            this.txtID.Erro = false;
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtID.Location = new System.Drawing.Point(107, 23);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 23);
             this.txtID.TabIndex = 0;
+            this.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtID.Leave += new System.EventHandler(this.TxtID_Leave);
             // 
             // tabPage2
             // 
@@ -338,8 +352,11 @@
             // 
             // txtK1
             // 
+            this.txtK1.Ativo = true;
+            this.txtK1.BackColor = System.Drawing.Color.White;
             this.txtK1.CampoObrigatorio = false;
             this.txtK1.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.NumeroReal;
+            this.txtK1.Erro = false;
             this.txtK1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtK1.Location = new System.Drawing.Point(34, 2);
             this.txtK1.Name = "txtK1";
@@ -368,8 +385,11 @@
             // 
             // txtK2
             // 
+            this.txtK2.Ativo = true;
+            this.txtK2.BackColor = System.Drawing.Color.White;
             this.txtK2.CampoObrigatorio = false;
             this.txtK2.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.NumeroReal;
+            this.txtK2.Erro = false;
             this.txtK2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtK2.Location = new System.Drawing.Point(34, 2);
             this.txtK2.Name = "txtK2";
@@ -398,8 +418,11 @@
             // 
             // txtK4
             // 
+            this.txtK4.Ativo = true;
+            this.txtK4.BackColor = System.Drawing.Color.White;
             this.txtK4.CampoObrigatorio = false;
             this.txtK4.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.NumeroReal;
+            this.txtK4.Erro = false;
             this.txtK4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtK4.Location = new System.Drawing.Point(34, 2);
             this.txtK4.Name = "txtK4";
@@ -428,8 +451,11 @@
             // 
             // txtK3
             // 
+            this.txtK3.Ativo = true;
+            this.txtK3.BackColor = System.Drawing.Color.White;
             this.txtK3.CampoObrigatorio = false;
             this.txtK3.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.NumeroReal;
+            this.txtK3.Erro = false;
             this.txtK3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtK3.Location = new System.Drawing.Point(34, 2);
             this.txtK3.Name = "txtK3";
@@ -521,60 +547,62 @@
             this.rbClasseDesconhecida.UseVisualStyleBackColor = true;
             this.rbClasseDesconhecida.CheckedChanged += new System.EventHandler(this.RbClasseMono_CheckedChanged);
             // 
-            // flaskButton1
+            // btnSalvar
             // 
-            this.flaskButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.flaskButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(54)))), ((int)(((byte)(76)))));
-            this.flaskButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.flaskButton1.FlatAppearance.BorderSize = 0;
-            this.flaskButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(60)))), ((int)(((byte)(195)))));
-            this.flaskButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(59)))), ((int)(((byte)(137)))));
-            this.flaskButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.flaskButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.flaskButton1.ForeColor = System.Drawing.Color.White;
-            this.flaskButton1.Location = new System.Drawing.Point(420, 352);
-            this.flaskButton1.Name = "flaskButton1";
-            this.flaskButton1.Size = new System.Drawing.Size(115, 30);
-            this.flaskButton1.TabIndex = 0;
-            this.flaskButton1.Text = "Salvar";
-            this.flaskButton1.UseVisualStyleBackColor = false;
-            this.flaskButton1.Click += new System.EventHandler(this.FlaskButton1_Click);
+            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(54)))), ((int)(((byte)(76)))));
+            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvar.FlatAppearance.BorderSize = 0;
+            this.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(60)))), ((int)(((byte)(195)))));
+            this.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(59)))), ((int)(((byte)(137)))));
+            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnSalvar.ForeColor = System.Drawing.Color.White;
+            this.btnSalvar.Location = new System.Drawing.Point(420, 352);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(115, 30);
+            this.btnSalvar.TabIndex = 0;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.FlaskButton1_Click);
             // 
-            // flaskButton2
+            // btnLimpar
             // 
-            this.flaskButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.flaskButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(54)))), ((int)(((byte)(76)))));
-            this.flaskButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.flaskButton2.FlatAppearance.BorderSize = 0;
-            this.flaskButton2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(60)))), ((int)(((byte)(195)))));
-            this.flaskButton2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(59)))), ((int)(((byte)(137)))));
-            this.flaskButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.flaskButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.flaskButton2.ForeColor = System.Drawing.Color.White;
-            this.flaskButton2.Location = new System.Drawing.Point(299, 352);
-            this.flaskButton2.Name = "flaskButton2";
-            this.flaskButton2.Size = new System.Drawing.Size(115, 30);
-            this.flaskButton2.TabIndex = 1;
-            this.flaskButton2.Text = "Limpar";
-            this.flaskButton2.UseVisualStyleBackColor = false;
+            this.btnLimpar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLimpar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(54)))), ((int)(((byte)(76)))));
+            this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpar.FlatAppearance.BorderSize = 0;
+            this.btnLimpar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(60)))), ((int)(((byte)(195)))));
+            this.btnLimpar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(59)))), ((int)(((byte)(137)))));
+            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnLimpar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpar.Location = new System.Drawing.Point(299, 352);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(115, 30);
+            this.btnLimpar.TabIndex = 1;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.Limpar);
             // 
-            // flaskButton3
+            // btnExcluir
             // 
-            this.flaskButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.flaskButton3.BackColor = System.Drawing.Color.Red;
-            this.flaskButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.flaskButton3.FlatAppearance.BorderSize = 0;
-            this.flaskButton3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Tomato;
-            this.flaskButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OrangeRed;
-            this.flaskButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.flaskButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.flaskButton3.ForeColor = System.Drawing.Color.White;
-            this.flaskButton3.Location = new System.Drawing.Point(5, 352);
-            this.flaskButton3.Name = "flaskButton3";
-            this.flaskButton3.Size = new System.Drawing.Size(115, 30);
-            this.flaskButton3.TabIndex = 2;
-            this.flaskButton3.Text = "Excluir";
-            this.flaskButton3.UseVisualStyleBackColor = false;
+            this.btnExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnExcluir.BackColor = System.Drawing.Color.Red;
+            this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExcluir.FlatAppearance.BorderSize = 0;
+            this.btnExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Tomato;
+            this.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OrangeRed;
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnExcluir.ForeColor = System.Drawing.Color.White;
+            this.btnExcluir.Location = new System.Drawing.Point(5, 352);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(115, 30);
+            this.btnExcluir.TabIndex = 2;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
             // 
             // ucHeader1
             // 
@@ -594,9 +622,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
             this.ClientSize = new System.Drawing.Size(540, 390);
-            this.Controls.Add(this.flaskButton3);
-            this.Controls.Add(this.flaskButton2);
-            this.Controls.Add(this.flaskButton1);
+            this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.btnLimpar);
+            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.ucHeader1);
             this.Name = "FrmCadastroReagente";
@@ -657,9 +685,9 @@
         private System.Windows.Forms.Panel pnlK4;
         private FlaskUI.COMPONENTES.FlaskTextBox txtK4;
         private FlaskUI.COMPONENTES.FlaskLabel flaskLabel9;
-        private FlaskUI.COMPONENTES.FlaskButton flaskButton1;
-        private FlaskUI.COMPONENTES.FlaskButton flaskButton2;
-        private FlaskUI.COMPONENTES.FlaskButton flaskButton3;
+        private FlaskUI.COMPONENTES.FlaskButton btnSalvar;
+        private FlaskUI.COMPONENTES.FlaskButton btnLimpar;
+        private FlaskUI.COMPONENTES.FlaskButton btnExcluir;
         private System.Windows.Forms.Panel panel1;
         private FlaskUI.COMPONENTES.FlaskComboBox txtForca;
         private FlaskUI.COMPONENTES.FlaskLabel flaskLabel5;

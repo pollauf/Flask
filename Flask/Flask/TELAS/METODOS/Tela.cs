@@ -1,8 +1,10 @@
 ﻿using Flask.TELAS.CONTROLES;
+using FlaskMODEL;
 using FlaskMODEL.CONSULTAS;
 using FlaskUI;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -89,10 +91,41 @@ namespace Flask.TELAS.METODOS
             return false;
         }
 
-        public static void ConsultaGeral(IConsulta consulta)
+        public static int ConsultaGeral(IConsulta consulta)
         {
             var form = new FrmConsultaGeral(consulta.Nome, consulta.Pesquisar(), consulta.Cabecalhos);
             form.ShowDialog();
+            return form.ID;
+        }
+
+        public static void InformarSalvoSucesso()
+        {
+            MessageBox.Show("Salvo com sucesso.", "Salvo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public static void InformarExcluidoSucesso()
+        {
+            MessageBox.Show("Excluído com sucesso.", "Excluído", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public static bool PerguntarDesejaExcluir()
+        {
+            if (MessageBox.Show("Deseja excluir este registro?", "Excluir Registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question) ==
+                DialogResult.Yes)
+                return true;
+
+            return false;
+        }
+
+        public static void InformarErroFatal(Exception erro)
+        {
+            MessageBox.Show(erro.ToString(), "Erro Fatal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            Application.Exit();
+        }
+
+        public static void InformarErro(Exception erro)
+        {
+            MessageBox.Show(erro.ToString(), "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }
