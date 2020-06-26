@@ -20,3 +20,7 @@ C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\bin\Debug\FlaskUI.dll.config
 C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\bin\Debug\FlaskMODEL.dll
 C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\bin\Debug\FlaskMODEL.pdb
 C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\bin\Debug\FlaskMODEL.dll.config
+C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\bin\Debug\EntityFramework.dll
+C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\bin\Debug\EntityFramework.xml
+C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\bin\Debug\EntityFramework.SqlServer.xml

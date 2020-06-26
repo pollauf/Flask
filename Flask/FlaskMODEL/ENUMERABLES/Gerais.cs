@@ -20,6 +20,6 @@ namespace FlaskMODEL
     {
         [Description("Não")]
         Nao = 0,
-        Sim = 1
+        Sim = 1,
     }
 }

@@ -27,4 +27,13 @@ namespace FlaskMODEL
         Fraca = 1,
         Forte = 2,
     }
+
+    public enum ClasseReagente
+    {
+        Desconhecida = 0,
+        Mono = 1,
+        Di = 2,
+        Tri = 3,
+        Tetra = 4,
+    }
 }
