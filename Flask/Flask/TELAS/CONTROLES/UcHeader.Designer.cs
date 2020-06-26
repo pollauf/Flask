@@ -1,4 +1,4 @@
-﻿namespace Flask.TELAS.CONTROLES
+﻿namespace Flask
 {
     partial class UcHeader
     {

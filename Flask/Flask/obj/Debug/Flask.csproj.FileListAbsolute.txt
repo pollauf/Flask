@@ -8,7 +8,6 @@ C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\obj\Debug\Flask.exe
 C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\obj\Debug\Flask.pdb
 C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\obj\Debug\Flask.TELAS.FrmPrincipal.resources
 C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\obj\Debug\Flask.TELAS.CONTROLES.UcMenuLateral.resources
-C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\obj\Debug\Flask.TELAS.CONTROLES.UcHeader.resources
 C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\obj\Debug\Flask.TELAS.Reagentes.FrmCadastroReagente.resources
 C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\obj\Debug\Flask.TELAS.CONTROLES.UcAbas.resources
 C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\obj\Debug\Flask.TELAS.FrmTeste.resources
@@ -26,3 +25,5 @@ C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\bin\Debug\EntityFramework.SqlSer
 C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\bin\Debug\FirebirdSql.Data.FirebirdClient.dll
 C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\bin\Debug\EntityFramework.Firebird.dll
+C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\obj\Debug\Flask.TELAS.FrmConsultaGeral.resources
+C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\obj\Debug\Flask.UcHeader.resources

@@ -1,4 +1,5 @@
 ﻿using Flask.TELAS.CONTROLES;
+using FlaskMODEL.CONSULTAS;
 using FlaskUI;
 using System;
 using System.Collections.Generic;
@@ -86,6 +87,12 @@ namespace Flask.TELAS.METODOS
                 return true;
 
             return false;
+        }
+
+        public static void ConsultaGeral(IConsulta consulta)
+        {
+            var form = new FrmConsultaGeral(consulta.Nome, consulta.Pesquisar(), consulta.Cabecalhos);
+            form.ShowDialog();
         }
     }
 }

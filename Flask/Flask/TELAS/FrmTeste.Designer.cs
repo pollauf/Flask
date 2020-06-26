@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucHeader1 = new Flask.TELAS.CONTROLES.UcHeader();
+            this.ucHeader1 = new UcHeader();
             this.SuspendLayout();
             // 
             // ucHeader1
@@ -59,6 +59,6 @@
         }
 
         #endregion
-        private CONTROLES.UcHeader ucHeader1;
+        private UcHeader ucHeader1;
     }
 }

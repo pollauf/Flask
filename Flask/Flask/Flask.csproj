@@ -95,6 +95,12 @@
     <Compile Include="TELAS\CONTROLES\UcMenuLateral.Designer.cs">
       <DependentUpon>UcMenuLateral.cs</DependentUpon>
     </Compile>
+    <Compile Include="TELAS\FrmConsultaGeral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TELAS\FrmConsultaGeral.Designer.cs">
+      <DependentUpon>FrmConsultaGeral.cs</DependentUpon>
+    </Compile>
     <Compile Include="TELAS\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TELAS\CONTROLES\UcMenuLateral.resx">
       <DependentUpon>UcMenuLateral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TELAS\FrmConsultaGeral.resx">
+      <DependentUpon>FrmConsultaGeral.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TELAS\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>

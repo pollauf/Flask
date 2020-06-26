@@ -70,7 +70,7 @@
             this.flaskButton1 = new FlaskUI.COMPONENTES.FlaskButton();
             this.flaskButton2 = new FlaskUI.COMPONENTES.FlaskButton();
             this.flaskButton3 = new FlaskUI.COMPONENTES.FlaskButton();
-            this.ucHeader1 = new Flask.TELAS.CONTROLES.UcHeader();
+            this.ucHeader1 = new UcHeader();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -125,7 +125,7 @@
             // 
             this.lblMols.AutoSize = true;
             this.lblMols.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblMols.Location = new System.Drawing.Point(380, 114);
+            this.lblMols.Location = new System.Drawing.Point(332, 114);
             this.lblMols.Name = "lblMols";
             this.lblMols.Size = new System.Drawing.Size(42, 17);
             this.lblMols.TabIndex = 14;
@@ -134,11 +134,13 @@
             // txtConcentracao
             // 
             this.txtConcentracao.CampoObrigatorio = false;
+            this.txtConcentracao.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.NumeroReal;
             this.txtConcentracao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtConcentracao.Location = new System.Drawing.Point(245, 111);
             this.txtConcentracao.Name = "txtConcentracao";
-            this.txtConcentracao.Size = new System.Drawing.Size(129, 23);
+            this.txtConcentracao.Size = new System.Drawing.Size(81, 23);
             this.txtConcentracao.TabIndex = 5;
+            this.txtConcentracao.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtComboConcentracao
             // 
@@ -216,6 +218,7 @@
             // txtDescricao
             // 
             this.txtDescricao.CampoObrigatorio = false;
+            this.txtDescricao.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.Texto;
             this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtDescricao.Location = new System.Drawing.Point(107, 141);
             this.txtDescricao.Multiline = true;
@@ -238,6 +241,7 @@
             // txtNome
             // 
             this.txtNome.CampoObrigatorio = true;
+            this.txtNome.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.Texto;
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtNome.Location = new System.Drawing.Point(107, 52);
             this.txtNome.Name = "txtNome";
@@ -279,6 +283,7 @@
             // txtID
             // 
             this.txtID.CampoObrigatorio = false;
+            this.txtID.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.Texto;
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtID.Location = new System.Drawing.Point(107, 23);
             this.txtID.Name = "txtID";
@@ -309,7 +314,7 @@
             this.flaskGroupBox2.Padding = new System.Windows.Forms.Padding(3);
             this.flaskGroupBox2.Size = new System.Drawing.Size(516, 80);
             this.flaskGroupBox2.TabIndex = 1;
-            this.flaskGroupBox2.Titulo = "Constante de Ionização";
+            this.flaskGroupBox2.Titulo = "Constante de Ionização (deixar em branco caso desconhecida)";
             // 
             // panel1
             // 
@@ -334,11 +339,13 @@
             // txtK1
             // 
             this.txtK1.CampoObrigatorio = false;
+            this.txtK1.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.NumeroReal;
             this.txtK1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtK1.Location = new System.Drawing.Point(34, 2);
             this.txtK1.Name = "txtK1";
             this.txtK1.Size = new System.Drawing.Size(58, 23);
             this.txtK1.TabIndex = 1;
+            this.txtK1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // flaskLabel6
             // 
@@ -362,11 +369,13 @@
             // txtK2
             // 
             this.txtK2.CampoObrigatorio = false;
+            this.txtK2.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.NumeroReal;
             this.txtK2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtK2.Location = new System.Drawing.Point(34, 2);
             this.txtK2.Name = "txtK2";
             this.txtK2.Size = new System.Drawing.Size(58, 23);
             this.txtK2.TabIndex = 1;
+            this.txtK2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // flaskLabel7
             // 
@@ -390,11 +399,13 @@
             // txtK4
             // 
             this.txtK4.CampoObrigatorio = false;
+            this.txtK4.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.NumeroReal;
             this.txtK4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtK4.Location = new System.Drawing.Point(34, 2);
             this.txtK4.Name = "txtK4";
             this.txtK4.Size = new System.Drawing.Size(58, 23);
             this.txtK4.TabIndex = 1;
+            this.txtK4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // flaskLabel9
             // 
@@ -418,11 +429,13 @@
             // txtK3
             // 
             this.txtK3.CampoObrigatorio = false;
+            this.txtK3.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.NumeroReal;
             this.txtK3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtK3.Location = new System.Drawing.Point(34, 2);
             this.txtK3.Name = "txtK3";
             this.txtK3.Size = new System.Drawing.Size(58, 23);
             this.txtK3.TabIndex = 1;
+            this.txtK3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // flaskLabel8
             // 
@@ -612,7 +625,7 @@
 
         #endregion
 
-        private CONTROLES.UcHeader ucHeader1;
+        private UcHeader ucHeader1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;

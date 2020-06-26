@@ -1,6 +1,7 @@
 ﻿using Flask.TELAS.METODOS;
 using Flask.TELAS.METODOS.EXTENSORES;
 using FlaskMODEL;
+using FlaskMODEL.CONSULTAS;
 using FlaskUI;
 using FlaskUI.CLASSES;
 using System;
@@ -30,15 +31,15 @@ namespace Flask.TELAS.Reagentes
 
         private void flaskSearchButton1_Click(object sender, EventArgs e)
         {
-
+            Tela.ConsultaGeral(new ConsultaReagente());
         }
 
         private void FrmCadastroReagente_Load(object sender, EventArgs e)
         {
             model = new Reagente();
-            txtTipo.Carregar(Extensao.EnumToList<TipoReagente>());
-            txtForca.Carregar(Extensao.EnumToList<ForcaReagente>());
-            txtComboConcentracao.Carregar(Extensao.EnumToList<Concentracao>());
+            txtTipo.Carregar(Metodos.EnumToList<TipoReagente>());
+            txtForca.Carregar(Metodos.EnumToList<ForcaReagente>());
+            txtComboConcentracao.Carregar(Metodos.EnumToList<Concentracao>());
             AtualizarControlesConstanteIonizacao();
         }
 
@@ -128,6 +129,7 @@ namespace Flask.TELAS.Reagentes
             using (FlaskDatabase db = new FlaskDatabase())
             {
                 model.Nome = txtNome.Text;
+                model.Descricao = txtDescricao.Text;
                 model.Tipo = (TipoReagente)txtTipo.SelectedIndex;
 
                 var classeSelecionada = ClasseReagente.Desconhecida;

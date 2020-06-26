@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CLASSES\Enumerables.cs" />
     <Compile Include="CLASSES\Extensao.cs" />
     <Compile Include="COMPONENTES\FlaskButton.cs">
       <SubType>Component</SubType>
@@ -61,6 +62,12 @@
     </Compile>
     <Compile Include="COMPONENTES\FlaskComboBox.Designer.cs">
       <DependentUpon>FlaskComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="COMPONENTES\FlaskDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="COMPONENTES\FlaskDataGridView.Designer.cs">
+      <DependentUpon>FlaskDataGridView.cs</DependentUpon>
     </Compile>
     <Compile Include="COMPONENTES\FlaskGroupBox.cs">
       <SubType>Component</SubType>

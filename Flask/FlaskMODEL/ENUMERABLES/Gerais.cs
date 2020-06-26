@@ -22,4 +22,11 @@ namespace FlaskMODEL
         Nao = 0,
         Sim = 1,
     }
+
+    public enum Alinhamento
+    {
+        Esquerda = 0,
+        Centro = 1,
+        Direita = 2,
+    }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Flask.TELAS.METODOS;
 
-namespace Flask.TELAS.CONTROLES
+namespace Flask
 {
     public partial class UcHeader : UserControl
     {
@@ -32,7 +32,10 @@ namespace Flask.TELAS.CONTROLES
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            Tela.Fechar();
+            if (this.Parent == Tela.FormPrincipal.ucAbas.AbaSelecionada.Tela)
+                Tela.Fechar();
+            else
+                ((Form)this.Parent).Close();
         }
         private void UcHeader_MouseDown(object sender, MouseEventArgs e)
         {
