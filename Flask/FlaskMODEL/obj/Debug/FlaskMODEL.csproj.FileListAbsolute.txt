@@ -1,0 +1,8 @@
+C:\Users\mathe\Desktop\FLASK_dotNET\Flask\FlaskMODEL\obj\Debug\FlaskMODEL.Properties.Resources.resources
+C:\Users\mathe\Desktop\FLASK_dotNET\Flask\FlaskMODEL\obj\Debug\FlaskMODEL.csproj.GenerateResource.cache
+C:\Users\mathe\Desktop\FLASK_dotNET\Flask\FlaskMODEL\obj\Debug\FlaskMODEL.csproj.CoreCompileInputs.cache
+C:\Users\mathe\Desktop\FLASK_dotNET\Flask\FlaskMODEL\bin\Debug\FlaskMODEL.dll.config
+C:\Users\mathe\Desktop\FLASK_dotNET\Flask\FlaskMODEL\bin\Debug\FlaskMODEL.dll
+C:\Users\mathe\Desktop\FLASK_dotNET\Flask\FlaskMODEL\bin\Debug\FlaskMODEL.pdb
+C:\Users\mathe\Desktop\FLASK_dotNET\Flask\FlaskMODEL\obj\Debug\FlaskMODEL.dll
+C:\Users\mathe\Desktop\FLASK_dotNET\Flask\FlaskMODEL\obj\Debug\FlaskMODEL.pdb

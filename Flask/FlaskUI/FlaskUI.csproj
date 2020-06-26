@@ -62,6 +62,12 @@
     <Compile Include="COMPONENTES\FlaskComboBox.Designer.cs">
       <DependentUpon>FlaskComboBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="COMPONENTES\FlaskGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="COMPONENTES\FlaskGroupBox.Designer.cs">
+      <DependentUpon>FlaskGroupBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="COMPONENTES\FlaskLabel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -80,7 +86,6 @@
     <Compile Include="COMPONENTES\FlaskTextBox.Designer.cs">
       <DependentUpon>FlaskTextBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="CLASSES\Enumerables.cs" />
     <Compile Include="FlaskForm.cs">
       <SubType>Form</SubType>
     </Compile>

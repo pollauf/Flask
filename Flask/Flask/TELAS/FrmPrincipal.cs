@@ -1,5 +1,6 @@
 ﻿using Flask.TELAS.METODOS;
 using Flask.TELAS.Reagentes;
+using FlaskMODEL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
