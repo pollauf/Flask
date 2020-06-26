@@ -33,33 +33,33 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.lblMols = new FlaskUI.COMPONENTES.FlaskLabel();
             this.txtConcentracao = new FlaskUI.COMPONENTES.FlaskTextBox();
-            this.comboConcentracao = new FlaskUI.COMPONENTES.FlaskComboBox();
+            this.txtComboConcentracao = new FlaskUI.COMPONENTES.FlaskComboBox();
             this.flaskLabel10 = new FlaskUI.COMPONENTES.FlaskLabel();
             this.flaskLabel5 = new FlaskUI.COMPONENTES.FlaskLabel();
-            this.flaskComboBox2 = new FlaskUI.COMPONENTES.FlaskComboBox();
+            this.txtForca = new FlaskUI.COMPONENTES.FlaskComboBox();
             this.flaskLabel4 = new FlaskUI.COMPONENTES.FlaskLabel();
-            this.flaskComboBox1 = new FlaskUI.COMPONENTES.FlaskComboBox();
+            this.txtTipo = new FlaskUI.COMPONENTES.FlaskComboBox();
             this.flaskLabel3 = new FlaskUI.COMPONENTES.FlaskLabel();
-            this.flaskTextBox3 = new FlaskUI.COMPONENTES.FlaskTextBox();
+            this.txtDescricao = new FlaskUI.COMPONENTES.FlaskTextBox();
             this.flaskLabel2 = new FlaskUI.COMPONENTES.FlaskLabel();
-            this.flaskTextBox2 = new FlaskUI.COMPONENTES.FlaskTextBox();
+            this.txtNome = new FlaskUI.COMPONENTES.FlaskTextBox();
             this.flaskLabel1 = new FlaskUI.COMPONENTES.FlaskLabel();
             this.flaskSearchButton1 = new FlaskUI.COMPONENTES.FlaskSearchButton();
-            this.flaskTextBox1 = new FlaskUI.COMPONENTES.FlaskTextBox();
+            this.txtID = new FlaskUI.COMPONENTES.FlaskTextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.flaskGroupBox2 = new FlaskUI.COMPONENTES.FlaskGroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlK1 = new System.Windows.Forms.Panel();
-            this.flaskTextBox4 = new FlaskUI.COMPONENTES.FlaskTextBox();
+            this.txtK1 = new FlaskUI.COMPONENTES.FlaskTextBox();
             this.flaskLabel6 = new FlaskUI.COMPONENTES.FlaskLabel();
             this.pnlK2 = new System.Windows.Forms.Panel();
-            this.flaskTextBox5 = new FlaskUI.COMPONENTES.FlaskTextBox();
+            this.txtK2 = new FlaskUI.COMPONENTES.FlaskTextBox();
             this.flaskLabel7 = new FlaskUI.COMPONENTES.FlaskLabel();
             this.pnlK4 = new System.Windows.Forms.Panel();
-            this.flaskTextBox7 = new FlaskUI.COMPONENTES.FlaskTextBox();
+            this.txtK4 = new FlaskUI.COMPONENTES.FlaskTextBox();
             this.flaskLabel9 = new FlaskUI.COMPONENTES.FlaskLabel();
             this.pnlK3 = new System.Windows.Forms.Panel();
-            this.flaskTextBox6 = new FlaskUI.COMPONENTES.FlaskTextBox();
+            this.txtK3 = new FlaskUI.COMPONENTES.FlaskTextBox();
             this.flaskLabel8 = new FlaskUI.COMPONENTES.FlaskLabel();
             this.flaskGroupBox1 = new FlaskUI.COMPONENTES.FlaskGroupBox();
             this.rbClasseTetra = new System.Windows.Forms.RadioButton();
@@ -101,19 +101,19 @@
             this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabPage1.Controls.Add(this.lblMols);
             this.tabPage1.Controls.Add(this.txtConcentracao);
-            this.tabPage1.Controls.Add(this.comboConcentracao);
+            this.tabPage1.Controls.Add(this.txtComboConcentracao);
             this.tabPage1.Controls.Add(this.flaskLabel10);
             this.tabPage1.Controls.Add(this.flaskLabel5);
-            this.tabPage1.Controls.Add(this.flaskComboBox2);
+            this.tabPage1.Controls.Add(this.txtForca);
             this.tabPage1.Controls.Add(this.flaskLabel4);
-            this.tabPage1.Controls.Add(this.flaskComboBox1);
+            this.tabPage1.Controls.Add(this.txtTipo);
             this.tabPage1.Controls.Add(this.flaskLabel3);
-            this.tabPage1.Controls.Add(this.flaskTextBox3);
+            this.tabPage1.Controls.Add(this.txtDescricao);
             this.tabPage1.Controls.Add(this.flaskLabel2);
-            this.tabPage1.Controls.Add(this.flaskTextBox2);
+            this.tabPage1.Controls.Add(this.txtNome);
             this.tabPage1.Controls.Add(this.flaskLabel1);
             this.tabPage1.Controls.Add(this.flaskSearchButton1);
-            this.tabPage1.Controls.Add(this.flaskTextBox1);
+            this.tabPage1.Controls.Add(this.txtID);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -140,16 +140,16 @@
             this.txtConcentracao.Size = new System.Drawing.Size(129, 23);
             this.txtConcentracao.TabIndex = 5;
             // 
-            // comboConcentracao
+            // txtComboConcentracao
             // 
-            this.comboConcentracao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboConcentracao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.comboConcentracao.FormattingEnabled = true;
-            this.comboConcentracao.Location = new System.Drawing.Point(107, 110);
-            this.comboConcentracao.Name = "comboConcentracao";
-            this.comboConcentracao.Size = new System.Drawing.Size(130, 24);
-            this.comboConcentracao.TabIndex = 4;
-            this.comboConcentracao.SelectedIndexChanged += new System.EventHandler(this.ComboConcentracao_SelectedIndexChanged);
+            this.txtComboConcentracao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtComboConcentracao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtComboConcentracao.FormattingEnabled = true;
+            this.txtComboConcentracao.Location = new System.Drawing.Point(107, 110);
+            this.txtComboConcentracao.Name = "txtComboConcentracao";
+            this.txtComboConcentracao.Size = new System.Drawing.Size(130, 24);
+            this.txtComboConcentracao.TabIndex = 4;
+            this.txtComboConcentracao.SelectedIndexChanged += new System.EventHandler(this.ComboConcentracao_SelectedIndexChanged);
             // 
             // flaskLabel10
             // 
@@ -171,17 +171,17 @@
             this.flaskLabel5.TabIndex = 10;
             this.flaskLabel5.Text = "Força";
             // 
-            // flaskComboBox2
+            // txtForca
             // 
-            this.flaskComboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.flaskComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.flaskComboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.flaskComboBox2.FormattingEnabled = true;
-            this.flaskComboBox2.Location = new System.Drawing.Point(292, 81);
-            this.flaskComboBox2.Name = "flaskComboBox2";
-            this.flaskComboBox2.Size = new System.Drawing.Size(130, 24);
-            this.flaskComboBox2.TabIndex = 3;
-            this.flaskComboBox2.SelectedIndexChanged += new System.EventHandler(this.FlaskComboBox2_SelectedIndexChanged);
+            this.txtForca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtForca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtForca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtForca.FormattingEnabled = true;
+            this.txtForca.Location = new System.Drawing.Point(292, 81);
+            this.txtForca.Name = "txtForca";
+            this.txtForca.Size = new System.Drawing.Size(130, 24);
+            this.txtForca.TabIndex = 3;
+            this.txtForca.SelectedIndexChanged += new System.EventHandler(this.FlaskComboBox2_SelectedIndexChanged);
             // 
             // flaskLabel4
             // 
@@ -193,15 +193,15 @@
             this.flaskLabel4.TabIndex = 8;
             this.flaskLabel4.Text = "Tipo";
             // 
-            // flaskComboBox1
+            // txtTipo
             // 
-            this.flaskComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.flaskComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.flaskComboBox1.FormattingEnabled = true;
-            this.flaskComboBox1.Location = new System.Drawing.Point(106, 81);
-            this.flaskComboBox1.Name = "flaskComboBox1";
-            this.flaskComboBox1.Size = new System.Drawing.Size(130, 24);
-            this.flaskComboBox1.TabIndex = 2;
+            this.txtTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtTipo.FormattingEnabled = true;
+            this.txtTipo.Location = new System.Drawing.Point(106, 81);
+            this.txtTipo.Name = "txtTipo";
+            this.txtTipo.Size = new System.Drawing.Size(130, 24);
+            this.txtTipo.TabIndex = 2;
             // 
             // flaskLabel3
             // 
@@ -213,17 +213,17 @@
             this.flaskLabel3.TabIndex = 6;
             this.flaskLabel3.Text = "Descrição";
             // 
-            // flaskTextBox3
+            // txtDescricao
             // 
-            this.flaskTextBox3.CampoObrigatorio = false;
-            this.flaskTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.flaskTextBox3.Location = new System.Drawing.Point(107, 141);
-            this.flaskTextBox3.Multiline = true;
-            this.flaskTextBox3.Name = "flaskTextBox3";
-            this.flaskTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.flaskTextBox3.Size = new System.Drawing.Size(389, 87);
-            this.flaskTextBox3.TabIndex = 6;
-            this.flaskTextBox3.TextChanged += new System.EventHandler(this.flaskTextBox3_TextChanged);
+            this.txtDescricao.CampoObrigatorio = false;
+            this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtDescricao.Location = new System.Drawing.Point(107, 141);
+            this.txtDescricao.Multiline = true;
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtDescricao.Size = new System.Drawing.Size(389, 87);
+            this.txtDescricao.TabIndex = 6;
+            this.txtDescricao.TextChanged += new System.EventHandler(this.flaskTextBox3_TextChanged);
             // 
             // flaskLabel2
             // 
@@ -235,14 +235,14 @@
             this.flaskLabel2.TabIndex = 4;
             this.flaskLabel2.Text = "Nome *";
             // 
-            // flaskTextBox2
+            // txtNome
             // 
-            this.flaskTextBox2.CampoObrigatorio = false;
-            this.flaskTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.flaskTextBox2.Location = new System.Drawing.Point(107, 52);
-            this.flaskTextBox2.Name = "flaskTextBox2";
-            this.flaskTextBox2.Size = new System.Drawing.Size(389, 23);
-            this.flaskTextBox2.TabIndex = 1;
+            this.txtNome.CampoObrigatorio = true;
+            this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtNome.Location = new System.Drawing.Point(107, 52);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(389, 23);
+            this.txtNome.TabIndex = 1;
             // 
             // flaskLabel1
             // 
@@ -276,14 +276,14 @@
             this.flaskSearchButton1.UseVisualStyleBackColor = false;
             this.flaskSearchButton1.Click += new System.EventHandler(this.flaskSearchButton1_Click);
             // 
-            // flaskTextBox1
+            // txtID
             // 
-            this.flaskTextBox1.CampoObrigatorio = false;
-            this.flaskTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.flaskTextBox1.Location = new System.Drawing.Point(107, 23);
-            this.flaskTextBox1.Name = "flaskTextBox1";
-            this.flaskTextBox1.Size = new System.Drawing.Size(100, 23);
-            this.flaskTextBox1.TabIndex = 0;
+            this.txtID.CampoObrigatorio = false;
+            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtID.Location = new System.Drawing.Point(107, 23);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(100, 23);
+            this.txtID.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -324,21 +324,21 @@
             // 
             // pnlK1
             // 
-            this.pnlK1.Controls.Add(this.flaskTextBox4);
+            this.pnlK1.Controls.Add(this.txtK1);
             this.pnlK1.Controls.Add(this.flaskLabel6);
             this.pnlK1.Location = new System.Drawing.Point(3, 3);
             this.pnlK1.Name = "pnlK1";
             this.pnlK1.Size = new System.Drawing.Size(95, 30);
             this.pnlK1.TabIndex = 2;
             // 
-            // flaskTextBox4
+            // txtK1
             // 
-            this.flaskTextBox4.CampoObrigatorio = false;
-            this.flaskTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.flaskTextBox4.Location = new System.Drawing.Point(34, 2);
-            this.flaskTextBox4.Name = "flaskTextBox4";
-            this.flaskTextBox4.Size = new System.Drawing.Size(58, 23);
-            this.flaskTextBox4.TabIndex = 1;
+            this.txtK1.CampoObrigatorio = false;
+            this.txtK1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtK1.Location = new System.Drawing.Point(34, 2);
+            this.txtK1.Name = "txtK1";
+            this.txtK1.Size = new System.Drawing.Size(58, 23);
+            this.txtK1.TabIndex = 1;
             // 
             // flaskLabel6
             // 
@@ -352,21 +352,21 @@
             // 
             // pnlK2
             // 
-            this.pnlK2.Controls.Add(this.flaskTextBox5);
+            this.pnlK2.Controls.Add(this.txtK2);
             this.pnlK2.Controls.Add(this.flaskLabel7);
             this.pnlK2.Location = new System.Drawing.Point(104, 3);
             this.pnlK2.Name = "pnlK2";
             this.pnlK2.Size = new System.Drawing.Size(95, 30);
             this.pnlK2.TabIndex = 3;
             // 
-            // flaskTextBox5
+            // txtK2
             // 
-            this.flaskTextBox5.CampoObrigatorio = false;
-            this.flaskTextBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.flaskTextBox5.Location = new System.Drawing.Point(34, 2);
-            this.flaskTextBox5.Name = "flaskTextBox5";
-            this.flaskTextBox5.Size = new System.Drawing.Size(58, 23);
-            this.flaskTextBox5.TabIndex = 1;
+            this.txtK2.CampoObrigatorio = false;
+            this.txtK2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtK2.Location = new System.Drawing.Point(34, 2);
+            this.txtK2.Name = "txtK2";
+            this.txtK2.Size = new System.Drawing.Size(58, 23);
+            this.txtK2.TabIndex = 1;
             // 
             // flaskLabel7
             // 
@@ -380,21 +380,21 @@
             // 
             // pnlK4
             // 
-            this.pnlK4.Controls.Add(this.flaskTextBox7);
+            this.pnlK4.Controls.Add(this.txtK4);
             this.pnlK4.Controls.Add(this.flaskLabel9);
             this.pnlK4.Location = new System.Drawing.Point(306, 3);
             this.pnlK4.Name = "pnlK4";
             this.pnlK4.Size = new System.Drawing.Size(95, 30);
             this.pnlK4.TabIndex = 5;
             // 
-            // flaskTextBox7
+            // txtK4
             // 
-            this.flaskTextBox7.CampoObrigatorio = false;
-            this.flaskTextBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.flaskTextBox7.Location = new System.Drawing.Point(34, 2);
-            this.flaskTextBox7.Name = "flaskTextBox7";
-            this.flaskTextBox7.Size = new System.Drawing.Size(58, 23);
-            this.flaskTextBox7.TabIndex = 1;
+            this.txtK4.CampoObrigatorio = false;
+            this.txtK4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtK4.Location = new System.Drawing.Point(34, 2);
+            this.txtK4.Name = "txtK4";
+            this.txtK4.Size = new System.Drawing.Size(58, 23);
+            this.txtK4.TabIndex = 1;
             // 
             // flaskLabel9
             // 
@@ -408,21 +408,21 @@
             // 
             // pnlK3
             // 
-            this.pnlK3.Controls.Add(this.flaskTextBox6);
+            this.pnlK3.Controls.Add(this.txtK3);
             this.pnlK3.Controls.Add(this.flaskLabel8);
             this.pnlK3.Location = new System.Drawing.Point(205, 3);
             this.pnlK3.Name = "pnlK3";
             this.pnlK3.Size = new System.Drawing.Size(95, 30);
             this.pnlK3.TabIndex = 4;
             // 
-            // flaskTextBox6
+            // txtK3
             // 
-            this.flaskTextBox6.CampoObrigatorio = false;
-            this.flaskTextBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.flaskTextBox6.Location = new System.Drawing.Point(34, 2);
-            this.flaskTextBox6.Name = "flaskTextBox6";
-            this.flaskTextBox6.Size = new System.Drawing.Size(58, 23);
-            this.flaskTextBox6.TabIndex = 1;
+            this.txtK3.CampoObrigatorio = false;
+            this.txtK3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtK3.Location = new System.Drawing.Point(34, 2);
+            this.txtK3.Name = "txtK3";
+            this.txtK3.Size = new System.Drawing.Size(58, 23);
+            this.txtK3.TabIndex = 1;
             // 
             // flaskLabel8
             // 
@@ -525,6 +525,7 @@
             this.flaskButton1.TabIndex = 0;
             this.flaskButton1.Text = "Salvar";
             this.flaskButton1.UseVisualStyleBackColor = false;
+            this.flaskButton1.Click += new System.EventHandler(this.FlaskButton1_Click);
             // 
             // flaskButton2
             // 
@@ -615,14 +616,14 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private FlaskUI.COMPONENTES.FlaskTextBox flaskTextBox1;
+        private FlaskUI.COMPONENTES.FlaskTextBox txtID;
         private FlaskUI.COMPONENTES.FlaskSearchButton flaskSearchButton1;
         private FlaskUI.COMPONENTES.FlaskLabel flaskLabel3;
-        private FlaskUI.COMPONENTES.FlaskTextBox flaskTextBox3;
+        private FlaskUI.COMPONENTES.FlaskTextBox txtDescricao;
         private FlaskUI.COMPONENTES.FlaskLabel flaskLabel2;
-        private FlaskUI.COMPONENTES.FlaskTextBox flaskTextBox2;
+        private FlaskUI.COMPONENTES.FlaskTextBox txtNome;
         private FlaskUI.COMPONENTES.FlaskLabel flaskLabel1;
-        private FlaskUI.COMPONENTES.FlaskComboBox flaskComboBox1;
+        private FlaskUI.COMPONENTES.FlaskComboBox txtTipo;
         private FlaskUI.COMPONENTES.FlaskLabel flaskLabel4;
         private FlaskUI.COMPONENTES.FlaskGroupBox flaskGroupBox1;
         private System.Windows.Forms.RadioButton rbClasseTetra;
@@ -632,26 +633,26 @@
         private System.Windows.Forms.RadioButton rbClasseDesconhecida;
         private FlaskUI.COMPONENTES.FlaskGroupBox flaskGroupBox2;
         private System.Windows.Forms.Panel pnlK1;
-        private FlaskUI.COMPONENTES.FlaskTextBox flaskTextBox4;
+        private FlaskUI.COMPONENTES.FlaskTextBox txtK1;
         private FlaskUI.COMPONENTES.FlaskLabel flaskLabel6;
         private System.Windows.Forms.Panel pnlK2;
-        private FlaskUI.COMPONENTES.FlaskTextBox flaskTextBox5;
+        private FlaskUI.COMPONENTES.FlaskTextBox txtK2;
         private FlaskUI.COMPONENTES.FlaskLabel flaskLabel7;
         private System.Windows.Forms.Panel pnlK3;
-        private FlaskUI.COMPONENTES.FlaskTextBox flaskTextBox6;
+        private FlaskUI.COMPONENTES.FlaskTextBox txtK3;
         private FlaskUI.COMPONENTES.FlaskLabel flaskLabel8;
         private System.Windows.Forms.Panel pnlK4;
-        private FlaskUI.COMPONENTES.FlaskTextBox flaskTextBox7;
+        private FlaskUI.COMPONENTES.FlaskTextBox txtK4;
         private FlaskUI.COMPONENTES.FlaskLabel flaskLabel9;
         private FlaskUI.COMPONENTES.FlaskButton flaskButton1;
         private FlaskUI.COMPONENTES.FlaskButton flaskButton2;
         private FlaskUI.COMPONENTES.FlaskButton flaskButton3;
         private System.Windows.Forms.Panel panel1;
-        private FlaskUI.COMPONENTES.FlaskComboBox flaskComboBox2;
+        private FlaskUI.COMPONENTES.FlaskComboBox txtForca;
         private FlaskUI.COMPONENTES.FlaskLabel flaskLabel5;
         private FlaskUI.COMPONENTES.FlaskLabel lblMols;
         private FlaskUI.COMPONENTES.FlaskTextBox txtConcentracao;
-        private FlaskUI.COMPONENTES.FlaskComboBox comboConcentracao;
+        private FlaskUI.COMPONENTES.FlaskComboBox txtComboConcentracao;
         private FlaskUI.COMPONENTES.FlaskLabel flaskLabel10;
     }
 }

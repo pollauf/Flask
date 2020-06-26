@@ -143,16 +143,23 @@
     <Compile Include="ENUMERABLES\Gerais.cs" />
     <Compile Include="ENUMERABLES\Quimica.cs" />
     <Compile Include="FlaskDatabase.cs" />
-    <Compile Include="Migrations\202006260433192_first.cs" />
-    <Compile Include="Migrations\202006260433192_first.designer.cs">
-      <DependentUpon>202006260433192_first.cs</DependentUpon>
+    <Compile Include="Migrations\202006260446373_first.cs" />
+    <Compile Include="Migrations\202006260446373_first.designer.cs">
+      <DependentUpon>202006260446373_first.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006260530555_second.cs" />
+    <Compile Include="Migrations\202006260530555_second.designer.cs">
+      <DependentUpon>202006260530555_second.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TABELAS\Reagente.cs" />
-    <EmbeddedResource Include="Migrations\202006260433192_first.resx">
-      <DependentUpon>202006260433192_first.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006260446373_first.resx">
+      <DependentUpon>202006260446373_first.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006260530555_second.resx">
+      <DependentUpon>202006260530555_second.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

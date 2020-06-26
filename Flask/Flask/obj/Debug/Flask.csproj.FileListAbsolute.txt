@@ -24,3 +24,5 @@ C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\bin\Debug\EntityFramework.dll
 C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\bin\Debug\EntityFramework.xml
 C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\bin\Debug\FirebirdSql.Data.FirebirdClient.dll
+C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\bin\Debug\EntityFramework.Firebird.dll

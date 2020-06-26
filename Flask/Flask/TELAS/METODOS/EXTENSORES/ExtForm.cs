@@ -15,7 +15,9 @@ namespace Flask.TELAS.METODOS.EXTENSORES
     {
         public static bool VerificarCamposObrigatorios(this Form form)
         {
-            foreach (Control control in form.Controls)
+            List<Control> controls = GetAllControls(form);
+
+            foreach (var control in controls)
             {
                 if (control is FlaskTextBox flaskTextBox)
                 {
@@ -31,6 +33,33 @@ namespace Flask.TELAS.METODOS.EXTENSORES
             return true;
         }
 
+        public static void LimparCampos(this Form form)
+        {
+            List<Control> controls = GetAllControls(form);
+
+            foreach (var control in controls)
+            {
+                if (control is FlaskTextBox flaskTextBox)
+                {
+                    ((FlaskTextBox)control).Text = string.Empty;
+                }
+            }
+        }
+        private static List<Control> GetAllControls(Control container, List<Control> list)
+        {
+            foreach (Control c in container.Controls)
+            {
+                if (c is TextBox) list.Add(c);
+                if (c.Controls.Count > 0)
+                    list = GetAllControls(c, list);
+            }
+
+            return list;
+        }
+        private static List<Control> GetAllControls(Control container)
+        {
+            return GetAllControls(container, new List<Control>());
+        }
         public static void AdotarPredefinicoes(this Form form)
         {
             form.BackColor = Color.FromArgb(219, 222, 225);

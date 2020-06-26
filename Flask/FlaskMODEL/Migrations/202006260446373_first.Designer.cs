@@ -13,7 +13,7 @@ namespace FlaskMODEL.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202006260433192_first"; }
+            get { return "202006260446373_first"; }
         }
         
         string IMigrationMetadata.Source

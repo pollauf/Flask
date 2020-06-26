@@ -24,5 +24,11 @@ namespace FlaskUI.COMPONENTES
         {
             base.OnPaint(pe);
         }
+
+        protected override void OnKeyDown(KeyEventArgs e)
+        {
+            base.OnKeyDown(e);
+            this.BackColor = Color.White;
+        }
     }
 }
