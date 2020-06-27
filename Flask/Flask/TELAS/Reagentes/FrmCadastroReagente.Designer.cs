@@ -71,6 +71,9 @@
             this.btnLimpar = new FlaskUI.COMPONENTES.FlaskButton();
             this.btnExcluir = new FlaskUI.COMPONENTES.FlaskButton();
             this.ucHeader1 = new Flask.UcHeader();
+            this.flaskLabel11 = new FlaskUI.COMPONENTES.FlaskLabel();
+            this.txtMassaMolar = new FlaskUI.COMPONENTES.FlaskTextBox();
+            this.flaskLabel12 = new FlaskUI.COMPONENTES.FlaskLabel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -99,6 +102,9 @@
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
             this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPage1.Controls.Add(this.flaskLabel12);
+            this.tabPage1.Controls.Add(this.txtMassaMolar);
+            this.tabPage1.Controls.Add(this.flaskLabel11);
             this.tabPage1.Controls.Add(this.lblMols);
             this.tabPage1.Controls.Add(this.txtConcentracao);
             this.tabPage1.Controls.Add(this.txtComboConcentracao);
@@ -212,7 +218,7 @@
             // 
             this.flaskLabel3.AutoSize = true;
             this.flaskLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.flaskLabel3.Location = new System.Drawing.Point(30, 141);
+            this.flaskLabel3.Location = new System.Drawing.Point(30, 169);
             this.flaskLabel3.Name = "flaskLabel3";
             this.flaskLabel3.Size = new System.Drawing.Size(71, 17);
             this.flaskLabel3.TabIndex = 6;
@@ -226,12 +232,12 @@
             this.txtDescricao.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.Texto;
             this.txtDescricao.Erro = false;
             this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtDescricao.Location = new System.Drawing.Point(107, 141);
+            this.txtDescricao.Location = new System.Drawing.Point(107, 169);
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtDescricao.Size = new System.Drawing.Size(389, 87);
-            this.txtDescricao.TabIndex = 6;
+            this.txtDescricao.TabIndex = 7;
             this.txtDescricao.TextChanged += new System.EventHandler(this.flaskTextBox3_TextChanged);
             // 
             // flaskLabel2
@@ -488,7 +494,7 @@
             this.flaskGroupBox1.Padding = new System.Windows.Forms.Padding(3);
             this.flaskGroupBox1.Size = new System.Drawing.Size(516, 87);
             this.flaskGroupBox1.TabIndex = 0;
-            this.flaskGroupBox1.Titulo = "Classe (H+/OH-) Ionizáveis";
+            this.flaskGroupBox1.Titulo = "Classe (H⁺/OH⁻) Ionizáveis";
             // 
             // rbClasseTetra
             // 
@@ -616,6 +622,40 @@
             this.ucHeader1.TabIndex = 0;
             this.ucHeader1.Titulo = "Cadastro de Reagente";
             // 
+            // flaskLabel11
+            // 
+            this.flaskLabel11.AutoSize = true;
+            this.flaskLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.flaskLabel11.Location = new System.Drawing.Point(13, 143);
+            this.flaskLabel11.Name = "flaskLabel11";
+            this.flaskLabel11.Size = new System.Drawing.Size(88, 17);
+            this.flaskLabel11.TabIndex = 15;
+            this.flaskLabel11.Text = "Massa Molar";
+            // 
+            // txtMassaMolar
+            // 
+            this.txtMassaMolar.Ativo = true;
+            this.txtMassaMolar.BackColor = System.Drawing.Color.White;
+            this.txtMassaMolar.CampoObrigatorio = false;
+            this.txtMassaMolar.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.NumeroReal;
+            this.txtMassaMolar.Erro = false;
+            this.txtMassaMolar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtMassaMolar.Location = new System.Drawing.Point(107, 140);
+            this.txtMassaMolar.Name = "txtMassaMolar";
+            this.txtMassaMolar.Size = new System.Drawing.Size(81, 23);
+            this.txtMassaMolar.TabIndex = 6;
+            this.txtMassaMolar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // flaskLabel12
+            // 
+            this.flaskLabel12.AutoSize = true;
+            this.flaskLabel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.flaskLabel12.Location = new System.Drawing.Point(194, 143);
+            this.flaskLabel12.Name = "flaskLabel12";
+            this.flaskLabel12.Size = new System.Drawing.Size(42, 17);
+            this.flaskLabel12.TabIndex = 17;
+            this.flaskLabel12.Text = "g/mol";
+            // 
             // FrmCadastroReagente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -695,5 +735,8 @@
         private FlaskUI.COMPONENTES.FlaskTextBox txtConcentracao;
         private FlaskUI.COMPONENTES.FlaskComboBox txtComboConcentracao;
         private FlaskUI.COMPONENTES.FlaskLabel flaskLabel10;
+        private FlaskUI.COMPONENTES.FlaskLabel flaskLabel12;
+        private FlaskUI.COMPONENTES.FlaskTextBox txtMassaMolar;
+        private FlaskUI.COMPONENTES.FlaskLabel flaskLabel11;
     }
 }

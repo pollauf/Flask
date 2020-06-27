@@ -11,6 +11,6 @@ namespace Flask
     {
         Reagente Titulante { get; set; }
         Reagente Titulado { get; set; }
-        double ObterResultado(double volumeDeTitulado, double volumeDeTitulante);
+        double Calcular(double volumeDeTitulado, double volumeDeTitulante);
     }
 }

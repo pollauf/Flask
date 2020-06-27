@@ -19,6 +19,7 @@ namespace FlaskUI
             this.FormBorderStyle = FormBorderStyle.None;
             this.Size = new Size(700, 500);
             this.Padding = new Padding(1, 1, 1, 40);
+            this.BackColor = Color.FromArgb(219, 222, 225);
         }       
 
         protected override void OnPaint(PaintEventArgs e)

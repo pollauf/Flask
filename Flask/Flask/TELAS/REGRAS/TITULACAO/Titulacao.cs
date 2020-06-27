@@ -12,7 +12,7 @@ namespace Flask
         public Reagente Titulante { get; set; }
         public Reagente Titulado { get; set; }
 
-        public double ObterResultado(double volumeDeTitulado, double volumeDeTitulante)
+        public double Calcular(double volumeDeTitulado, double volumeDeTitulante)
         {
             double m1 = 0;
             double m2 = Titulante.Concentracao;

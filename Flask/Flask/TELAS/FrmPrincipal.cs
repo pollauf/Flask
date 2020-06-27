@@ -1,4 +1,5 @@
-﻿using Flask.TELAS.METODOS;
+﻿using Flask.TELAS.Analises;
+using Flask.TELAS.METODOS;
 using Flask.TELAS.Reagentes;
 using FlaskMODEL;
 using System;
@@ -115,6 +116,20 @@ namespace Flask.TELAS
                 {
                     case "CADASTRO":
                         Tela.Abrir(new FrmCadastroReagente(), janelaAbrir);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else if (MenuAtual == AbasMenu.Analises)
+            {
+                switch (janelaAbrir)
+                {
+                    case "ACIDIMETRIA":
+                        Tela.Abrir(new FrmTitulacaoAcidoBaseNormal(TipoAnalise.Acidimetria), janelaAbrir);
+                        break;
+                    case "ALCALIMETRIA":
+                        Tela.Abrir(new FrmTitulacaoAcidoBaseNormal(TipoAnalise.Alcalimetria), janelaAbrir);
                         break;
                     default:
                         break;

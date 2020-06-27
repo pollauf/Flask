@@ -93,7 +93,15 @@ namespace Flask.TELAS.METODOS
 
         public static int ConsultaGeral(IConsulta consulta)
         {
-            var form = new FrmConsultaGeral(consulta.Nome, consulta.Pesquisar(), consulta.Cabecalhos);
+            var query = consulta.Pesquisar();
+
+            if (query == null)
+            {
+                MessageBox.Show("Busca sem resultados", "Sem Resultados", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return -1;
+            }                
+
+            var form = new FrmConsultaGeral(consulta.Nome, query, consulta.Cabecalhos);
             form.ShowDialog();
             return form.ID;
         }

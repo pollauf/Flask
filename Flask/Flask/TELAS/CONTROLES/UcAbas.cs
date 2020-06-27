@@ -86,6 +86,7 @@ namespace Flask.TELAS.CONTROLES
 
             abaSelecionada.Tela.Show();
             abaSelecionada.Tela.BringToFront();
+            abaSelecionada.Tela.Centralizar();
             if (abaSelecionada.Tela.WindowState == FormWindowState.Maximized)
             {
                 abaSelecionada.Tela.WindowState = FormWindowState.Normal;

@@ -141,6 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CONSULTAS\ConfiguracaoCabecalho.cs" />
+    <Compile Include="CONSULTAS\ConsultaReagenteFiltro.cs" />
     <Compile Include="CONSULTAS\IConsulta.cs" />
     <Compile Include="CONSULTAS\ConsultaReagente.cs" />
     <Compile Include="ENUMERABLES\Gerais.cs" />
@@ -158,6 +159,10 @@
     <Compile Include="Migrations\202006262147082_third.designer.cs">
       <DependentUpon>202006262147082_third.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006270442520_fourth.cs" />
+    <Compile Include="Migrations\202006270442520_fourth.designer.cs">
+      <DependentUpon>202006270442520_fourth.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OUTROS\Metodos.cs" />
     <Compile Include="Program.cs" />
@@ -171,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006262147082_third.resx">
       <DependentUpon>202006262147082_third.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006270442520_fourth.resx">
+      <DependentUpon>202006270442520_fourth.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

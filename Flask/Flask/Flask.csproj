@@ -76,12 +76,24 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TELAS\Analises\FrmTitulacaoAcidoBaseNormal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TELAS\Analises\FrmTitulacaoAcidoBaseNormal.Designer.cs">
+      <DependentUpon>FrmTitulacaoAcidoBaseNormal.cs</DependentUpon>
+    </Compile>
     <Compile Include="TELAS\CONTROLES\Aba.cs" />
     <Compile Include="TELAS\CONTROLES\UcAbas.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="TELAS\CONTROLES\UcAbas.Designer.cs">
       <DependentUpon>UcAbas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TELAS\CONTROLES\UcFichaReagente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TELAS\CONTROLES\UcFichaReagente.Designer.cs">
+      <DependentUpon>UcFichaReagente.cs</DependentUpon>
     </Compile>
     <Compile Include="TELAS\CONTROLES\UcHeader.cs">
       <SubType>UserControl</SubType>
@@ -94,6 +106,12 @@
     </Compile>
     <Compile Include="TELAS\CONTROLES\UcMenuLateral.Designer.cs">
       <DependentUpon>UcMenuLateral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TELAS\CONTROLES\UcReplicata.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TELAS\CONTROLES\UcReplicata.Designer.cs">
+      <DependentUpon>UcReplicata.cs</DependentUpon>
     </Compile>
     <Compile Include="TELAS\FrmConsultaGeral.cs">
       <SubType>Form</SubType>
@@ -121,6 +139,9 @@
     <Compile Include="TELAS\Reagentes\FrmCadastroReagente.Designer.cs">
       <DependentUpon>FrmCadastroReagente.cs</DependentUpon>
     </Compile>
+    <Compile Include="TELAS\REGRAS\RELATORIOS\IRelatorioTitulacao.cs" />
+    <Compile Include="TELAS\REGRAS\RELATORIOS\RelatorioTitulacao.cs" />
+    <Compile Include="TELAS\REGRAS\RELATORIOS\ResultadoTitulacao.cs" />
     <Compile Include="TELAS\REGRAS\TITULACAO\ITitulacao.cs" />
     <Compile Include="TELAS\REGRAS\TITULACAO\Titulacao.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -131,15 +152,25 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TELAS\Analises\FrmTitulacaoAcidoBaseNormal.resx">
+      <DependentUpon>FrmTitulacaoAcidoBaseNormal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TELAS\CONTROLES\UcAbas.resx">
       <DependentUpon>UcAbas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TELAS\CONTROLES\UcFichaReagente.resx">
+      <DependentUpon>UcFichaReagente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TELAS\CONTROLES\UcHeader.resx">
       <DependentUpon>UcHeader.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TELAS\CONTROLES\UcMenuLateral.resx">
       <DependentUpon>UcMenuLateral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TELAS\CONTROLES\UcReplicata.resx">
+      <DependentUpon>UcReplicata.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TELAS\FrmConsultaGeral.resx">
       <DependentUpon>FrmConsultaGeral.cs</DependentUpon>
@@ -169,6 +200,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\iconReagente.png" />
+    <None Include="Resources\iconPlus.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FlaskUI\FlaskUI.csproj">

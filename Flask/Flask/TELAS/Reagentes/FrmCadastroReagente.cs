@@ -156,6 +156,7 @@ namespace Flask.TELAS.Reagentes
                     model.Classe = classeSelecionada;
                     model.Forca = (ForcaReagente)txtForca.SelectedIndex;
                     model.Concentracao = string.IsNullOrEmpty(txtConcentracao.Text) ? 0 : double.Parse(txtConcentracao.Text);
+                    model.MassaMolar = string.IsNullOrEmpty(txtMassaMolar.Text) ? 0 : double.Parse(txtMassaMolar.Text);
 
                     model.KI1 = string.IsNullOrEmpty(txtK1.Text) ? 0 : double.Parse(txtK1.Text);
                     model.KI2 = string.IsNullOrEmpty(txtK2.Text) ? 0 : double.Parse(txtK2.Text);
@@ -238,7 +239,7 @@ namespace Flask.TELAS.Reagentes
                     {
                         Limpar(null, new EventArgs());
                         return;
-                    }                        
+                    }
 
                     model = query;
 
@@ -252,6 +253,9 @@ namespace Flask.TELAS.Reagentes
                         txtComboConcentracao.SelectedIndex = (int)Concentracao.Conhecida;
                         txtConcentracao.Text = model.Concentracao.FormatarString();
                     }
+
+                    if (model.MassaMolar > 0)
+                        txtMassaMolar.Text = model.MassaMolar.FormatarString();
 
                     txtTipo.SelectedIndex = (int)model.Tipo;
                     txtForca.SelectedIndex = (int)model.Forca;

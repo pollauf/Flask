@@ -24,29 +24,39 @@ namespace FlaskMODEL.CONSULTAS
             Cabecalhos.Add(new ConfiguracaoCabecalho("Classe"));
             Cabecalhos.Add(new ConfiguracaoCabecalho("Concentração (mol/L)", DataGridViewContentAlignment.MiddleRight));
         }
-        public object Pesquisar()
+        public virtual object Pesquisar()
         {
-            var _return = new List<SReagenteGrid>();
-
-            using (FlaskDatabase db = new FlaskDatabase())
+            try
             {
-                var query = db.Reagente.OrderBy(x => x.ID).ToList();
+                var _return = new List<SReagenteGrid>();
 
-                foreach (var item in query)
+                using (FlaskDatabase db = new FlaskDatabase())
                 {
-                    _return.Add(new SReagenteGrid
-                    {
-                        ID = item.ID,
-                        Nome = item.Nome,
-                        Classe = Metodos.ObterDescricao(item.Classe),
-                        Concentracao = item.Concentracao == 0 ? "Desconhecida" : item.Concentracao.ToString("0.00000"),
-                        Forca = Metodos.ObterDescricao(item.Forca),
-                        Tipo = Metodos.ObterDescricao(item.Tipo),
-                    });
-                }
-            }
+                    var query = db.Reagente.OrderBy(x => x.ID).ToList();
 
-            return _return;
+                    if (query.Count == 0)
+                        return null;
+
+                    foreach (var item in query)
+                    {
+                        _return.Add(new SReagenteGrid
+                        {
+                            ID = item.ID,
+                            Nome = item.Nome,
+                            Classe = Metodos.ObterDescricao(item.Classe),
+                            Concentracao = item.Concentracao == 0 ? "Desconhecida" : item.Concentracao.ToString("0.00000"),
+                            Forca = Metodos.ObterDescricao(item.Forca),
+                            Tipo = Metodos.ObterDescricao(item.Tipo),
+                        });
+                    }
+                }
+
+                return _return;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
     }
 

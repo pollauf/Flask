@@ -36,4 +36,10 @@ namespace FlaskMODEL
         Tri = 3,
         Tetra = 4,
     }
+
+    public enum TipoAnalise
+    {
+        Acidimetria = 0,
+        Alcalimetria = 1,
+    }
 }
