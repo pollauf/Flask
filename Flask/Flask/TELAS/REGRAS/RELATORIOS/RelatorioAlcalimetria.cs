@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Flask
 {
-    public class RelatorioAlcalimetria : IRelatorioTitulacao
+    public class RelatorioAlcalimetria : IRelatorioTitulacao, ITitulanteTitulado, IReplicatas
     {
         public Reagente Titulante { get; set; }
         public Reagente Titulado { get; set; }
@@ -36,7 +36,7 @@ namespace Flask
                 replicatas +=
                     $"Volume de Titulado Utilizado: {item.VolumeTitulado.FormatarString()} mL\n" +
                      $"Volume de Titulante Gasto: {item.VolumeTitulante.FormatarString()} mL\n" +
-                      $"Resultado: {item.Resultado.FormatarString()} mol/L\n\n";
+                      $"Resultado: {item.ConcentracaoTitulado.FormatarString()} mol/L\n\n";
             }
 
             relatorio = relatorio.Replace("@REPLICATAS", replicatas);

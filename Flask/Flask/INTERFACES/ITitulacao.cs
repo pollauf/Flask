@@ -9,8 +9,6 @@ namespace Flask
 {
     public interface ITitulacao
     {
-        Reagente Titulante { get; set; }
-        Reagente Titulado { get; set; }
-        double Calcular(double volumeDeTitulado, double volumeDeTitulante);
+        double CalcularConcentracao(double volumeDeTitulado, double volumeDeTitulante);
     }
 }

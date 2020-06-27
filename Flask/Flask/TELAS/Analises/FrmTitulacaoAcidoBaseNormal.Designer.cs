@@ -29,45 +29,32 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTitulacaoAcidoBaseNormal));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flaskGroupBox1 = new FlaskUI.COMPONENTES.FlaskGroupBox();
             this.UcTitulante = new Flask.TELAS.CONTROLES.UcFichaReagente();
             this.flaskGroupBox2 = new FlaskUI.COMPONENTES.FlaskGroupBox();
             this.UcTitulado = new Flask.TELAS.CONTROLES.UcFichaReagente();
             this.flaskGroupBox3 = new FlaskUI.COMPONENTES.FlaskGroupBox();
-            this.flaskLabel4 = new FlaskUI.COMPONENTES.FlaskLabel();
+            this.lblUnidadeTitulado = new FlaskUI.COMPONENTES.FlaskLabel();
             this.flaskLabel3 = new FlaskUI.COMPONENTES.FlaskLabel();
             this.flaskButton1 = new FlaskUI.COMPONENTES.FlaskButton();
-            this.flaskLabel2 = new FlaskUI.COMPONENTES.FlaskLabel();
+            this.lblVolumeTitulado = new FlaskUI.COMPONENTES.FlaskLabel();
             this.txtVolumeTitulado = new FlaskUI.COMPONENTES.FlaskTextBox();
             this.flaskLabel1 = new FlaskUI.COMPONENTES.FlaskLabel();
             this.txtVolumeTitulante = new FlaskUI.COMPONENTES.FlaskTextBox();
-            this.flaskGroupBox4 = new FlaskUI.COMPONENTES.FlaskGroupBox();
+            this.gpbReplicatas = new FlaskUI.COMPONENTES.FlaskGroupBox();
             this.FLP = new System.Windows.Forms.FlowLayoutPanel();
             this.flaskButton2 = new FlaskUI.COMPONENTES.FlaskButton();
             this.flaskButton3 = new FlaskUI.COMPONENTES.FlaskButton();
             this.flaskButton4 = new FlaskUI.COMPONENTES.FlaskButton();
-            this.ucHeader1 = new Flask.UcHeader();
             this.lblResultado = new FlaskUI.COMPONENTES.FlaskLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.ucHeader1 = new Flask.UcHeader();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flaskGroupBox1.SuspendLayout();
             this.flaskGroupBox2.SuspendLayout();
             this.flaskGroupBox3.SuspendLayout();
-            this.flaskGroupBox4.SuspendLayout();
+            this.gpbReplicatas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(15, 47);
-            this.pictureBox1.MaximumSize = new System.Drawing.Size(126, 379);
-            this.pictureBox1.MinimumSize = new System.Drawing.Size(126, 379);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(126, 379);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // flaskGroupBox1
             // 
@@ -85,6 +72,7 @@
             this.UcTitulante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
             this.UcTitulante.Consulta = null;
             this.UcTitulante.Location = new System.Drawing.Point(6, 28);
+            this.UcTitulante.ManterFixo = false;
             this.UcTitulante.MaximumSize = new System.Drawing.Size(280, 95);
             this.UcTitulante.MinimumSize = new System.Drawing.Size(280, 95);
             this.UcTitulante.Name = "UcTitulante";
@@ -109,6 +97,7 @@
             this.UcTitulado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
             this.UcTitulado.Consulta = null;
             this.UcTitulado.Location = new System.Drawing.Point(6, 28);
+            this.UcTitulado.ManterFixo = false;
             this.UcTitulado.MaximumSize = new System.Drawing.Size(280, 95);
             this.UcTitulado.MinimumSize = new System.Drawing.Size(280, 95);
             this.UcTitulado.Name = "UcTitulado";
@@ -119,10 +108,10 @@
             // 
             // flaskGroupBox3
             // 
-            this.flaskGroupBox3.Controls.Add(this.flaskLabel4);
+            this.flaskGroupBox3.Controls.Add(this.lblUnidadeTitulado);
             this.flaskGroupBox3.Controls.Add(this.flaskLabel3);
             this.flaskGroupBox3.Controls.Add(this.flaskButton1);
-            this.flaskGroupBox3.Controls.Add(this.flaskLabel2);
+            this.flaskGroupBox3.Controls.Add(this.lblVolumeTitulado);
             this.flaskGroupBox3.Controls.Add(this.txtVolumeTitulado);
             this.flaskGroupBox3.Controls.Add(this.flaskLabel1);
             this.flaskGroupBox3.Controls.Add(this.txtVolumeTitulante);
@@ -134,15 +123,15 @@
             this.flaskGroupBox3.TabIndex = 5;
             this.flaskGroupBox3.Titulo = "Dados";
             // 
-            // flaskLabel4
+            // lblUnidadeTitulado
             // 
-            this.flaskLabel4.AutoSize = true;
-            this.flaskLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.flaskLabel4.Location = new System.Drawing.Point(312, 64);
-            this.flaskLabel4.Name = "flaskLabel4";
-            this.flaskLabel4.Size = new System.Drawing.Size(27, 17);
-            this.flaskLabel4.TabIndex = 7;
-            this.flaskLabel4.Text = "mL";
+            this.lblUnidadeTitulado.AutoSize = true;
+            this.lblUnidadeTitulado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblUnidadeTitulado.Location = new System.Drawing.Point(312, 64);
+            this.lblUnidadeTitulado.Name = "lblUnidadeTitulado";
+            this.lblUnidadeTitulado.Size = new System.Drawing.Size(27, 17);
+            this.lblUnidadeTitulado.TabIndex = 7;
+            this.lblUnidadeTitulado.Text = "mL";
             // 
             // flaskLabel3
             // 
@@ -168,19 +157,19 @@
             this.flaskButton1.Name = "flaskButton1";
             this.flaskButton1.Size = new System.Drawing.Size(115, 30);
             this.flaskButton1.TabIndex = 2;
-            this.flaskButton1.Text = "Adicionar";
+            this.flaskButton1.Text = "Calcular";
             this.flaskButton1.UseVisualStyleBackColor = false;
             this.flaskButton1.Click += new System.EventHandler(this.FlaskButton1_Click);
             // 
-            // flaskLabel2
+            // lblVolumeTitulado
             // 
-            this.flaskLabel2.AutoSize = true;
-            this.flaskLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.flaskLabel2.Location = new System.Drawing.Point(12, 64);
-            this.flaskLabel2.Name = "flaskLabel2";
-            this.flaskLabel2.Size = new System.Drawing.Size(188, 17);
-            this.flaskLabel2.TabIndex = 4;
-            this.flaskLabel2.Text = "Volume de Titulado Utilizado";
+            this.lblVolumeTitulado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblVolumeTitulado.Location = new System.Drawing.Point(12, 64);
+            this.lblVolumeTitulado.Name = "lblVolumeTitulado";
+            this.lblVolumeTitulado.Size = new System.Drawing.Size(188, 17);
+            this.lblVolumeTitulado.TabIndex = 4;
+            this.lblVolumeTitulado.Text = "Volume de Titulado Utilizado";
+            this.lblVolumeTitulado.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // txtVolumeTitulado
             // 
@@ -221,17 +210,17 @@
             this.txtVolumeTitulante.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtVolumeTitulante.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtVolumeTitulante_KeyDown);
             // 
-            // flaskGroupBox4
+            // gpbReplicatas
             // 
-            this.flaskGroupBox4.Controls.Add(this.FLP);
-            this.flaskGroupBox4.Controls.Add(this.flaskButton2);
-            this.flaskGroupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.flaskGroupBox4.Location = new System.Drawing.Point(446, 160);
-            this.flaskGroupBox4.Name = "flaskGroupBox4";
-            this.flaskGroupBox4.Padding = new System.Windows.Forms.Padding(3);
-            this.flaskGroupBox4.Size = new System.Drawing.Size(197, 238);
-            this.flaskGroupBox4.TabIndex = 6;
-            this.flaskGroupBox4.Titulo = "Replicatas";
+            this.gpbReplicatas.Controls.Add(this.FLP);
+            this.gpbReplicatas.Controls.Add(this.flaskButton2);
+            this.gpbReplicatas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.gpbReplicatas.Location = new System.Drawing.Point(446, 160);
+            this.gpbReplicatas.Name = "gpbReplicatas";
+            this.gpbReplicatas.Padding = new System.Windows.Forms.Padding(3);
+            this.gpbReplicatas.Size = new System.Drawing.Size(197, 238);
+            this.gpbReplicatas.TabIndex = 6;
+            this.gpbReplicatas.Titulo = "Replicatas  [TITULADO]";
             // 
             // FLP
             // 
@@ -277,6 +266,8 @@
             this.flaskButton3.TabIndex = 7;
             this.flaskButton3.Text = "Salvar Concentração";
             this.flaskButton3.UseVisualStyleBackColor = false;
+            this.flaskButton3.Visible = false;
+            this.flaskButton3.Click += new System.EventHandler(this.FlaskButton3_Click);
             // 
             // flaskButton4
             // 
@@ -294,7 +285,19 @@
             this.flaskButton4.TabIndex = 8;
             this.flaskButton4.Text = "Gerar Relatório";
             this.flaskButton4.UseVisualStyleBackColor = false;
+            this.flaskButton4.Visible = false;
             this.flaskButton4.Click += new System.EventHandler(this.FlaskButton4_Click);
+            // 
+            // lblResultado
+            // 
+            this.lblResultado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblResultado.Location = new System.Drawing.Point(446, 401);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(197, 25);
+            this.lblResultado.TabIndex = 9;
+            this.lblResultado.Text = "Resultado:";
+            this.lblResultado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ucHeader1
             // 
@@ -308,16 +311,18 @@
             this.ucHeader1.TabIndex = 0;
             this.ucHeader1.Titulo = "Titulação";
             // 
-            // lblResultado
+            // pictureBox1
             // 
-            this.lblResultado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblResultado.Location = new System.Drawing.Point(446, 401);
-            this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(197, 25);
-            this.lblResultado.TabIndex = 9;
-            this.lblResultado.Text = "Resultado:";
-            this.lblResultado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(15, 47);
+            this.pictureBox1.MaximumSize = new System.Drawing.Size(126, 379);
+            this.pictureBox1.MinimumSize = new System.Drawing.Size(126, 379);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(126, 379);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // FrmTitulacaoAcidoBaseNormal
             // 
@@ -327,24 +332,25 @@
             this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.flaskButton4);
             this.Controls.Add(this.flaskButton3);
-            this.Controls.Add(this.flaskGroupBox4);
+            this.Controls.Add(this.gpbReplicatas);
             this.Controls.Add(this.flaskGroupBox3);
             this.Controls.Add(this.flaskGroupBox2);
             this.Controls.Add(this.flaskGroupBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ucHeader1);
             this.Name = "FrmTitulacaoAcidoBaseNormal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Titulação";
             this.Load += new System.EventHandler(this.FrmTitulacaoAcidoBaseNormal_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flaskGroupBox1.ResumeLayout(false);
             this.flaskGroupBox1.PerformLayout();
             this.flaskGroupBox2.ResumeLayout(false);
             this.flaskGroupBox2.PerformLayout();
             this.flaskGroupBox3.ResumeLayout(false);
             this.flaskGroupBox3.PerformLayout();
-            this.flaskGroupBox4.ResumeLayout(false);
-            this.flaskGroupBox4.PerformLayout();
+            this.gpbReplicatas.ResumeLayout(false);
+            this.gpbReplicatas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -359,15 +365,15 @@
         private CONTROLES.UcFichaReagente UcTitulado;
         private FlaskUI.COMPONENTES.FlaskGroupBox flaskGroupBox3;
         private FlaskUI.COMPONENTES.FlaskButton flaskButton1;
-        private FlaskUI.COMPONENTES.FlaskLabel flaskLabel2;
+        private FlaskUI.COMPONENTES.FlaskLabel lblVolumeTitulado;
         private FlaskUI.COMPONENTES.FlaskTextBox txtVolumeTitulado;
         private FlaskUI.COMPONENTES.FlaskLabel flaskLabel1;
         private FlaskUI.COMPONENTES.FlaskTextBox txtVolumeTitulante;
-        private FlaskUI.COMPONENTES.FlaskGroupBox flaskGroupBox4;
+        private FlaskUI.COMPONENTES.FlaskGroupBox gpbReplicatas;
         private FlaskUI.COMPONENTES.FlaskButton flaskButton2;
         private FlaskUI.COMPONENTES.FlaskButton flaskButton3;
         private FlaskUI.COMPONENTES.FlaskButton flaskButton4;
-        private FlaskUI.COMPONENTES.FlaskLabel flaskLabel4;
+        private FlaskUI.COMPONENTES.FlaskLabel lblUnidadeTitulado;
         private FlaskUI.COMPONENTES.FlaskLabel flaskLabel3;
         private System.Windows.Forms.FlowLayoutPanel FLP;
         private FlaskUI.COMPONENTES.FlaskLabel lblResultado;

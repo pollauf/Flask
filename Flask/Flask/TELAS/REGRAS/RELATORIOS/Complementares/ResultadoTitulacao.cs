@@ -10,12 +10,12 @@ namespace Flask
     {
         public double VolumeTitulado { get; set; }
         public double VolumeTitulante { get; set; }
-        public double Resultado { get; set; }
+        public double ConcentracaoTitulado { get; set; }
         public ResultadoTitulacao(double volumeTitulado, double volumeTitulante, double resultado)
         {
             VolumeTitulado = volumeTitulado;
             VolumeTitulante = volumeTitulante;
-            Resultado = resultado;
+            ConcentracaoTitulado = resultado;
         }
     }
 }

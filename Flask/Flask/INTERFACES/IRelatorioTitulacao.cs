@@ -10,11 +10,7 @@ namespace Flask
 {
     public interface IRelatorioTitulacao
     {
-        Reagente Titulante { get; set; }
-        Reagente Titulado { get; set; }
-        List<ResultadoTitulacao> Replicatas { get; set; }
         double Resultado { get; set; }
-
         string GerarRelatorio();
     }
 }

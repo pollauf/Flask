@@ -74,8 +74,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="INTERFACES\ITitulanteTitulado.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TELAS\Analises\FrmRetrotitulacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TELAS\Analises\FrmRetrotitulacao.Designer.cs">
+      <DependentUpon>FrmRetrotitulacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="TELAS\Analises\FrmTitulacaoAcidoBaseNormal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,11 +147,17 @@
     <Compile Include="TELAS\Reagentes\FrmCadastroReagente.Designer.cs">
       <DependentUpon>FrmCadastroReagente.cs</DependentUpon>
     </Compile>
-    <Compile Include="TELAS\REGRAS\RELATORIOS\IRelatorioTitulacao.cs" />
+    <Compile Include="INTERFACES\IRelatorioTitulacao.cs" />
+    <Compile Include="INTERFACES\IReplicatas.cs" />
+    <Compile Include="TELAS\REGRAS\RELATORIOS\Complementares\ExtResultadoTitulacao.cs" />
+    <Compile Include="TELAS\REGRAS\RELATORIOS\Complementares\ReagentesTitulacao.cs" />
     <Compile Include="TELAS\REGRAS\RELATORIOS\RelatorioAcidimetria.cs" />
     <Compile Include="TELAS\REGRAS\RELATORIOS\RelatorioAlcalimetria.cs" />
-    <Compile Include="TELAS\REGRAS\RELATORIOS\ResultadoTitulacao.cs" />
-    <Compile Include="TELAS\REGRAS\TITULACAO\ITitulacao.cs" />
+    <Compile Include="TELAS\REGRAS\RELATORIOS\Complementares\ResultadoTitulacao.cs" />
+    <Compile Include="TELAS\REGRAS\RELATORIOS\RelatorioRetrotitulacao.cs" />
+    <Compile Include="INTERFACES\IAnalitoExcesso.cs" />
+    <Compile Include="INTERFACES\ITitulacao.cs" />
+    <Compile Include="TELAS\REGRAS\TITULACAO\ExtTitulacao.cs" />
     <Compile Include="TELAS\REGRAS\TITULACAO\Retrotitulacao.cs" />
     <Compile Include="TELAS\REGRAS\TITULACAO\Titulacao.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -157,6 +170,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TELAS\Analises\FrmRetrotitulacao.resx">
+      <DependentUpon>FrmRetrotitulacao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TELAS\Analises\FrmTitulacaoAcidoBaseNormal.resx">
       <DependentUpon>FrmTitulacaoAcidoBaseNormal.cs</DependentUpon>
     </EmbeddedResource>

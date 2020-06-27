@@ -41,5 +41,6 @@ namespace FlaskMODEL
     {
         Acidimetria = 0,
         Alcalimetria = 1,
+        Retrotitulacao = 3,
     }
 }

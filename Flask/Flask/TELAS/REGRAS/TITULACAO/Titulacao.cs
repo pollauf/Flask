@@ -7,12 +7,11 @@ using System.Threading.Tasks;
 
 namespace Flask
 {
-    public class Titulacao : ITitulacao
+    public class Titulacao : ITitulacao, ITitulanteTitulado
     {
         public Reagente Titulante { get; set; }
         public Reagente Titulado { get; set; }
-
-        public double Calcular(double volumeDeTitulado, double volumeDeTitulante)
+        public double CalcularConcentracao(double volumeDeTitulado, double volumeDeTitulante)
         {
             double m1 = 0;
             double m2 = Titulante.Concentracao;

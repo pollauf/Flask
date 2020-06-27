@@ -57,7 +57,7 @@ namespace Flask.TELAS
                             "{sep}",
                             "ACIDIMETRIA",
                             "ALCALIMETRIA",
-                            "POTENCIOMETRIA"
+                            "RETROTITULAÇÃO"
                         });
                         btnAnalises.BackColor = Color.FromArgb(90, 59, 137);
                         break;
@@ -130,6 +130,9 @@ namespace Flask.TELAS
                         break;
                     case "ALCALIMETRIA":
                         Tela.Abrir(new FrmTitulacaoAcidoBaseNormal(TipoAnalise.Alcalimetria), janelaAbrir);
+                        break;
+                    case "RETROTITULAÇÃO":
+                        Tela.Abrir(new FrmRetrotitulacao(), janelaAbrir);
                         break;
                     default:
                         break;

@@ -18,7 +18,30 @@ namespace Flask.TELAS.Analises
 {
     public partial class FrmTitulacaoAcidoBaseNormal : FlaskForm
     {
-        public IRelatorioTitulacao Relatorio { get; set; }
+        private IRelatorioTitulacao relatorio;
+
+        public IRelatorioTitulacao Relatorio
+        {
+            get { return relatorio; }
+            set
+            {
+                relatorio = value;
+
+                if (Relatorio == null)
+                {
+                    lblResultado.Text = "Resultado:";
+                    flaskButton3.Visible = flaskButton4.Visible = false;
+                }
+                else
+                {
+                    flaskButton3.Visible = true;
+
+                    if (TipoAnalise != TipoAnalise.Retrotitulacao)
+                        flaskButton4.Visible = true;
+                }
+            }
+        }
+
         public TipoAnalise TipoAnalise { get; set; }
 
         private bool manterConsultaFixa = false;
@@ -53,6 +76,27 @@ namespace Flask.TELAS.Analises
             TipoAnalise = tipoAnalise;
 
             ucHeader1.Titulo = this.Text;
+        }
+
+        public FrmTitulacaoAcidoBaseNormal(TipoAnalise tipoAnalise, Reagente titulado)
+        {
+            InitializeComponent();
+
+            if (tipoAnalise == TipoAnalise.Retrotitulacao)
+            {
+                this.Name = "TitulacaoExcesso";
+                this.Text = ucHeader1.Titulo = "Titulação do Excesso";
+                gpbReplicatas.Titulo = "REPLICATAS (mL Titulante)";
+                UcTitulado.ManterFixo = true;
+
+                flaskButton3.Text = "Ok";
+
+                lblVolumeTitulado.Visible = txtVolumeTitulado.Visible =
+                    lblUnidadeTitulado.Visible = flaskButton4.Visible = false;
+            }
+
+            UcTitulado.Reagente = titulado;
+            TipoAnalise = tipoAnalise;
         }
 
         private void FrmTitulacaoAcidoBaseNormal_Load(object sender, EventArgs e)
@@ -111,22 +155,37 @@ namespace Flask.TELAS.Analises
             double volumeTitulado = 0;
             double volumeTitulante = 0;
 
-            if (!double.TryParse(txtVolumeTitulado.Text, out volumeTitulado))
-                return;
+            if (TipoAnalise != TipoAnalise.Retrotitulacao)
+            {
+                if (!double.TryParse(txtVolumeTitulado.Text, out volumeTitulado))
+                    return;
+            }
 
             if (!double.TryParse(txtVolumeTitulante.Text, out volumeTitulante))
                 return;
 
             ITitulacao titulacao = new Titulacao();
 
-            titulacao.Titulado = UcTitulado.Reagente;
-            titulacao.Titulante = UcTitulante.Reagente;
+            ((ITitulanteTitulado)titulacao).Titulado = UcTitulado.Reagente;
+            ((ITitulanteTitulado)titulacao).Titulante = UcTitulante.Reagente;
 
-            double resultadoDouble = Math.Round(titulacao.Calcular(volumeTitulado, volumeTitulante), 5);
+            double resultadoTitulacao = 0;
+
+            if (TipoAnalise != TipoAnalise.Retrotitulacao)
+                resultadoTitulacao = titulacao.CalcularConcentracao(volumeTitulado, volumeTitulante);
+            else
+                resultadoTitulacao = titulacao.CalcularVolumeDoTitulado(volumeTitulante);
+
+            double resultadoDouble = Math.Round(resultadoTitulacao, 5);
             string resultado = resultadoDouble.FormatarString();
 
-            var ucReplicata = new UcReplicata(resultado);
-            ucReplicata.Titulacao = new ResultadoTitulacao(volumeTitulado, volumeTitulante, resultadoDouble);
+            var ucReplicata = new UcReplicata(volumeTitulante.FormatarString(), TipoAnalise);
+
+            if (TipoAnalise != TipoAnalise.Retrotitulacao)
+                ucReplicata.Titulacao = new ResultadoTitulacao(volumeTitulado, volumeTitulante, resultadoDouble);
+            else
+                ucReplicata.Titulacao = new ResultadoTitulacao(resultadoDouble, volumeTitulante, UcTitulado.Reagente.Concentracao);
+
             ucReplicata.ButtonRemoveClick += RemoverReplicata;
 
             FLP.Controls.Add(ucReplicata);
@@ -138,6 +197,7 @@ namespace Flask.TELAS.Analises
         private void RemoverReplicata(object sender, EventArgs e)
         {
             FLP.Controls.Remove((UcReplicata)sender);
+            Relatorio = null;
         }
 
         private void FlaskButton2_Click(object sender, EventArgs e)
@@ -157,7 +217,14 @@ namespace Flask.TELAS.Analises
                     var ucItem = (UcReplicata)item;
                     if (ucItem.checkBox.Checked)
                     {
-                        selecionados.Add(ucItem.Titulacao.Resultado);
+                        if (TipoAnalise != TipoAnalise.Retrotitulacao)
+                        {
+                            selecionados.Add(ucItem.Titulacao.ConcentracaoTitulado);
+                        }
+                        else
+                        {
+                            selecionados.Add(ucItem.Titulacao.VolumeTitulante);
+                        }
                         resultadosSelecionados.Add(ucItem.Titulacao);
                     }
                 }
@@ -179,15 +246,14 @@ namespace Flask.TELAS.Analises
             double media = Math.Round(selecionados.Average(), 5); ;
             lblResultado.Text = $"Resultado: {media.FormatarString()} mol/L";
 
-            if (TipoAnalise == TipoAnalise.Acidimetria)
+            if (UcTitulante.Reagente.Tipo == TipoReagente.Base)
             {
                 Relatorio = new RelatorioAcidimetria(UcTitulante.Reagente, UcTitulado.Reagente, resultadosSelecionados, media);
             }
-            else if (TipoAnalise == TipoAnalise.Alcalimetria)
+            else if (UcTitulante.Reagente.Tipo == TipoReagente.Acido)
             {
                 Relatorio = new RelatorioAlcalimetria(UcTitulante.Reagente, UcTitulado.Reagente, resultadosSelecionados, media);
             }
-
         }
 
         private void TxtVolumeTitulante_KeyDown(object sender, KeyEventArgs e)
@@ -203,6 +269,21 @@ namespace Flask.TELAS.Analises
             if (Relatorio != null)
             {
                 MessageBox.Show(Relatorio.GerarRelatorio());
+            }
+        }
+
+        private void FlaskButton3_Click(object sender, EventArgs e)
+        {
+            if (Relatorio != null)
+            {
+                if (TipoAnalise != TipoAnalise.Retrotitulacao)
+                {
+                    MessageBox.Show(Relatorio.GerarRelatorio());
+                }
+                else
+                {
+                    Close();
+                }
             }
         }
     }

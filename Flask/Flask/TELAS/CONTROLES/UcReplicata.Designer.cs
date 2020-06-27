@@ -48,12 +48,13 @@
             this.btnRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnRemover.ForeColor = System.Drawing.Color.White;
             this.btnRemover.Location = new System.Drawing.Point(125, 0);
-            this.btnRemover.MaximumSize = new System.Drawing.Size(30, 30);
-            this.btnRemover.MinimumSize = new System.Drawing.Size(30, 30);
+            this.btnRemover.MaximumSize = new System.Drawing.Size(30, 25);
+            this.btnRemover.MinimumSize = new System.Drawing.Size(30, 25);
             this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(30, 30);
+            this.btnRemover.Size = new System.Drawing.Size(30, 25);
             this.btnRemover.TabIndex = 8;
             this.btnRemover.Text = "X";
+            this.btnRemover.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnRemover.UseVisualStyleBackColor = false;
             this.btnRemover.Click += new System.EventHandler(this.BtnRemover_Click);
             // 
@@ -61,11 +62,10 @@
             // 
             this.lblValor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblValor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.lblValor.Location = new System.Drawing.Point(0, 0);
-            this.lblValor.MaximumSize = new System.Drawing.Size(110, 30);
             this.lblValor.Name = "lblValor";
-            this.lblValor.Size = new System.Drawing.Size(110, 30);
+            this.lblValor.Size = new System.Drawing.Size(125, 25);
             this.lblValor.TabIndex = 9;
             this.lblValor.Text = "100,00000";
             this.lblValor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -88,7 +88,7 @@
             // 
             this.checkBox.AutoSize = true;
             this.checkBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBox.Location = new System.Drawing.Point(9, 8);
+            this.checkBox.Location = new System.Drawing.Point(9, 7);
             this.checkBox.Name = "checkBox";
             this.checkBox.Size = new System.Drawing.Size(15, 14);
             this.checkBox.TabIndex = 0;
@@ -103,10 +103,10 @@
             this.Controls.Add(this.lblValor);
             this.Controls.Add(this.btnRemover);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MaximumSize = new System.Drawing.Size(155, 30);
-            this.MinimumSize = new System.Drawing.Size(155, 30);
+            this.MaximumSize = new System.Drawing.Size(155, 25);
+            this.MinimumSize = new System.Drawing.Size(155, 25);
             this.Name = "UcReplicata";
-            this.Size = new System.Drawing.Size(155, 30);
+            this.Size = new System.Drawing.Size(155, 25);
             this.Click += new System.EventHandler(this.LblValor_Click);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

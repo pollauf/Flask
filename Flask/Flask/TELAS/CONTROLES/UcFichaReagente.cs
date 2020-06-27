@@ -21,7 +21,7 @@ namespace Flask.TELAS.CONTROLES
         public IConsulta Consulta { get; set; }
 
         private Reagente reagente;
-
+        public bool ManterFixo { get; set; } = false;
         public Reagente Reagente
         {
             get { return reagente; }
@@ -39,7 +39,8 @@ namespace Flask.TELAS.CONTROLES
                 {
                     pcbIcon.Image = Properties.Resources.iconReagente;
                     pcbIcon.Cursor = Cursors.Default;
-                    pnlInfo.Visible = btnRemover.Visible = true;                    
+                    pnlInfo.Visible = true;
+                    btnRemover.Visible = !ManterFixo;
 
                     var tipoReagente = Reagente.Tipo == TipoReagente.Acido ? "Ácido" : "Base";
 
@@ -63,7 +64,7 @@ namespace Flask.TELAS.CONTROLES
                     lblNome.Text = Reagente.Nome;
                     lblTipo.Text = tipoReagente;
                     lblClasse.Text = classeReagente;
-                    lblConcentracao.Text = $"[{Reagente.Concentracao.FormatarString()}]";                   
+                    lblConcentracao.Text = $"[{Reagente.Concentracao.FormatarString()}]";
                 }
 
                 if (ReagenteChanged != null)
@@ -96,14 +97,14 @@ namespace Flask.TELAS.CONTROLES
                 if (Reagente == null)
                 {
                     var id = Tela.ConsultaGeral(Consulta);
-                    Reagente = new FlaskDatabase().Reagente.Where(x => x.ID == id).FirstOrDefault();                    
+                    Reagente = new FlaskDatabase().Reagente.Where(x => x.ID == id).FirstOrDefault();
                 }
             }
             catch (Exception ex)
             {
                 Tela.InformarErroFatal(ex);
             }
-        }       
+        }
 
         protected void OnReagenteChanged(EventArgs e)
         {

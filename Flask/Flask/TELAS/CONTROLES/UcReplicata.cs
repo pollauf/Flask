@@ -7,17 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FlaskMODEL;
 
 namespace Flask.TELAS.CONTROLES
 {
     public partial class UcReplicata : UserControl
-    {
+    {       
         public ResultadoTitulacao Titulacao { get; set; }
         public event EventHandler ButtonRemoveClick;
-        public UcReplicata(string valor)
+        public UcReplicata(string valor, TipoAnalise tipoAnalise = TipoAnalise.Acidimetria)
         {
             InitializeComponent();
-            lblValor.Text = valor;
+            
+            if (tipoAnalise != TipoAnalise.Retrotitulacao)
+                lblValor.Text = $"{valor} mol/L";
+            else
+                lblValor.Text = $"{valor} mL";
         }
 
         protected void OnButtonRemoveClick(EventArgs e)
