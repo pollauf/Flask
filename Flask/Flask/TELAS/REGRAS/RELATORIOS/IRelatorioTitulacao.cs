@@ -14,5 +14,7 @@ namespace Flask
         Reagente Titulado { get; set; }
         List<ResultadoTitulacao> Replicatas { get; set; }
         double Resultado { get; set; }
+
+        string GerarRelatorio();
     }
 }

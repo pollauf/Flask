@@ -132,6 +132,7 @@
       <DependentUpon>FrmTeste.cs</DependentUpon>
     </Compile>
     <Compile Include="TELAS\METODOS\EXTENSORES\ExtForm.cs" />
+    <Compile Include="TELAS\METODOS\EXTENSORES\ExtReagente.cs" />
     <Compile Include="TELAS\METODOS\Tela.cs" />
     <Compile Include="TELAS\Reagentes\FrmCadastroReagente.cs">
       <SubType>Form</SubType>
@@ -140,9 +141,11 @@
       <DependentUpon>FrmCadastroReagente.cs</DependentUpon>
     </Compile>
     <Compile Include="TELAS\REGRAS\RELATORIOS\IRelatorioTitulacao.cs" />
-    <Compile Include="TELAS\REGRAS\RELATORIOS\RelatorioTitulacao.cs" />
+    <Compile Include="TELAS\REGRAS\RELATORIOS\RelatorioAcidimetria.cs" />
+    <Compile Include="TELAS\REGRAS\RELATORIOS\RelatorioAlcalimetria.cs" />
     <Compile Include="TELAS\REGRAS\RELATORIOS\ResultadoTitulacao.cs" />
     <Compile Include="TELAS\REGRAS\TITULACAO\ITitulacao.cs" />
+    <Compile Include="TELAS\REGRAS\TITULACAO\Retrotitulacao.cs" />
     <Compile Include="TELAS\REGRAS\TITULACAO\Titulacao.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -19,6 +19,7 @@ namespace Flask.TELAS.Analises
     public partial class FrmTitulacaoAcidoBaseNormal : FlaskForm
     {
         public IRelatorioTitulacao Relatorio { get; set; }
+        public TipoAnalise TipoAnalise { get; set; }
 
         private bool manterConsultaFixa = false;
         private bool consultarTodosTipos = true;
@@ -42,12 +43,14 @@ namespace Flask.TELAS.Analises
                 consultaTitulado = TipoReagente.Base;
                 this.Name = this.Text = "Alcalimetria";
             }
-            else
+            else if (tipoAnalise == TipoAnalise.Acidimetria)
             {
                 consultaTitulante = TipoReagente.Base;
                 consultaTitulado = TipoReagente.Acido;
                 this.Name = this.Text = "Acidimetria";
             }
+
+            TipoAnalise = tipoAnalise;
 
             ucHeader1.Titulo = this.Text;
         }
@@ -176,7 +179,15 @@ namespace Flask.TELAS.Analises
             double media = Math.Round(selecionados.Average(), 5); ;
             lblResultado.Text = $"Resultado: {media.FormatarString()} mol/L";
 
-            Relatorio = new RelatorioTitulacao(UcTitulante.Reagente, UcTitulado.Reagente, resultadosSelecionados, media);
+            if (TipoAnalise == TipoAnalise.Acidimetria)
+            {
+                Relatorio = new RelatorioAcidimetria(UcTitulante.Reagente, UcTitulado.Reagente, resultadosSelecionados, media);
+            }
+            else if (TipoAnalise == TipoAnalise.Alcalimetria)
+            {
+                Relatorio = new RelatorioAlcalimetria(UcTitulante.Reagente, UcTitulado.Reagente, resultadosSelecionados, media);
+            }
+
         }
 
         private void TxtVolumeTitulante_KeyDown(object sender, KeyEventArgs e)
@@ -187,56 +198,11 @@ namespace Flask.TELAS.Analises
             }
         }
 
-        private string ObterInformacoesDoReagente(Reagente reagente)
-        {
-            var tipoReagente = reagente.Tipo == TipoReagente.Acido ? "Ácido" : "Base";
-
-            if (reagente.Forca != ForcaReagente.Desconhecida)
-            {
-                var forcaReagente = reagente.Forca == ForcaReagente.Forte ? "Forte" : "Fraco";
-
-                if (reagente.Forca == ForcaReagente.Fraca && reagente.Tipo == TipoReagente.Base)
-                    forcaReagente = "Fraca";
-
-                tipoReagente = $"{tipoReagente} {forcaReagente}";
-            }
-
-            var classeReagente = ((int)reagente.Classe).ToString();
-
-            if (reagente.Tipo == TipoReagente.Acido)
-                classeReagente += " H⁺";
-            else
-                classeReagente += " OH⁻";
-
-            return
-                $"Nome: {reagente.Nome}\n" +
-                $"Tipo: {tipoReagente} ({classeReagente})\n" +
-                $"{reagente.Concentracao.FormatarString()} mol/L";
-        }
-
         private void FlaskButton4_Click(object sender, EventArgs e)
         {
             if (Relatorio != null)
             {
-                var relatorio =
-                    $"ANÁLISE DE {Name.ToUpper()}\n\nResultado: {Relatorio.Resultado.FormatarString()} mol/L\n\n" +
-                    $"TITULANTE:\n{ObterInformacoesDoReagente(Relatorio.Titulante)}\n\n" +
-                    $"TITULADO:\n{ObterInformacoesDoReagente(Relatorio.Titulado)}\n\n" +
-                    $"REPLICATAS:\n@REPLICATAS";
-
-                var replicatas = string.Empty;
-
-                foreach (ResultadoTitulacao item in Relatorio.Replicatas)
-                {
-                    replicatas += 
-                        $"Volume de Titulado Utilizado: {item.VolumeTitulado.FormatarString()} mL\n"+
-                         $"Volume de Titulante Gasto: {item.VolumeTitulante.FormatarString()} mL\n"+
-                          $"Resultado: {item.Resultado.FormatarString()} mol/L\n\n";
-                }
-
-                relatorio = relatorio.Replace("@REPLICATAS", replicatas);
-
-                MessageBox.Show(relatorio);
+                MessageBox.Show(Relatorio.GerarRelatorio());
             }
         }
     }
