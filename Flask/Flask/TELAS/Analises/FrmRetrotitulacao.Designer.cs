@@ -73,6 +73,7 @@
             this.flaskButton4.Text = "Gerar Relatório";
             this.flaskButton4.UseVisualStyleBackColor = false;
             this.flaskButton4.Visible = false;
+            this.flaskButton4.Click += new System.EventHandler(this.FlaskButton4_Click);
             // 
             // flaskGroupBox3
             // 
@@ -276,6 +277,7 @@
             this.btnCalcular.TabIndex = 16;
             this.btnCalcular.Text = "Calcular";
             this.btnCalcular.UseVisualStyleBackColor = false;
+            this.btnCalcular.Click += new System.EventHandler(this.BtnCalcular_Click);
             // 
             // lblResultadoConcentracao
             // 

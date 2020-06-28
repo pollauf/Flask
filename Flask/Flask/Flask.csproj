@@ -140,6 +140,7 @@
     </Compile>
     <Compile Include="TELAS\METODOS\EXTENSORES\ExtForm.cs" />
     <Compile Include="TELAS\METODOS\EXTENSORES\ExtReagente.cs" />
+    <Compile Include="TELAS\METODOS\RelatorioDATA.cs" />
     <Compile Include="TELAS\METODOS\Tela.cs" />
     <Compile Include="TELAS\Reagentes\FrmCadastroReagente.cs">
       <SubType>Form</SubType>
@@ -149,15 +150,14 @@
     </Compile>
     <Compile Include="INTERFACES\IRelatorioTitulacao.cs" />
     <Compile Include="INTERFACES\IReplicatas.cs" />
+    <Compile Include="TELAS\REGRAS\FiltroReagente.cs" />
     <Compile Include="TELAS\REGRAS\RELATORIOS\Complementares\ExtResultadoTitulacao.cs" />
     <Compile Include="TELAS\REGRAS\RELATORIOS\Complementares\ReagentesTitulacao.cs" />
-    <Compile Include="TELAS\REGRAS\RELATORIOS\RelatorioAcidimetria.cs" />
-    <Compile Include="TELAS\REGRAS\RELATORIOS\RelatorioAlcalimetria.cs" />
+    <Compile Include="TELAS\REGRAS\RELATORIOS\RelatorioTitulacao.cs" />
     <Compile Include="TELAS\REGRAS\RELATORIOS\Complementares\ResultadoTitulacao.cs" />
     <Compile Include="TELAS\REGRAS\RELATORIOS\RelatorioRetrotitulacao.cs" />
     <Compile Include="INTERFACES\IAnalitoExcesso.cs" />
     <Compile Include="INTERFACES\ITitulacao.cs" />
-    <Compile Include="TELAS\REGRAS\TITULACAO\ExtTitulacao.cs" />
     <Compile Include="TELAS\REGRAS\TITULACAO\Retrotitulacao.cs" />
     <Compile Include="TELAS\REGRAS\TITULACAO\Titulacao.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

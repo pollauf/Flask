@@ -1,4 +1,5 @@
 ﻿using FlaskMODEL;
+using FlaskMODEL.TABELAS;
 using FlaskUI.CLASSES;
 using System;
 using System.Collections.Generic;
@@ -8,14 +9,16 @@ using System.Threading.Tasks;
 
 namespace Flask
 {
-    public class RelatorioAlcalimetria : IRelatorioTitulacao, ITitulanteTitulado, IReplicatas
+    public class RelatorioTitulacao : IRelatorioTitulacao, ITitulanteTitulado, IReplicatas
     {
+        public TipoAnalise TipoAnalise { get; set; }
         public Reagente Titulante { get; set; }
         public Reagente Titulado { get; set; }
         public List<ResultadoTitulacao> Replicatas { get; set; }
         public double Resultado { get; set; }
-        public RelatorioAlcalimetria(Reagente titulante, Reagente titulado, List<ResultadoTitulacao> replicatas, double resultado)
+        public RelatorioTitulacao(TipoAnalise tipoAnalise, Reagente titulante, Reagente titulado, List<ResultadoTitulacao> replicatas, double resultado)
         {
+            TipoAnalise = tipoAnalise;
             Titulante = titulante;
             Titulado = titulado;
             Replicatas = replicatas;
@@ -23,8 +26,13 @@ namespace Flask
         }
         public string GerarRelatorio()
         {
+            var relatorioDe = "TITULAÇÃO ÁCIDO-BASE";
+
+            if (TipoAnalise != TipoAnalise.Retrotitulacao)
+                relatorioDe = $"ANÁLISE DE {TipoAnalise.ObterDescricao().ToUpper()}";
+
             var relatorio =
-                $"ANÁLISE DE ALCALIMETRIA\n\nResultado: {this.Resultado.FormatarString()} mol/L\n\n" +
+                $"{relatorioDe}\n\nResultado: {this.Resultado.FormatarString()} mol/L\n\n" +
                 $"TITULANTE:\n{this.Titulante.ResumirInformacoes()}\n\n" +
                 $"TITULADO:\n{this.Titulado.ResumirInformacoes()}\n\n" +
                 $"REPLICATAS:\n@REPLICATAS";

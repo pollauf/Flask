@@ -99,7 +99,7 @@ namespace Flask.TELAS.METODOS
             {
                 MessageBox.Show("Busca sem resultados", "Sem Resultados", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return -1;
-            }                
+            }
 
             var form = new FrmConsultaGeral(consulta.Nome, query, consulta.Cabecalhos);
             form.ShowDialog();

@@ -42,29 +42,36 @@ namespace Flask.TELAS.CONTROLES
                     pnlInfo.Visible = true;
                     btnRemover.Visible = !ManterFixo;
 
-                    var tipoReagente = Reagente.Tipo == TipoReagente.Acido ? "Ácido" : "Base";
+                    var tipoReagente = reagente.Tipo == TipoReagente.Acido ? "Ácido" : "Base";
 
-                    if (Reagente.Forca != ForcaReagente.Desconhecida)
+                    if (reagente.Forca != ForcaReagente.Desconhecida)
                     {
-                        var forcaReagente = Reagente.Forca == ForcaReagente.Forte ? "Forte" : "Fraco";
+                        var forcaReagente = reagente.Forca == ForcaReagente.Forte ? "Forte" : "Fraco";
 
-                        if (Reagente.Forca == ForcaReagente.Fraca && Reagente.Tipo == TipoReagente.Base)
+                        if (reagente.Forca == ForcaReagente.Fraca && reagente.Tipo == TipoReagente.Base)
                             forcaReagente = "Fraca";
 
                         tipoReagente = $"{tipoReagente} {forcaReagente}";
                     }
 
-                    var classeReagente = ((int)Reagente.Classe).ToString();
+                    if (reagente.Tipo == TipoReagente.Anfotero)
+                        tipoReagente = "Anfótero";
 
-                    if (Reagente.Tipo == TipoReagente.Acido)
-                        classeReagente += " H⁺";
-                    else
-                        classeReagente += " OH⁻";
+                    var classeReagente = string.Empty;
+
+                    if (reagente.Tipo == TipoReagente.Acido)
+                        classeReagente = "Perde ";
+                    else if (reagente.Tipo == TipoReagente.Base)
+                        classeReagente = "Recebe ";
+                    else if (reagente.Tipo == TipoReagente.Anfotero)
+                        classeReagente = "Perde ou Recebe ";
+
+                    classeReagente += ((int)reagente.Classe).ToString() + " H⁺";
 
                     lblNome.Text = Reagente.Nome;
                     lblTipo.Text = tipoReagente;
                     lblClasse.Text = classeReagente;
-                    lblConcentracao.Text = $"[{Reagente.Concentracao.FormatarString()}]";
+                    lblConcentracao.Text = reagente.Concentracao == 0 ? "[Desconhecida]" : $"[{Reagente.Concentracao.FormatarString()}]";
                 }
 
                 if (ReagenteChanged != null)

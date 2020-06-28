@@ -19,10 +19,8 @@ namespace Flask
             ReagenteExcesso = reagenteExcesso;
             Analito = analito;
         }
-        public double CalcularConcentracao(double volumeTotalDeExcesso, double volumeDeAnalito, double volumeExcessoReagido)//double volumeTitulanteGasto)
+        public double CalcularConcentracao(double volumeDeAnalito, double volumeExcessoReagido)
         {
-            //double volumeExcessoRestante = (volumeTitulanteGasto * ReagentesTitulacaoDoExcesso.Titulante.Concentracao) / ReagenteExcesso.Concentracao;
-            //double volumeExcessoReagido = volumeTotalDeExcesso - volumeExcessoRestante;
             double concentracaoAnalito = 
                 ((int)Analito.Classe * volumeExcessoReagido * ReagenteExcesso.Concentracao) / (volumeDeAnalito * (int)ReagenteExcesso.Classe);
 

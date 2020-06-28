@@ -21,7 +21,7 @@ namespace FlaskMODEL.CONSULTAS
             Cabecalhos.Add(new ConfiguracaoCabecalho("Nome"));
             Cabecalhos.Add(new ConfiguracaoCabecalho("Tipo"));
             Cabecalhos.Add(new ConfiguracaoCabecalho("Força"));
-            Cabecalhos.Add(new ConfiguracaoCabecalho("Classe"));
+            Cabecalhos.Add(new ConfiguracaoCabecalho("H⁺/OH⁻", DataGridViewContentAlignment.MiddleCenter));
             Cabecalhos.Add(new ConfiguracaoCabecalho("Concentração (mol/L)", DataGridViewContentAlignment.MiddleRight));
         }
         public virtual object Pesquisar()
@@ -37,18 +37,7 @@ namespace FlaskMODEL.CONSULTAS
                     if (query.Count == 0)
                         return null;
 
-                    foreach (var item in query)
-                    {
-                        _return.Add(new SReagenteGrid
-                        {
-                            ID = item.ID,
-                            Nome = item.Nome,
-                            Classe = Metodos.ObterDescricao(item.Classe),
-                            Concentracao = item.Concentracao == 0 ? "Desconhecida" : item.Concentracao.ToString("0.00000"),
-                            Forca = Metodos.ObterDescricao(item.Forca),
-                            Tipo = Metodos.ObterDescricao(item.Tipo),
-                        });
-                    }
+                    _return = OrganizarGrid(query);
                 }
 
                 return _return;
@@ -57,6 +46,26 @@ namespace FlaskMODEL.CONSULTAS
             {
                 return null;
             }
+        }
+
+        protected List<SReagenteGrid> OrganizarGrid(List<Reagente> query)
+        {
+            var _return = new List<SReagenteGrid>();
+
+            foreach (var item in query)
+            {
+                _return.Add(new SReagenteGrid
+                {
+                    ID = item.ID,
+                    Nome = item.Nome,
+                    Classe = item.Classe == ClasseReagente.Desconhecida ? item.Classe.ObterDescricao() : ((int)item.Classe).ToString(),
+                    Concentracao = item.Concentracao == 0 ? "Desconhecida" : item.Concentracao.ToString("0.00000"),
+                    Forca = Metodos.ObterDescricao(item.Forca),
+                    Tipo = Metodos.ObterDescricao(item.Tipo),
+                });
+            }
+
+            return _return;
         }
     }
 

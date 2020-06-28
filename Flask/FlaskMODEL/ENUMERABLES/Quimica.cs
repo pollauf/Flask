@@ -9,10 +9,12 @@ namespace FlaskMODEL
 {
     public enum TipoReagente
     {
-        [Description("Solução Ácida")]
+        [Description("Ácido")]
         Acido = 0,
-        [Description("Solução Básica")]
+        [Description("Base")]
         Base = 1,
+        [Description("Anfótero")]
+        Anfotero = 2,
     }
 
     public enum Concentracao

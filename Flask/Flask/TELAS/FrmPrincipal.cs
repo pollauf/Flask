@@ -141,7 +141,9 @@ namespace Flask.TELAS
             else
             {
                 Tela.Abrir(new FrmTeste(), janelaAbrir);
-            }            
+            }
+
+            MenuAtual = AbasMenu.Oculto;
         }
 
         private void BtnReagentes_Click(object sender, EventArgs e) => MudarMenu(AbasMenu.Reagentes);

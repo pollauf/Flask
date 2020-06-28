@@ -165,8 +165,8 @@ namespace Flask.TELAS.Reagentes
 
                     if (Modo == Modo.Novo)
                     {
-                        int? nextID = db.Reagente.OrderByDescending(x => x.ID).FirstOrDefault().ID;
-                        model.ID = nextID == null ? 1 : nextID.Value + 1;
+                        Reagente oldestModel = db.Reagente.OrderByDescending(x => x.ID).FirstOrDefault();
+                        model.ID = oldestModel == null ? 1 : oldestModel.ID + 1;
 
                         db.Entry(model).State = EntityState.Added;
                         db.Reagente.Add(model);

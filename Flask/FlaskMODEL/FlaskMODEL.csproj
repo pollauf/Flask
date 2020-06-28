@@ -141,44 +141,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CONSULTAS\ConfiguracaoCabecalho.cs" />
-    <Compile Include="CONSULTAS\ConsultaReagenteFiltro.cs" />
+    <Compile Include="CONSULTAS\ConsultaReagenteTitulacao.cs" />
     <Compile Include="CONSULTAS\IConsulta.cs" />
     <Compile Include="CONSULTAS\ConsultaReagente.cs" />
     <Compile Include="ENUMERABLES\Gerais.cs" />
     <Compile Include="ENUMERABLES\Quimica.cs" />
     <Compile Include="FlaskDatabase.cs" />
-    <Compile Include="Migrations\202006260446373_first.cs" />
-    <Compile Include="Migrations\202006260446373_first.designer.cs">
-      <DependentUpon>202006260446373_first.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006260530555_second.cs" />
-    <Compile Include="Migrations\202006260530555_second.designer.cs">
-      <DependentUpon>202006260530555_second.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006262147082_third.cs" />
-    <Compile Include="Migrations\202006262147082_third.designer.cs">
-      <DependentUpon>202006262147082_third.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006270442520_fourth.cs" />
-    <Compile Include="Migrations\202006270442520_fourth.designer.cs">
-      <DependentUpon>202006270442520_fourth.cs</DependentUpon>
+    <Compile Include="Migrations\202006281735224_first.cs" />
+    <Compile Include="Migrations\202006281735224_first.designer.cs">
+      <DependentUpon>202006281735224_first.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OUTROS\Metodos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TABELAS\Reagente.cs" />
-    <EmbeddedResource Include="Migrations\202006260446373_first.resx">
-      <DependentUpon>202006260446373_first.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006260530555_second.resx">
-      <DependentUpon>202006260530555_second.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006262147082_third.resx">
-      <DependentUpon>202006262147082_third.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006270442520_fourth.resx">
-      <DependentUpon>202006270442520_fourth.cs</DependentUpon>
+    <Compile Include="TABELAS\Relatorio.cs" />
+    <EmbeddedResource Include="Migrations\202006281735224_first.resx">
+      <DependentUpon>202006281735224_first.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

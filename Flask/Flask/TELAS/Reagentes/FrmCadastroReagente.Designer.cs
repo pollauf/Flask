@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastroReagente));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.flaskLabel12 = new FlaskUI.COMPONENTES.FlaskLabel();
+            this.txtMassaMolar = new FlaskUI.COMPONENTES.FlaskTextBox();
+            this.flaskLabel11 = new FlaskUI.COMPONENTES.FlaskLabel();
             this.lblMols = new FlaskUI.COMPONENTES.FlaskLabel();
             this.txtConcentracao = new FlaskUI.COMPONENTES.FlaskTextBox();
             this.txtComboConcentracao = new FlaskUI.COMPONENTES.FlaskComboBox();
@@ -71,9 +74,6 @@
             this.btnLimpar = new FlaskUI.COMPONENTES.FlaskButton();
             this.btnExcluir = new FlaskUI.COMPONENTES.FlaskButton();
             this.ucHeader1 = new Flask.UcHeader();
-            this.flaskLabel11 = new FlaskUI.COMPONENTES.FlaskLabel();
-            this.txtMassaMolar = new FlaskUI.COMPONENTES.FlaskTextBox();
-            this.flaskLabel12 = new FlaskUI.COMPONENTES.FlaskLabel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -126,6 +126,40 @@
             this.tabPage1.Size = new System.Drawing.Size(530, 280);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Capa";
+            // 
+            // flaskLabel12
+            // 
+            this.flaskLabel12.AutoSize = true;
+            this.flaskLabel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.flaskLabel12.Location = new System.Drawing.Point(194, 143);
+            this.flaskLabel12.Name = "flaskLabel12";
+            this.flaskLabel12.Size = new System.Drawing.Size(42, 17);
+            this.flaskLabel12.TabIndex = 17;
+            this.flaskLabel12.Text = "g/mol";
+            // 
+            // txtMassaMolar
+            // 
+            this.txtMassaMolar.Ativo = true;
+            this.txtMassaMolar.BackColor = System.Drawing.Color.White;
+            this.txtMassaMolar.CampoObrigatorio = false;
+            this.txtMassaMolar.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.NumeroReal;
+            this.txtMassaMolar.Erro = false;
+            this.txtMassaMolar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtMassaMolar.Location = new System.Drawing.Point(107, 140);
+            this.txtMassaMolar.Name = "txtMassaMolar";
+            this.txtMassaMolar.Size = new System.Drawing.Size(81, 23);
+            this.txtMassaMolar.TabIndex = 6;
+            this.txtMassaMolar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // flaskLabel11
+            // 
+            this.flaskLabel11.AutoSize = true;
+            this.flaskLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.flaskLabel11.Location = new System.Drawing.Point(13, 143);
+            this.flaskLabel11.Name = "flaskLabel11";
+            this.flaskLabel11.Size = new System.Drawing.Size(88, 17);
+            this.flaskLabel11.TabIndex = 15;
+            this.flaskLabel11.Text = "Massa Molar";
             // 
             // lblMols
             // 
@@ -494,38 +528,39 @@
             this.flaskGroupBox1.Padding = new System.Windows.Forms.Padding(3);
             this.flaskGroupBox1.Size = new System.Drawing.Size(516, 87);
             this.flaskGroupBox1.TabIndex = 0;
-            this.flaskGroupBox1.Titulo = "Classe (H⁺/OH⁻) Ionizáveis";
+            this.flaskGroupBox1.Titulo = "Quantidade (Perde/Recebe H⁺)";
             // 
             // rbClasseTetra
             // 
             this.rbClasseTetra.AutoSize = true;
-            this.rbClasseTetra.Location = new System.Drawing.Point(383, 41);
+            this.rbClasseTetra.Location = new System.Drawing.Point(276, 41);
             this.rbClasseTetra.Name = "rbClasseTetra";
-            this.rbClasseTetra.Size = new System.Drawing.Size(82, 21);
+            this.rbClasseTetra.Size = new System.Drawing.Size(34, 21);
             this.rbClasseTetra.TabIndex = 5;
-            this.rbClasseTetra.Text = "Tetra (4)";
+            this.rbClasseTetra.Tag = "";
+            this.rbClasseTetra.Text = "4";
             this.rbClasseTetra.UseVisualStyleBackColor = true;
             this.rbClasseTetra.CheckedChanged += new System.EventHandler(this.RbClasseMono_CheckedChanged);
             // 
             // rbClasseTri
             // 
             this.rbClasseTri.AutoSize = true;
-            this.rbClasseTri.Location = new System.Drawing.Point(312, 41);
+            this.rbClasseTri.Location = new System.Drawing.Point(236, 41);
             this.rbClasseTri.Name = "rbClasseTri";
-            this.rbClasseTri.Size = new System.Drawing.Size(65, 21);
+            this.rbClasseTri.Size = new System.Drawing.Size(34, 21);
             this.rbClasseTri.TabIndex = 4;
-            this.rbClasseTri.Text = "Tri (3)";
+            this.rbClasseTri.Text = "3";
             this.rbClasseTri.UseVisualStyleBackColor = true;
             this.rbClasseTri.CheckedChanged += new System.EventHandler(this.RbClasseMono_CheckedChanged);
             // 
             // rbClasseDi
             // 
             this.rbClasseDi.AutoSize = true;
-            this.rbClasseDi.Location = new System.Drawing.Point(245, 41);
+            this.rbClasseDi.Location = new System.Drawing.Point(196, 41);
             this.rbClasseDi.Name = "rbClasseDi";
-            this.rbClasseDi.Size = new System.Drawing.Size(61, 21);
+            this.rbClasseDi.Size = new System.Drawing.Size(34, 21);
             this.rbClasseDi.TabIndex = 3;
-            this.rbClasseDi.Text = "Di (2)";
+            this.rbClasseDi.Text = "2";
             this.rbClasseDi.UseVisualStyleBackColor = true;
             this.rbClasseDi.CheckedChanged += new System.EventHandler(this.RbClasseMono_CheckedChanged);
             // 
@@ -534,9 +569,9 @@
             this.rbClasseMono.AutoSize = true;
             this.rbClasseMono.Location = new System.Drawing.Point(156, 41);
             this.rbClasseMono.Name = "rbClasseMono";
-            this.rbClasseMono.Size = new System.Drawing.Size(83, 21);
+            this.rbClasseMono.Size = new System.Drawing.Size(34, 21);
             this.rbClasseMono.TabIndex = 2;
-            this.rbClasseMono.Text = "Mono (1)";
+            this.rbClasseMono.Text = "1";
             this.rbClasseMono.UseVisualStyleBackColor = true;
             this.rbClasseMono.CheckedChanged += new System.EventHandler(this.RbClasseMono_CheckedChanged);
             // 
@@ -549,7 +584,7 @@
             this.rbClasseDesconhecida.Size = new System.Drawing.Size(116, 21);
             this.rbClasseDesconhecida.TabIndex = 1;
             this.rbClasseDesconhecida.TabStop = true;
-            this.rbClasseDesconhecida.Text = "Desconhecido";
+            this.rbClasseDesconhecida.Text = "Desconhecida";
             this.rbClasseDesconhecida.UseVisualStyleBackColor = true;
             this.rbClasseDesconhecida.CheckedChanged += new System.EventHandler(this.RbClasseMono_CheckedChanged);
             // 
@@ -621,40 +656,6 @@
             this.ucHeader1.Size = new System.Drawing.Size(538, 40);
             this.ucHeader1.TabIndex = 0;
             this.ucHeader1.Titulo = "Cadastro de Reagente";
-            // 
-            // flaskLabel11
-            // 
-            this.flaskLabel11.AutoSize = true;
-            this.flaskLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.flaskLabel11.Location = new System.Drawing.Point(13, 143);
-            this.flaskLabel11.Name = "flaskLabel11";
-            this.flaskLabel11.Size = new System.Drawing.Size(88, 17);
-            this.flaskLabel11.TabIndex = 15;
-            this.flaskLabel11.Text = "Massa Molar";
-            // 
-            // txtMassaMolar
-            // 
-            this.txtMassaMolar.Ativo = true;
-            this.txtMassaMolar.BackColor = System.Drawing.Color.White;
-            this.txtMassaMolar.CampoObrigatorio = false;
-            this.txtMassaMolar.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.NumeroReal;
-            this.txtMassaMolar.Erro = false;
-            this.txtMassaMolar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtMassaMolar.Location = new System.Drawing.Point(107, 140);
-            this.txtMassaMolar.Name = "txtMassaMolar";
-            this.txtMassaMolar.Size = new System.Drawing.Size(81, 23);
-            this.txtMassaMolar.TabIndex = 6;
-            this.txtMassaMolar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // flaskLabel12
-            // 
-            this.flaskLabel12.AutoSize = true;
-            this.flaskLabel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.flaskLabel12.Location = new System.Drawing.Point(194, 143);
-            this.flaskLabel12.Name = "flaskLabel12";
-            this.flaskLabel12.Size = new System.Drawing.Size(42, 17);
-            this.flaskLabel12.TabIndex = 17;
-            this.flaskLabel12.Text = "g/mol";
             // 
             // FrmCadastroReagente
             // 

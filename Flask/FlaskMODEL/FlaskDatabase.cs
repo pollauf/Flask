@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FlaskMODEL.TABELAS;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -16,5 +17,6 @@ namespace FlaskMODEL
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<FlaskDatabase, Migrations.Configuration>());
         }
         public DbSet<Reagente> Reagente { get; set; }
+        public DbSet<Relatorio> Relatorio { get; set; }
     }
 }

@@ -127,7 +127,7 @@
             // 
             this.lblUnidadeTitulado.AutoSize = true;
             this.lblUnidadeTitulado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblUnidadeTitulado.Location = new System.Drawing.Point(312, 64);
+            this.lblUnidadeTitulado.Location = new System.Drawing.Point(313, 35);
             this.lblUnidadeTitulado.Name = "lblUnidadeTitulado";
             this.lblUnidadeTitulado.Size = new System.Drawing.Size(27, 17);
             this.lblUnidadeTitulado.TabIndex = 7;
@@ -137,7 +137,7 @@
             // 
             this.flaskLabel3.AutoSize = true;
             this.flaskLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.flaskLabel3.Location = new System.Drawing.Point(312, 35);
+            this.flaskLabel3.Location = new System.Drawing.Point(313, 64);
             this.flaskLabel3.Name = "flaskLabel3";
             this.flaskLabel3.Size = new System.Drawing.Size(27, 17);
             this.flaskLabel3.TabIndex = 6;
@@ -164,7 +164,7 @@
             // lblVolumeTitulado
             // 
             this.lblVolumeTitulado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblVolumeTitulado.Location = new System.Drawing.Point(12, 64);
+            this.lblVolumeTitulado.Location = new System.Drawing.Point(13, 35);
             this.lblVolumeTitulado.Name = "lblVolumeTitulado";
             this.lblVolumeTitulado.Size = new System.Drawing.Size(188, 17);
             this.lblVolumeTitulado.TabIndex = 4;
@@ -179,17 +179,17 @@
             this.txtVolumeTitulado.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.NumeroReal;
             this.txtVolumeTitulado.Erro = false;
             this.txtVolumeTitulado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtVolumeTitulado.Location = new System.Drawing.Point(206, 61);
+            this.txtVolumeTitulado.Location = new System.Drawing.Point(207, 32);
             this.txtVolumeTitulado.Name = "txtVolumeTitulado";
             this.txtVolumeTitulado.Size = new System.Drawing.Size(100, 23);
-            this.txtVolumeTitulado.TabIndex = 1;
+            this.txtVolumeTitulado.TabIndex = 0;
             this.txtVolumeTitulado.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // flaskLabel1
             // 
             this.flaskLabel1.AutoSize = true;
             this.flaskLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.flaskLabel1.Location = new System.Drawing.Point(24, 35);
+            this.flaskLabel1.Location = new System.Drawing.Point(25, 64);
             this.flaskLabel1.Name = "flaskLabel1";
             this.flaskLabel1.Size = new System.Drawing.Size(176, 17);
             this.flaskLabel1.TabIndex = 2;
@@ -203,10 +203,10 @@
             this.txtVolumeTitulante.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.NumeroReal;
             this.txtVolumeTitulante.Erro = false;
             this.txtVolumeTitulante.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtVolumeTitulante.Location = new System.Drawing.Point(206, 32);
+            this.txtVolumeTitulante.Location = new System.Drawing.Point(207, 61);
             this.txtVolumeTitulante.Name = "txtVolumeTitulante";
             this.txtVolumeTitulante.Size = new System.Drawing.Size(100, 23);
-            this.txtVolumeTitulante.TabIndex = 0;
+            this.txtVolumeTitulante.TabIndex = 1;
             this.txtVolumeTitulante.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtVolumeTitulante.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtVolumeTitulante_KeyDown);
             // 

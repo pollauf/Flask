@@ -24,12 +24,19 @@ namespace Flask
                 tipoReagente = $"{tipoReagente} {forcaReagente}";
             }
 
-            var classeReagente = ((int)reagente.Classe).ToString();
+            if (reagente.Tipo == TipoReagente.Anfotero)
+                tipoReagente = "Anfótero";
+
+            var classeReagente = string.Empty;
 
             if (reagente.Tipo == TipoReagente.Acido)
-                classeReagente += " H⁺";
-            else
-                classeReagente += " OH⁻";
+                classeReagente = "Perde ";
+            else if (reagente.Tipo == TipoReagente.Base)
+                classeReagente = "Recebe ";
+            else if (reagente.Tipo == TipoReagente.Anfotero)
+                classeReagente = "Perde/Recebe ";
+
+            classeReagente += ((int)reagente.Classe).ToString() + " H⁺";
 
             return
                 $"Nome: {reagente.Nome}\n" +

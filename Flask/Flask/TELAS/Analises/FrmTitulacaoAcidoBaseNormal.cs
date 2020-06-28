@@ -45,9 +45,6 @@ namespace Flask.TELAS.Analises
         public TipoAnalise TipoAnalise { get; set; }
 
         private bool manterConsultaFixa = false;
-        private bool consultarTodosTipos = true;
-        private TipoReagente consultaTitulante = TipoReagente.Base;
-        private TipoReagente consultaTitulado = TipoReagente.Acido;
         public FrmTitulacaoAcidoBaseNormal()
         {
             InitializeComponent();
@@ -58,18 +55,13 @@ namespace Flask.TELAS.Analises
             InitializeComponent();
 
             manterConsultaFixa = true;
-            consultarTodosTipos = false;
 
             if (tipoAnalise == TipoAnalise.Alcalimetria)
             {
-                consultaTitulante = TipoReagente.Acido;
-                consultaTitulado = TipoReagente.Base;
                 this.Name = this.Text = "Alcalimetria";
             }
             else if (tipoAnalise == TipoAnalise.Acidimetria)
             {
-                consultaTitulante = TipoReagente.Base;
-                consultaTitulado = TipoReagente.Acido;
                 this.Name = this.Text = "Acidimetria";
             }
 
@@ -106,38 +98,37 @@ namespace Flask.TELAS.Analises
 
         private void AtualizarFiltros()
         {
-            UcTitulante.Consulta = new ConsultaReagenteFiltro(consultarTodosTipos, true, true, true, consultaTitulante);
-            UcTitulado.Consulta = new ConsultaReagenteFiltro(consultarTodosTipos, false, true, false, consultaTitulado);
+            var tipoTitulante = TipoReagente.Anfotero;
+            var tipoTitulado = TipoReagente.Anfotero;
+
+            if (TipoAnalise == TipoAnalise.Acidimetria)
+            {
+                tipoTitulante = TipoReagente.Base;
+                tipoTitulado = TipoReagente.Acido;
+            }
+            else if (TipoAnalise == TipoAnalise.Alcalimetria)
+            {
+                tipoTitulante = TipoReagente.Acido;
+                tipoTitulado = TipoReagente.Base;
+            }
+            else
+            {
+                if (UcTitulado.Reagente != null)
+                    tipoTitulante = UcTitulado.Reagente.Tipo.RetornarReagenteOposto();
+
+                if (UcTitulante.Reagente != null)
+                    tipoTitulado = UcTitulante.Reagente.Tipo.RetornarReagenteOposto();
+            }
+
+            UcTitulante.Consulta = new ConsultaReagenteTitulacao(tipoTitulante, true);
+            UcTitulado.Consulta = new ConsultaReagenteTitulacao(tipoTitulado, false);
         }
 
         private void UcTitulante_ReagenteChanged(object sender, EventArgs e)
         {
             if (!manterConsultaFixa)
             {
-                if (UcTitulante.Reagente != null || UcTitulado.Reagente != null)
-                    consultarTodosTipos = false;
-                else
-                {
-                    consultarTodosTipos = true;
-                    AtualizarFiltros();
-                    return;
-                }
-
-                if (UcTitulante.Reagente != null)
-                {
-                    consultaTitulante = UcTitulante.Reagente.Tipo;
-                    consultaTitulado = consultaTitulante == TipoReagente.Acido ? TipoReagente.Base : TipoReagente.Acido;
-                    AtualizarFiltros();
-                    return;
-                }
-
-                if (UcTitulado.Reagente != null)
-                {
-                    consultaTitulado = UcTitulado.Reagente.Tipo;
-                    consultaTitulante = consultaTitulado == TipoReagente.Acido ? TipoReagente.Base : TipoReagente.Acido;
-                    AtualizarFiltros();
-                    return;
-                }
+                AtualizarFiltros();
             }
         }
 
@@ -174,12 +165,15 @@ namespace Flask.TELAS.Analises
             if (TipoAnalise != TipoAnalise.Retrotitulacao)
                 resultadoTitulacao = titulacao.CalcularConcentracao(volumeTitulado, volumeTitulante);
             else
-                resultadoTitulacao = titulacao.CalcularVolumeDoTitulado(volumeTitulante);
+                resultadoTitulacao = 0;
 
             double resultadoDouble = Math.Round(resultadoTitulacao, 5);
             string resultado = resultadoDouble.FormatarString();
 
-            var ucReplicata = new UcReplicata(volumeTitulante.FormatarString(), TipoAnalise);
+            var ucReplicata = new UcReplicata(resultado, TipoAnalise);
+
+            if (TipoAnalise == TipoAnalise.Retrotitulacao)
+                ucReplicata = new UcReplicata(volumeTitulante.FormatarString(), TipoAnalise);
 
             if (TipoAnalise != TipoAnalise.Retrotitulacao)
                 ucReplicata.Titulacao = new ResultadoTitulacao(volumeTitulado, volumeTitulante, resultadoDouble);
@@ -246,14 +240,7 @@ namespace Flask.TELAS.Analises
             double media = Math.Round(selecionados.Average(), 5); ;
             lblResultado.Text = $"Resultado: {media.FormatarString()} mol/L";
 
-            if (UcTitulante.Reagente.Tipo == TipoReagente.Base)
-            {
-                Relatorio = new RelatorioAcidimetria(UcTitulante.Reagente, UcTitulado.Reagente, resultadosSelecionados, media);
-            }
-            else if (UcTitulante.Reagente.Tipo == TipoReagente.Acido)
-            {
-                Relatorio = new RelatorioAlcalimetria(UcTitulante.Reagente, UcTitulado.Reagente, resultadosSelecionados, media);
-            }
+            Relatorio = new RelatorioTitulacao(TipoAnalise, UcTitulante.Reagente, UcTitulado.Reagente, resultadosSelecionados, media);
         }
 
         private void TxtVolumeTitulante_KeyDown(object sender, KeyEventArgs e)
