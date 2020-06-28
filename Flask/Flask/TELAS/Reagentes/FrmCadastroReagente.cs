@@ -157,6 +157,7 @@ namespace Flask.TELAS.Reagentes
                     model.Forca = (ForcaReagente)txtForca.SelectedIndex;
                     model.Concentracao = string.IsNullOrEmpty(txtConcentracao.Text) ? 0 : double.Parse(txtConcentracao.Text);
                     model.MassaMolar = string.IsNullOrEmpty(txtMassaMolar.Text) ? 0 : double.Parse(txtMassaMolar.Text);
+                    model.Formula = txtFormula.Text;
 
                     model.KI1 = string.IsNullOrEmpty(txtK1.Text) ? 0 : double.Parse(txtK1.Text);
                     model.KI2 = string.IsNullOrEmpty(txtK2.Text) ? 0 : double.Parse(txtK2.Text);
@@ -247,6 +248,7 @@ namespace Flask.TELAS.Reagentes
                     txtID.Ativo = false;
                     txtNome.Text = model.Nome;
                     txtDescricao.Text = model.Descricao;
+                    txtFormula.Text = model.Formula;
 
                     if (model.Concentracao > 0)
                     {

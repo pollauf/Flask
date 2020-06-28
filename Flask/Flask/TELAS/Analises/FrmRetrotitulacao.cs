@@ -53,12 +53,16 @@ namespace Flask.TELAS.Analises
 
             var retrotitulacao = new Retrotitulacao((ITitulanteTitulado)relatorioTitulacao, ucExcesso.Reagente, ucAnalito.Reagente);
 
+            ITitulacao titulacaoExcesso = new Titulacao();
+            ((ITitulanteTitulado)titulacaoExcesso).Titulante = ((ITitulanteTitulado)relatorioTitulacao).Titulante;
+            ((ITitulanteTitulado)titulacaoExcesso).Titulado = ((ITitulanteTitulado)relatorioTitulacao).Titulado;
+
             var volumes = new List<double>();
             double mediaVolume = 0;
 
             foreach (var item in ((IReplicatas)relatorioTitulacao).Replicatas)
             {
-                double volumeExcessoRestante = (item.VolumeTitulante * ((ITitulanteTitulado)relatorioTitulacao).Titulante.Concentracao) / ucExcesso.Reagente.Concentracao;
+                double volumeExcessoRestante = titulacaoExcesso.CalcularVolumeTitulado(item.VolumeTitulante);
                 double volumeExcessoReagido = volumeExcesso - volumeExcessoRestante;
                 item.VolumeTitulado = volumeExcessoReagido;
                 volumes.Add(volumeExcessoReagido);
@@ -107,7 +111,7 @@ namespace Flask.TELAS.Analises
         {
             if (Relatorio != null)
             {
-                lblResultadoConcentracao.Text = $"Resultado: {Relatorio.Resultado.FormatarString()} mol/L";
+                lblResultadoConcentracao.Text = $"Resultado: {Relatorio.ConcentracaoTitulado.FormatarString()} mol/L";
                 flaskButton4.Visible = flaskButton3.Visible = true;
             }
             else

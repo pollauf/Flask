@@ -237,10 +237,18 @@ namespace Flask.TELAS.Analises
                     return;
             }
 
-            double media = Math.Round(selecionados.Average(), 5); ;
-            lblResultado.Text = $"Resultado: {media.FormatarString()} mol/L";
+            double media = Math.Round(selecionados.Average(), 5); ;            
 
-            Relatorio = new RelatorioTitulacao(TipoAnalise, UcTitulante.Reagente, UcTitulado.Reagente, resultadosSelecionados, media);
+            if (TipoAnalise != TipoAnalise.Retrotitulacao)
+            {
+                Relatorio = new RelatorioTitulacao(TipoAnalise, UcTitulante.Reagente, UcTitulado.Reagente, resultadosSelecionados, media);
+                lblResultado.Text = $"Resultado: {media.FormatarString()} mol/L";
+            }
+            else
+            {
+                Relatorio = new RelatorioTitulacao(TipoAnalise, UcTitulante.Reagente, UcTitulado.Reagente, resultadosSelecionados, UcTitulado.Reagente.Concentracao);
+                lblResultado.Text = $"Resultado: {media.FormatarString()} mL";
+            }
         }
 
         private void TxtVolumeTitulante_KeyDown(object sender, KeyEventArgs e)

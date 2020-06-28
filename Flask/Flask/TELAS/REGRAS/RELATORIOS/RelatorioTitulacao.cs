@@ -15,14 +15,14 @@ namespace Flask
         public Reagente Titulante { get; set; }
         public Reagente Titulado { get; set; }
         public List<ResultadoTitulacao> Replicatas { get; set; }
-        public double Resultado { get; set; }
-        public RelatorioTitulacao(TipoAnalise tipoAnalise, Reagente titulante, Reagente titulado, List<ResultadoTitulacao> replicatas, double resultado)
+        public double ConcentracaoTitulado { get; set; }
+        public RelatorioTitulacao(TipoAnalise tipoAnalise, Reagente titulante, Reagente titulado, List<ResultadoTitulacao> replicatas, double concentracaoTitulado)
         {
             TipoAnalise = tipoAnalise;
             Titulante = titulante;
             Titulado = titulado;
             Replicatas = replicatas;
-            Resultado = resultado;
+            ConcentracaoTitulado = concentracaoTitulado;
         }
         public string GerarRelatorio()
         {
@@ -32,7 +32,7 @@ namespace Flask
                 relatorioDe = $"ANÁLISE DE {TipoAnalise.ObterDescricao().ToUpper()}";
 
             var relatorio =
-                $"{relatorioDe}\n\nResultado: {this.Resultado.FormatarString()} mol/L\n\n" +
+                $"{relatorioDe}\n\nResultado: {this.ConcentracaoTitulado.FormatarString()} mol/L\n\n" +
                 $"TITULANTE:\n{this.Titulante.ResumirInformacoes()}\n\n" +
                 $"TITULADO:\n{this.Titulado.ResumirInformacoes()}\n\n" +
                 $"REPLICATAS:\n@REPLICATAS";

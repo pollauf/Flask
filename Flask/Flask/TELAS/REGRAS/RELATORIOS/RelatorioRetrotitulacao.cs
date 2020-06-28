@@ -13,13 +13,13 @@ namespace Flask
         public IRelatorioTitulacao RelatorioTitulacaoExcesso { get; set; }
         public Reagente ReagenteExcesso { get; set; }
         public Reagente Analito { get; set; }
-        public double Resultado { get; set; }
+        public double ConcentracaoTitulado { get; set; }
         public RelatorioRetrotitulacao(IRelatorioTitulacao relatorioTitulacaoExcesso, Reagente reagenteExcesso, Reagente analito, double resultado)
         {
             RelatorioTitulacaoExcesso = relatorioTitulacaoExcesso;
             ReagenteExcesso = reagenteExcesso;
             Analito = analito;
-            Resultado = resultado;
+            ConcentracaoTitulado = resultado;
         }
         public string GerarRelatorio()
         {
@@ -27,11 +27,11 @@ namespace Flask
             var RelatorioReplicatas = (IReplicatas)RelatorioTitulacaoExcesso;
 
             var relatorio =
-                $"ANÁLISE DE RETROTITULAÇÃO\n\nResultado: {this.Resultado.FormatarString()} mol/L\n\n" +
+                $"ANÁLISE DE RETROTITULAÇÃO\n\nResultado: {this.ConcentracaoTitulado.FormatarString()} mol/L\n\n" +
                 $"EXCESSO:\n{this.ReagenteExcesso.ResumirInformacoes()}\n\n" +
                 $"ANALITO:\n{this.Analito.ResumirInformacoes()}\n\n" +
                 "______________________________________________________________\n" +
-                $"TITULAÇÃO DO EXCESSO\n\nResultado: {RelatorioTitulacaoExcesso.Resultado.FormatarString()} mol/L\n\n" +
+                $"TITULAÇÃO DO EXCESSO\n\nResultado: {RelatorioTitulacaoExcesso.ConcentracaoTitulado.FormatarString()} mol/L\n\n" +
                 $"TITULANTE:\n{RelatorioReagentesExcesso.Titulante.ResumirInformacoes()}\n\n" +
                 $"TITULADO:\n{RelatorioReagentesExcesso.Titulado.ResumirInformacoes()}\n\n" +
                 $"REPLICATAS:\n@REPLICATAS";

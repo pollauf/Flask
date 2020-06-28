@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Flask.TELAS.METODOS;
+using FlaskUI;
 
 namespace Flask
 {
     public partial class UcHeader : UserControl
     {
+        public bool NaoEhFilho { get; set; }
+
         private string titulo;
 
         public string Titulo
@@ -32,6 +35,12 @@ namespace Flask
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            if (NaoEhFilho)
+            {
+                Application.Exit();
+                return;
+            }                
+
             if (this.Parent == Tela.FormPrincipal.ucAbas.AbaSelecionada.Tela)
                 Tela.Fechar();
             else

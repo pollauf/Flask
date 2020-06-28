@@ -31,3 +31,5 @@ C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\obj\Debug\Flask.TELAS.Analises.F
 C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\obj\Debug\Flask.TELAS.CONTROLES.UcFichaReagente.resources
 C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\obj\Debug\Flask.TELAS.CONTROLES.UcReplicata.resources
 C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\obj\Debug\Flask.TELAS.Analises.FrmRetrotitulacao.resources
+C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\obj\Debug\Flask.FrmCarregando.resources
+C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\obj\Debug\Flask.FrmLogin.resources

@@ -74,6 +74,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmCarregando.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCarregando.Designer.cs">
+      <DependentUpon>FrmCarregando.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="INTERFACES\ITitulanteTitulado.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -158,8 +170,15 @@
     <Compile Include="TELAS\REGRAS\RELATORIOS\RelatorioRetrotitulacao.cs" />
     <Compile Include="INTERFACES\IAnalitoExcesso.cs" />
     <Compile Include="INTERFACES\ITitulacao.cs" />
+    <Compile Include="TELAS\REGRAS\TITULACAO\ExtTitulacao.cs" />
     <Compile Include="TELAS\REGRAS\TITULACAO\Retrotitulacao.cs" />
     <Compile Include="TELAS\REGRAS\TITULACAO\Titulacao.cs" />
+    <EmbeddedResource Include="FrmCarregando.resx">
+      <DependentUpon>FrmCarregando.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

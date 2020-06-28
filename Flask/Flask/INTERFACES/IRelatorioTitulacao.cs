@@ -10,7 +10,7 @@ namespace Flask
 {
     public interface IRelatorioTitulacao
     {
-        double Resultado { get; set; }
+        double ConcentracaoTitulado { get; set; }
         string GerarRelatorio();
     }
 }

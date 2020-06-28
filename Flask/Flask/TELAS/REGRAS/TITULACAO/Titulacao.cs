@@ -13,18 +13,15 @@ namespace Flask
         public Reagente Titulado { get; set; }
         public double CalcularConcentracao(double volumeDeTitulado, double volumeDeTitulante)
         {
-            double m1 = 0;
-            double m2 = Titulante.Concentracao;
+            double concentracaoTitulado = 0;
+            double concentracaoTitulante = Titulante.Concentracao;
 
-            var n1 = (int)Titulado.Classe;
-            var n2 = (int)Titulante.Classe;
+            var nTitulado = (int)Titulado.Classe;
+            var nTitulante = (int)Titulante.Classe;
 
-            var v1 = volumeDeTitulado;
-            var v2 = volumeDeTitulante;
+            concentracaoTitulado = (nTitulado * concentracaoTitulante * volumeDeTitulante) / (nTitulante * volumeDeTitulado);
 
-            m1 = (n1 * m2 * v2) / (n2 * v1);
-
-            return m1;
+            return concentracaoTitulado;
         }
     }
 }

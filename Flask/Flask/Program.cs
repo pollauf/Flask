@@ -1,4 +1,5 @@
 ﻿using FlaskMODEL;
+using FlaskMODEL.TABELAS;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -21,12 +22,7 @@ namespace Flask
 
             if (!File.Exists(@"C:\FLASK\DATA\BANCO.FDB"))
             {
-                Directory.CreateDirectory(@"C:\FLASK\DATA");
-                using (FlaskDatabase db = new FlaskDatabase())
-                {
-                    db.Reagente.Add(new Reagente { ID = 1, Nome = "teste" });
-                    db.SaveChanges();
-                }             
+                Directory.CreateDirectory(@"C:\FLASK\DATA");          
             }                
 
             Application.Run(new TELAS.FrmPrincipal());

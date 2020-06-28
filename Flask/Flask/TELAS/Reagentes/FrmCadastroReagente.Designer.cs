@@ -74,6 +74,8 @@
             this.btnLimpar = new FlaskUI.COMPONENTES.FlaskButton();
             this.btnExcluir = new FlaskUI.COMPONENTES.FlaskButton();
             this.ucHeader1 = new Flask.UcHeader();
+            this.flaskLabel13 = new FlaskUI.COMPONENTES.FlaskLabel();
+            this.txtFormula = new FlaskUI.COMPONENTES.FlaskTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -102,6 +104,8 @@
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
             this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPage1.Controls.Add(this.txtFormula);
+            this.tabPage1.Controls.Add(this.flaskLabel13);
             this.tabPage1.Controls.Add(this.flaskLabel12);
             this.tabPage1.Controls.Add(this.txtMassaMolar);
             this.tabPage1.Controls.Add(this.flaskLabel11);
@@ -131,7 +135,7 @@
             // 
             this.flaskLabel12.AutoSize = true;
             this.flaskLabel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.flaskLabel12.Location = new System.Drawing.Point(194, 143);
+            this.flaskLabel12.Location = new System.Drawing.Point(421, 84);
             this.flaskLabel12.Name = "flaskLabel12";
             this.flaskLabel12.Size = new System.Drawing.Size(42, 17);
             this.flaskLabel12.TabIndex = 17;
@@ -145,17 +149,17 @@
             this.txtMassaMolar.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.NumeroReal;
             this.txtMassaMolar.Erro = false;
             this.txtMassaMolar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtMassaMolar.Location = new System.Drawing.Point(107, 140);
+            this.txtMassaMolar.Location = new System.Drawing.Point(334, 81);
             this.txtMassaMolar.Name = "txtMassaMolar";
             this.txtMassaMolar.Size = new System.Drawing.Size(81, 23);
-            this.txtMassaMolar.TabIndex = 6;
+            this.txtMassaMolar.TabIndex = 3;
             this.txtMassaMolar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // flaskLabel11
             // 
             this.flaskLabel11.AutoSize = true;
             this.flaskLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.flaskLabel11.Location = new System.Drawing.Point(13, 143);
+            this.flaskLabel11.Location = new System.Drawing.Point(240, 84);
             this.flaskLabel11.Name = "flaskLabel11";
             this.flaskLabel11.Size = new System.Drawing.Size(88, 17);
             this.flaskLabel11.TabIndex = 15;
@@ -165,7 +169,7 @@
             // 
             this.lblMols.AutoSize = true;
             this.lblMols.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblMols.Location = new System.Drawing.Point(332, 114);
+            this.lblMols.Location = new System.Drawing.Point(332, 144);
             this.lblMols.Name = "lblMols";
             this.lblMols.Size = new System.Drawing.Size(42, 17);
             this.lblMols.TabIndex = 14;
@@ -179,10 +183,10 @@
             this.txtConcentracao.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.NumeroReal;
             this.txtConcentracao.Erro = false;
             this.txtConcentracao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtConcentracao.Location = new System.Drawing.Point(245, 111);
+            this.txtConcentracao.Location = new System.Drawing.Point(245, 141);
             this.txtConcentracao.Name = "txtConcentracao";
             this.txtConcentracao.Size = new System.Drawing.Size(81, 23);
-            this.txtConcentracao.TabIndex = 5;
+            this.txtConcentracao.TabIndex = 7;
             this.txtConcentracao.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtComboConcentracao
@@ -190,17 +194,17 @@
             this.txtComboConcentracao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtComboConcentracao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtComboConcentracao.FormattingEnabled = true;
-            this.txtComboConcentracao.Location = new System.Drawing.Point(107, 110);
+            this.txtComboConcentracao.Location = new System.Drawing.Point(107, 140);
             this.txtComboConcentracao.Name = "txtComboConcentracao";
             this.txtComboConcentracao.Size = new System.Drawing.Size(130, 24);
-            this.txtComboConcentracao.TabIndex = 4;
+            this.txtComboConcentracao.TabIndex = 6;
             this.txtComboConcentracao.SelectedIndexChanged += new System.EventHandler(this.ComboConcentracao_SelectedIndexChanged);
             // 
             // flaskLabel10
             // 
             this.flaskLabel10.AutoSize = true;
             this.flaskLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.flaskLabel10.Location = new System.Drawing.Point(5, 114);
+            this.flaskLabel10.Location = new System.Drawing.Point(5, 144);
             this.flaskLabel10.Name = "flaskLabel10";
             this.flaskLabel10.Size = new System.Drawing.Size(96, 17);
             this.flaskLabel10.TabIndex = 11;
@@ -210,7 +214,7 @@
             // 
             this.flaskLabel5.AutoSize = true;
             this.flaskLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.flaskLabel5.Location = new System.Drawing.Point(242, 85);
+            this.flaskLabel5.Location = new System.Drawing.Point(243, 114);
             this.flaskLabel5.Name = "flaskLabel5";
             this.flaskLabel5.Size = new System.Drawing.Size(44, 17);
             this.flaskLabel5.TabIndex = 10;
@@ -222,17 +226,17 @@
             this.txtForca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtForca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtForca.FormattingEnabled = true;
-            this.txtForca.Location = new System.Drawing.Point(292, 81);
+            this.txtForca.Location = new System.Drawing.Point(293, 110);
             this.txtForca.Name = "txtForca";
             this.txtForca.Size = new System.Drawing.Size(130, 24);
-            this.txtForca.TabIndex = 3;
+            this.txtForca.TabIndex = 5;
             this.txtForca.SelectedIndexChanged += new System.EventHandler(this.FlaskComboBox2_SelectedIndexChanged);
             // 
             // flaskLabel4
             // 
             this.flaskLabel4.AutoSize = true;
             this.flaskLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.flaskLabel4.Location = new System.Drawing.Point(64, 85);
+            this.flaskLabel4.Location = new System.Drawing.Point(65, 114);
             this.flaskLabel4.Name = "flaskLabel4";
             this.flaskLabel4.Size = new System.Drawing.Size(36, 17);
             this.flaskLabel4.TabIndex = 8;
@@ -243,16 +247,16 @@
             this.txtTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtTipo.FormattingEnabled = true;
-            this.txtTipo.Location = new System.Drawing.Point(106, 81);
+            this.txtTipo.Location = new System.Drawing.Point(107, 110);
             this.txtTipo.Name = "txtTipo";
             this.txtTipo.Size = new System.Drawing.Size(130, 24);
-            this.txtTipo.TabIndex = 2;
+            this.txtTipo.TabIndex = 4;
             // 
             // flaskLabel3
             // 
             this.flaskLabel3.AutoSize = true;
             this.flaskLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.flaskLabel3.Location = new System.Drawing.Point(30, 169);
+            this.flaskLabel3.Location = new System.Drawing.Point(30, 170);
             this.flaskLabel3.Name = "flaskLabel3";
             this.flaskLabel3.Size = new System.Drawing.Size(71, 17);
             this.flaskLabel3.TabIndex = 6;
@@ -266,12 +270,12 @@
             this.txtDescricao.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.Texto;
             this.txtDescricao.Erro = false;
             this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtDescricao.Location = new System.Drawing.Point(107, 169);
+            this.txtDescricao.Location = new System.Drawing.Point(107, 170);
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtDescricao.Size = new System.Drawing.Size(389, 87);
-            this.txtDescricao.TabIndex = 7;
+            this.txtDescricao.TabIndex = 8;
             this.txtDescricao.TextChanged += new System.EventHandler(this.flaskTextBox3_TextChanged);
             // 
             // flaskLabel2
@@ -603,6 +607,7 @@
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(115, 30);
             this.btnSalvar.TabIndex = 0;
+            this.btnSalvar.TabStop = false;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.FlaskButton1_Click);
@@ -622,6 +627,7 @@
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(115, 30);
             this.btnLimpar.TabIndex = 1;
+            this.btnLimpar.TabStop = false;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
             this.btnLimpar.Click += new System.EventHandler(this.Limpar);
@@ -641,6 +647,7 @@
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(115, 30);
             this.btnExcluir.TabIndex = 2;
+            this.btnExcluir.TabStop = false;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
@@ -653,9 +660,34 @@
             this.ucHeader1.MaximumSize = new System.Drawing.Size(0, 40);
             this.ucHeader1.MinimumSize = new System.Drawing.Size(400, 40);
             this.ucHeader1.Name = "ucHeader1";
+            this.ucHeader1.NaoEhFilho = false;
             this.ucHeader1.Size = new System.Drawing.Size(538, 40);
             this.ucHeader1.TabIndex = 0;
+            this.ucHeader1.TabStop = false;
             this.ucHeader1.Titulo = "Cadastro de Reagente";
+            // 
+            // flaskLabel13
+            // 
+            this.flaskLabel13.AutoSize = true;
+            this.flaskLabel13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.flaskLabel13.Location = new System.Drawing.Point(42, 84);
+            this.flaskLabel13.Name = "flaskLabel13";
+            this.flaskLabel13.Size = new System.Drawing.Size(59, 17);
+            this.flaskLabel13.TabIndex = 18;
+            this.flaskLabel13.Text = "Fórmula";
+            // 
+            // txtFormula
+            // 
+            this.txtFormula.Ativo = true;
+            this.txtFormula.BackColor = System.Drawing.Color.White;
+            this.txtFormula.CampoObrigatorio = false;
+            this.txtFormula.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.Texto;
+            this.txtFormula.Erro = false;
+            this.txtFormula.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtFormula.Location = new System.Drawing.Point(107, 81);
+            this.txtFormula.Name = "txtFormula";
+            this.txtFormula.Size = new System.Drawing.Size(129, 23);
+            this.txtFormula.TabIndex = 2;
             // 
             // FrmCadastroReagente
             // 
@@ -739,5 +771,7 @@
         private FlaskUI.COMPONENTES.FlaskLabel flaskLabel12;
         private FlaskUI.COMPONENTES.FlaskTextBox txtMassaMolar;
         private FlaskUI.COMPONENTES.FlaskLabel flaskLabel11;
+        private FlaskUI.COMPONENTES.FlaskTextBox txtFormula;
+        private FlaskUI.COMPONENTES.FlaskLabel flaskLabel13;
     }
 }

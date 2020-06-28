@@ -18,5 +18,6 @@ namespace FlaskMODEL
         }
         public DbSet<Reagente> Reagente { get; set; }
         public DbSet<Relatorio> Relatorio { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
     }
 }

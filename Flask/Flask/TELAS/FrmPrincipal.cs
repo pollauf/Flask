@@ -44,9 +44,6 @@ namespace Flask.TELAS
                         SetMenu("REAGENTES", new string[]
                         {
                             "CADASTRO",
-                            "CONSULTA",
-                            "ENTRADA/SAÍDA",
-                            "RASTREIO",
                         });
                         btnReagentes.BackColor = Color.FromArgb(90, 59, 137);
                         break;
@@ -57,14 +54,16 @@ namespace Flask.TELAS
                             "{sep}",
                             "ACIDIMETRIA",
                             "ALCALIMETRIA",
-                            "RETROTITULAÇÃO"
+                            "RETROTITULAÇÃO",
+                            "POTENCIOMETRIA",
+                            "CÁLCULO KI"
                         });
                         btnAnalises.BackColor = Color.FromArgb(90, 59, 137);
                         break;
                     case AbasMenu.Relatorios:
-                        SetMenu("RELATÓRIOS", new string[]
+                        SetMenu("REGISTROS", new string[]
                         {
-                            "CONSULTA",
+                            "CADASTRO",
                         });
                         btnRelatorios.BackColor = Color.FromArgb(90, 59, 137);
                         break;
@@ -89,6 +88,12 @@ namespace Flask.TELAS
         public FrmPrincipal()
         {
             InitializeComponent();
+
+            var frm = new FrmLogin();
+            frm.ShowDialog();
+
+            if (frm.Validado)
+                Application.Exit();
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
