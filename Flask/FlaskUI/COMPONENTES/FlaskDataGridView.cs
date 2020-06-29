@@ -17,7 +17,7 @@ namespace FlaskUI.COMPONENTES
         {
             InitializeComponent();
 
-            this.Dock = DockStyle.Fill;
+            //this.Dock = DockStyle.Fill;
             this.BackgroundColor = Color.White;
             this.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             this.EditMode = DataGridViewEditMode.EditProgrammatically;

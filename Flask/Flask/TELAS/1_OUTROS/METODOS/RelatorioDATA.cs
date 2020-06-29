@@ -1,4 +1,5 @@
-﻿using FlaskMODEL;
+﻿using Flask.TELAS.METODOS;
+using FlaskMODEL;
 using FlaskMODEL.TABELAS;
 using FlaskUI.CLASSES;
 using System;
@@ -13,7 +14,7 @@ namespace Flask
 {
     public static class RelatorioDATA
     {
-        public static bool Salvar(Relatorio model, Modo modo = Modo.Novo, bool abrirAposGerar = false)
+        public static bool Salvar(this Relatorio model, Modo modo = Modo.Novo, bool abrirAposGerar = false)
         {
 			try
 			{
@@ -23,6 +24,7 @@ namespace Flask
                     {
                         Relatorio oldestModel = db.Relatorio.OrderByDescending(x => x.ID).FirstOrDefault();     
                         model.ID = oldestModel == null ? 1 : oldestModel.ID + 1;
+                        model.Data = DateTime.Now;
 
                         db.Entry(model).State = EntityState.Added;
                         db.Relatorio.Add(model);
@@ -34,8 +36,11 @@ namespace Flask
                 }
 
                 var tipoAlteracao = modo == Modo.Novo ? "gerado" : "alterado";
-                MessageBox.Show($"Relatório Nº {model.ID.ToString("000000")} {tipoAlteracao} com sucesso.",
+                MessageBox.Show($"Registro Nº {model.ID.ToString("000000")} {tipoAlteracao} com sucesso.",
                     $"Relatório {tipoAlteracao}", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                if (abrirAposGerar)
+                    Tela.Abrir(new FrmRelatorio(model.ID), "CADASTRO REGISTRO");
 
                 return true;
 			}
@@ -46,7 +51,7 @@ namespace Flask
 			}
         }
 
-        public static bool Excluir(Relatorio model)
+        public static bool Excluir(this Relatorio model)
         {
             try
             {
@@ -54,6 +59,7 @@ namespace Flask
                 {
                     db.Entry(model).State = EntityState.Deleted;
                     db.SaveChanges();
+                    Tela.InformarExcluidoSucesso();
                 }
 
                 return true;

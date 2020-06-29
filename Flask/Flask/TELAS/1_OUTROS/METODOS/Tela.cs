@@ -125,6 +125,15 @@ namespace Flask.TELAS.METODOS
             return false;
         }
 
+        public static bool PerguntarDesejaAlterar(string mensagem = "Deseja alterar este registro?")
+        {
+            if (MessageBox.Show(mensagem, "Alterar Registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question) ==
+                DialogResult.Yes)
+                return true;
+
+            return false;
+        }
+
         public static void InformarErroFatal(Exception erro)
         {
             MessageBox.Show(erro.ToString(), "Erro Fatal", MessageBoxButtons.OK, MessageBoxIcon.Error);

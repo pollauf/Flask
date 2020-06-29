@@ -135,55 +135,40 @@ namespace Flask.TELAS.Reagentes
                 if (!ValidarInformacoes())
                     return;
 
-                using (FlaskDatabase db = new FlaskDatabase())
-                {
-                    model.Nome = txtNome.Text;
-                    model.Descricao = txtDescricao.Text;
-                    model.Tipo = (TipoReagente)txtTipo.SelectedIndex;
+                model.Nome = txtNome.Text;
+                model.Descricao = txtDescricao.Text;
+                model.Tipo = (TipoReagente)txtTipo.SelectedIndex;
 
-                    var classeSelecionada = ClasseReagente.Desconhecida;
-                    if (rbClasseDesconhecida.Checked)
-                        classeSelecionada = ClasseReagente.Desconhecida;
-                    else if (rbClasseMono.Checked)
-                        classeSelecionada = ClasseReagente.Mono;
-                    else if (rbClasseDi.Checked)
-                        classeSelecionada = ClasseReagente.Di;
-                    else if (rbClasseTri.Checked)
-                        classeSelecionada = ClasseReagente.Tri;
-                    else if (rbClasseTetra.Checked)
-                        classeSelecionada = ClasseReagente.Tetra;
+                var classeSelecionada = ClasseReagente.Desconhecida;
+                if (rbClasseDesconhecida.Checked)
+                    classeSelecionada = ClasseReagente.Desconhecida;
+                else if (rbClasseMono.Checked)
+                    classeSelecionada = ClasseReagente.Mono;
+                else if (rbClasseDi.Checked)
+                    classeSelecionada = ClasseReagente.Di;
+                else if (rbClasseTri.Checked)
+                    classeSelecionada = ClasseReagente.Tri;
+                else if (rbClasseTetra.Checked)
+                    classeSelecionada = ClasseReagente.Tetra;
 
-                    model.Classe = classeSelecionada;
-                    model.Forca = (ForcaReagente)txtForca.SelectedIndex;
-                    model.Concentracao = string.IsNullOrEmpty(txtConcentracao.Text) ? 0 : double.Parse(txtConcentracao.Text);
-                    model.MassaMolar = string.IsNullOrEmpty(txtMassaMolar.Text) ? 0 : double.Parse(txtMassaMolar.Text);
-                    model.Formula = txtFormula.Text;
+                model.Classe = classeSelecionada;
+                model.Forca = (ForcaReagente)txtForca.SelectedIndex;
+                model.Concentracao = string.IsNullOrEmpty(txtConcentracao.Text) ? 0 : double.Parse(txtConcentracao.Text);
+                model.MassaMolar = string.IsNullOrEmpty(txtMassaMolar.Text) ? 0 : double.Parse(txtMassaMolar.Text);
+                model.Formula = txtFormula.Text;
 
-                    model.KI1 = string.IsNullOrEmpty(txtK1.Text) ? 0 : double.Parse(txtK1.Text);
-                    model.KI2 = string.IsNullOrEmpty(txtK2.Text) ? 0 : double.Parse(txtK2.Text);
-                    model.KI3 = string.IsNullOrEmpty(txtK3.Text) ? 0 : double.Parse(txtK3.Text);
-                    model.KI4 = string.IsNullOrEmpty(txtK4.Text) ? 0 : double.Parse(txtK4.Text);
+                model.KI1 = string.IsNullOrEmpty(txtK1.Text) ? 0 : double.Parse(txtK1.Text);
+                model.KI2 = string.IsNullOrEmpty(txtK2.Text) ? 0 : double.Parse(txtK2.Text);
+                model.KI3 = string.IsNullOrEmpty(txtK3.Text) ? 0 : double.Parse(txtK3.Text);
+                model.KI4 = string.IsNullOrEmpty(txtK4.Text) ? 0 : double.Parse(txtK4.Text);
 
-                    if (Modo == Modo.Novo)
-                    {
-                        Reagente oldestModel = db.Reagente.OrderByDescending(x => x.ID).FirstOrDefault();
-                        model.ID = oldestModel == null ? 1 : oldestModel.ID + 1;
+                model.Salvar(Modo);
 
-                        db.Entry(model).State = EntityState.Added;
-                        db.Reagente.Add(model);
-                    }
-                    else if (Modo == Modo.Alteracao)
-                    {
-                        db.Entry(model).State = EntityState.Modified;
-                    }
+                txtID.Select();
 
-                    db.SaveChanges();
-                    Tela.InformarSalvoSucesso();
-                    txtID.Select();
+                Modo = Modo.Alteracao;
+                txtID.Text = model.ID.ToString("000000");
 
-                    Modo = Modo.Alteracao;
-                    txtID.Text = model.ID.ToString("000000");
-                }
             }
             catch (Exception ex)
             {
@@ -292,6 +277,7 @@ namespace Flask.TELAS.Reagentes
         private void Limpar(object sender, EventArgs e)
         {
             Modo = Modo.Novo;
+            model = new Reagente();
             this.LimparCampos();
 
             txtID.Ativo = true;
@@ -314,13 +300,8 @@ namespace Flask.TELAS.Reagentes
                 if (!Tela.PerguntarDesejaExcluir())
                     return;
 
-                using (FlaskDatabase db = new FlaskDatabase())
-                {
-                    db.Entry(model).State = EntityState.Deleted;
-                    db.SaveChanges();
-                }
+                model.Excluir();
 
-                Tela.InformarExcluidoSucesso();
                 Limpar(null, new EventArgs());
             }
             catch (Exception ex)

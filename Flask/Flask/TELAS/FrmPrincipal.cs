@@ -120,7 +120,7 @@ namespace Flask.TELAS
                 switch (janelaAbrir)
                 {
                     case "CADASTRO":
-                        Tela.Abrir(new FrmCadastroReagente(), janelaAbrir);
+                        Tela.Abrir(new FrmCadastroReagente(), janelaAbrir + " REAGENTE");
                         break;
                     default:
                         break;
@@ -139,13 +139,23 @@ namespace Flask.TELAS
                     case "RETROTITULAÇÃO":
                         Tela.Abrir(new FrmRetrotitulacao(), janelaAbrir);
                         break;
+                    case "POTENCIOMETRIA":
+                        Tela.Abrir(new FrmPotenciometrica(), janelaAbrir);
+                        break;
                     default:
                         break;
                 }
             }
-            else
+            else if (MenuAtual == AbasMenu.Relatorios)
             {
-                Tela.Abrir(new FrmTeste(), janelaAbrir);
+                switch (janelaAbrir)
+                {
+                    case "CADASTRO":
+                        Tela.Abrir(new FrmRelatorio(), janelaAbrir + " REGISTRO");
+                        break;
+                    default:
+                        break;
+                }
             }
 
             MenuAtual = AbasMenu.Oculto;

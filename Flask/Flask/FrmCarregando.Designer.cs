@@ -36,6 +36,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.AppStarting;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(31, 28);
             this.pictureBox1.Name = "pictureBox1";
@@ -47,6 +48,7 @@
             // flaskLabel1
             // 
             this.flaskLabel1.AutoSize = true;
+            this.flaskLabel1.Cursor = System.Windows.Forms.Cursors.AppStarting;
             this.flaskLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.flaskLabel1.Location = new System.Drawing.Point(165, 62);
             this.flaskLabel1.Name = "flaskLabel1";
@@ -61,6 +63,7 @@
             this.ClientSize = new System.Drawing.Size(340, 150);
             this.Controls.Add(this.flaskLabel1);
             this.Controls.Add(this.pictureBox1);
+            this.Cursor = System.Windows.Forms.Cursors.AppStarting;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCarregando";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

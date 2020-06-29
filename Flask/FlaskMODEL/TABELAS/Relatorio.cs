@@ -14,5 +14,6 @@ namespace FlaskMODEL.TABELAS
         public int ID { get; set; }
         public string Analise { get; set; }
         public string Texto { get; set; }
+        public DateTime Data { get; set; }
     }
 }

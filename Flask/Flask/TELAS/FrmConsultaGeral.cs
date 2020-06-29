@@ -41,10 +41,16 @@ namespace Flask.TELAS
         {
             var somaLarguras = 6;
             var somaAltura = 105 + flaskDataGridView1.Rows.Count * 22;
-            somaAltura = somaAltura > 600 ? 600 : somaAltura;
+            somaAltura = somaAltura > 450 ? 450 : somaAltura;
 
+            var colunas = new List<DataGridViewColumn>();
             foreach (DataGridViewColumn item in flaskDataGridView1.Columns)
+            {
+                colunas.Add(item);
                 somaLarguras += item.Width;
+            }
+
+            colunas.OrderByDescending(x => x.Width).FirstOrDefault().AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             this.Width = somaLarguras;
             this.Height = somaAltura;

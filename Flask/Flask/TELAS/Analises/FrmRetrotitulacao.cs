@@ -1,4 +1,6 @@
-﻿using FlaskMODEL;
+﻿using Flask.TELAS.METODOS;
+using Flask.TELAS.METODOS.EXTENSORES;
+using FlaskMODEL;
 using FlaskMODEL.CONSULTAS;
 using FlaskMODEL.TABELAS;
 using FlaskUI;
@@ -17,7 +19,23 @@ namespace Flask.TELAS.Analises
 {
     public partial class FrmRetrotitulacao : FlaskForm
     {
-        public IRelatorioTitulacao Relatorio { get; set; }
+        private IRelatorioTitulacao relatorio;
+
+        public IRelatorioTitulacao Relatorio
+        {
+            get { return relatorio; }
+            set
+            {
+                relatorio = value;
+
+                if (Relatorio == null)
+                {
+                    lblResultadoConcentracao.Text = lblResultadoExcesso.Text = "Resultado: ";
+                    flaskButton3.Visible = flaskButton4.Visible = false;
+                }
+            }
+        }
+
         public FrmRetrotitulacao()
         {
             InitializeComponent();
@@ -90,6 +108,7 @@ namespace Flask.TELAS.Analises
 
         private void UcExcesso_ReagenteChanged(object sender, EventArgs e)
         {
+            this.Relatorio = null;
             AtualizarFiltros();
         }
         private void AtualizarFiltros()
@@ -123,13 +142,38 @@ namespace Flask.TELAS.Analises
             if (Relatorio == null)
                 return;
 
-            RelatorioDATA.Salvar(new Relatorio
+            var relatorio = new Relatorio
             {
                 Analise = "Retrotitulação",
                 Texto = Relatorio.GerarRelatorio(),
-            });
+            };
+
+            relatorio.Salvar(Modo.Novo, true);
 
             flaskButton4.Visible = false;
+        }
+
+        private void FlaskButton3_Click(object sender, EventArgs e)
+        {
+            if (!Tela.PerguntarDesejaAlterar("Deseja alterar a concentração do analito em seu registro?"))
+                return;
+
+            try
+            {
+                Reagente analito = ucAnalito.Reagente;
+                analito.Concentracao = Relatorio.ConcentracaoTitulado;
+
+                analito.Salvar(Modo.Alteracao);
+                this.LimparCampos();
+
+                ucAnalito.Reagente = analito;
+
+                flaskButton3.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                Tela.InformarErro(ex);
+            }
         }
     }
 }

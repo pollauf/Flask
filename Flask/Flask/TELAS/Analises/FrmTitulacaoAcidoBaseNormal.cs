@@ -13,6 +13,8 @@ using System.Windows.Forms;
 using Flask.TELAS.METODOS.EXTENSORES;
 using FlaskUI.CLASSES;
 using Flask.TELAS.CONTROLES;
+using Flask.TELAS.METODOS;
+using FlaskMODEL.TABELAS;
 
 namespace Flask.TELAS.Analises
 {
@@ -126,6 +128,8 @@ namespace Flask.TELAS.Analises
 
         private void UcTitulante_ReagenteChanged(object sender, EventArgs e)
         {
+            this.Relatorio = null;
+            FLP.Controls.Clear();
             if (!manterConsultaFixa)
             {
                 AtualizarFiltros();
@@ -263,7 +267,18 @@ namespace Flask.TELAS.Analises
         {
             if (Relatorio != null)
             {
-                MessageBox.Show(Relatorio.GerarRelatorio());
+                if (Relatorio == null)
+                    return;
+
+                var relatorio = new Relatorio
+                {
+                    Analise = "Titulação",
+                    Texto = Relatorio.GerarRelatorio(),
+                };
+
+                relatorio.Salvar(Modo.Novo, true);
+
+                flaskButton4.Visible = false;
             }
         }
 
@@ -271,13 +286,30 @@ namespace Flask.TELAS.Analises
         {
             if (Relatorio != null)
             {
-                if (TipoAnalise != TipoAnalise.Retrotitulacao)
-                {
-                    MessageBox.Show(Relatorio.GerarRelatorio());
-                }
-                else
+                if (TipoAnalise == TipoAnalise.Retrotitulacao)
                 {
                     Close();
+                    return;
+                }                    
+
+                if (!Tela.PerguntarDesejaAlterar("Deseja alterar a concentração do analito em seu registro?"))
+                    return;
+
+                try
+                {
+                    Reagente analito = UcTitulado.Reagente;
+                    analito.Concentracao = Relatorio.ConcentracaoTitulado;
+
+                    analito.Salvar(Modo.Alteracao);
+                    this.LimparCampos();
+
+                    UcTitulado.Reagente = analito;
+
+                    flaskButton3.Visible = false;
+                }
+                catch (Exception ex)
+                {
+                    Tela.InformarErro(ex);
                 }
             }
         }

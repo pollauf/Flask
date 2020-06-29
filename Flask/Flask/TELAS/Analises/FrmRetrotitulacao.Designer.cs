@@ -317,6 +317,7 @@
             this.flaskButton3.Text = "Salvar Concentração";
             this.flaskButton3.UseVisualStyleBackColor = false;
             this.flaskButton3.Visible = false;
+            this.flaskButton3.Click += new System.EventHandler(this.FlaskButton3_Click);
             // 
             // ucHeader1
             // 
@@ -326,6 +327,7 @@
             this.ucHeader1.MaximumSize = new System.Drawing.Size(0, 40);
             this.ucHeader1.MinimumSize = new System.Drawing.Size(330, 40);
             this.ucHeader1.Name = "ucHeader1";
+            this.ucHeader1.NaoEhFilho = false;
             this.ucHeader1.Size = new System.Drawing.Size(615, 40);
             this.ucHeader1.TabIndex = 1;
             this.ucHeader1.Titulo = "Retrotitulação";

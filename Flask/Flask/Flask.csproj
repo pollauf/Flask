@@ -63,6 +63,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -89,6 +90,14 @@
     <Compile Include="INTERFACES\ITitulanteTitulado.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TELAS\1_OUTROS\METODOS\ReagenteDATA.cs" />
+    <Compile Include="TELAS\1_OUTROS\REGRAS\TITULACAO\Potenciometrica.cs" />
+    <Compile Include="TELAS\Analises\FrmPotenciometrica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TELAS\Analises\FrmPotenciometrica.Designer.cs">
+      <DependentUpon>FrmPotenciometrica.cs</DependentUpon>
+    </Compile>
     <Compile Include="TELAS\Analises\FrmRetrotitulacao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,36 +110,42 @@
     <Compile Include="TELAS\Analises\FrmTitulacaoAcidoBaseNormal.Designer.cs">
       <DependentUpon>FrmTitulacaoAcidoBaseNormal.cs</DependentUpon>
     </Compile>
-    <Compile Include="TELAS\CONTROLES\Aba.cs" />
-    <Compile Include="TELAS\CONTROLES\UcAbas.cs">
+    <Compile Include="TELAS\1_OUTROS\CONTROLES\Aba.cs" />
+    <Compile Include="TELAS\1_OUTROS\CONTROLES\UcAbas.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TELAS\CONTROLES\UcAbas.Designer.cs">
+    <Compile Include="TELAS\1_OUTROS\CONTROLES\UcAbas.Designer.cs">
       <DependentUpon>UcAbas.cs</DependentUpon>
     </Compile>
-    <Compile Include="TELAS\CONTROLES\UcFichaReagente.cs">
+    <Compile Include="TELAS\1_OUTROS\CONTROLES\UcFichaReagente.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TELAS\CONTROLES\UcFichaReagente.Designer.cs">
+    <Compile Include="TELAS\1_OUTROS\CONTROLES\UcFichaReagente.Designer.cs">
       <DependentUpon>UcFichaReagente.cs</DependentUpon>
     </Compile>
-    <Compile Include="TELAS\CONTROLES\UcHeader.cs">
+    <Compile Include="TELAS\1_OUTROS\CONTROLES\UcHeader.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TELAS\CONTROLES\UcHeader.Designer.cs">
+    <Compile Include="TELAS\1_OUTROS\CONTROLES\UcHeader.Designer.cs">
       <DependentUpon>UcHeader.cs</DependentUpon>
     </Compile>
-    <Compile Include="TELAS\CONTROLES\UcMenuLateral.cs">
+    <Compile Include="TELAS\1_OUTROS\CONTROLES\UcMenuLateral.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TELAS\CONTROLES\UcMenuLateral.Designer.cs">
+    <Compile Include="TELAS\1_OUTROS\CONTROLES\UcMenuLateral.Designer.cs">
       <DependentUpon>UcMenuLateral.cs</DependentUpon>
     </Compile>
-    <Compile Include="TELAS\CONTROLES\UcReplicata.cs">
+    <Compile Include="TELAS\1_OUTROS\CONTROLES\UcReplicata.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TELAS\CONTROLES\UcReplicata.Designer.cs">
+    <Compile Include="TELAS\1_OUTROS\CONTROLES\UcReplicata.Designer.cs">
       <DependentUpon>UcReplicata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TELAS\1_OUTROS\CONTROLES\UcRTF.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TELAS\1_OUTROS\CONTROLES\UcRTF.Designer.cs">
+      <DependentUpon>UcRTF.cs</DependentUpon>
     </Compile>
     <Compile Include="TELAS\FrmConsultaGeral.cs">
       <SubType>Form</SubType>
@@ -150,10 +165,10 @@
     <Compile Include="TELAS\FrmTeste.designer.cs">
       <DependentUpon>FrmTeste.cs</DependentUpon>
     </Compile>
-    <Compile Include="TELAS\METODOS\EXTENSORES\ExtForm.cs" />
-    <Compile Include="TELAS\METODOS\EXTENSORES\ExtReagente.cs" />
-    <Compile Include="TELAS\METODOS\RelatorioDATA.cs" />
-    <Compile Include="TELAS\METODOS\Tela.cs" />
+    <Compile Include="TELAS\1_OUTROS\METODOS\EXTENSORES\ExtForm.cs" />
+    <Compile Include="TELAS\1_OUTROS\METODOS\EXTENSORES\ExtReagente.cs" />
+    <Compile Include="TELAS\1_OUTROS\METODOS\RelatorioDATA.cs" />
+    <Compile Include="TELAS\1_OUTROS\METODOS\Tela.cs" />
     <Compile Include="TELAS\Reagentes\FrmCadastroReagente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,17 +177,23 @@
     </Compile>
     <Compile Include="INTERFACES\IRelatorioTitulacao.cs" />
     <Compile Include="INTERFACES\IReplicatas.cs" />
-    <Compile Include="TELAS\REGRAS\FiltroReagente.cs" />
-    <Compile Include="TELAS\REGRAS\RELATORIOS\Complementares\ExtResultadoTitulacao.cs" />
-    <Compile Include="TELAS\REGRAS\RELATORIOS\Complementares\ReagentesTitulacao.cs" />
-    <Compile Include="TELAS\REGRAS\RELATORIOS\RelatorioTitulacao.cs" />
-    <Compile Include="TELAS\REGRAS\RELATORIOS\Complementares\ResultadoTitulacao.cs" />
-    <Compile Include="TELAS\REGRAS\RELATORIOS\RelatorioRetrotitulacao.cs" />
+    <Compile Include="TELAS\1_OUTROS\REGRAS\FiltroReagente.cs" />
+    <Compile Include="TELAS\1_OUTROS\REGRAS\RELATORIOS\Complementares\ExtResultadoTitulacao.cs" />
+    <Compile Include="TELAS\1_OUTROS\REGRAS\RELATORIOS\Complementares\ReagentesTitulacao.cs" />
+    <Compile Include="TELAS\1_OUTROS\REGRAS\RELATORIOS\RelatorioTitulacao.cs" />
+    <Compile Include="TELAS\1_OUTROS\REGRAS\RELATORIOS\Complementares\ResultadoTitulacao.cs" />
+    <Compile Include="TELAS\1_OUTROS\REGRAS\RELATORIOS\RelatorioRetrotitulacao.cs" />
     <Compile Include="INTERFACES\IAnalitoExcesso.cs" />
     <Compile Include="INTERFACES\ITitulacao.cs" />
-    <Compile Include="TELAS\REGRAS\TITULACAO\ExtTitulacao.cs" />
-    <Compile Include="TELAS\REGRAS\TITULACAO\Retrotitulacao.cs" />
-    <Compile Include="TELAS\REGRAS\TITULACAO\Titulacao.cs" />
+    <Compile Include="TELAS\1_OUTROS\REGRAS\TITULACAO\ExtTitulacao.cs" />
+    <Compile Include="TELAS\1_OUTROS\REGRAS\TITULACAO\Retrotitulacao.cs" />
+    <Compile Include="TELAS\1_OUTROS\REGRAS\TITULACAO\Titulacao.cs" />
+    <Compile Include="TELAS\Relatorios\FrmRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TELAS\Relatorios\FrmRelatorio.Designer.cs">
+      <DependentUpon>FrmRelatorio.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmCarregando.resx">
       <DependentUpon>FrmCarregando.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,26 +210,32 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TELAS\Analises\FrmPotenciometrica.resx">
+      <DependentUpon>FrmPotenciometrica.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TELAS\Analises\FrmRetrotitulacao.resx">
       <DependentUpon>FrmRetrotitulacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TELAS\Analises\FrmTitulacaoAcidoBaseNormal.resx">
       <DependentUpon>FrmTitulacaoAcidoBaseNormal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TELAS\CONTROLES\UcAbas.resx">
+    <EmbeddedResource Include="TELAS\1_OUTROS\CONTROLES\UcAbas.resx">
       <DependentUpon>UcAbas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TELAS\CONTROLES\UcFichaReagente.resx">
+    <EmbeddedResource Include="TELAS\1_OUTROS\CONTROLES\UcFichaReagente.resx">
       <DependentUpon>UcFichaReagente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TELAS\CONTROLES\UcHeader.resx">
+    <EmbeddedResource Include="TELAS\1_OUTROS\CONTROLES\UcHeader.resx">
       <DependentUpon>UcHeader.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TELAS\CONTROLES\UcMenuLateral.resx">
+    <EmbeddedResource Include="TELAS\1_OUTROS\CONTROLES\UcMenuLateral.resx">
       <DependentUpon>UcMenuLateral.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TELAS\CONTROLES\UcReplicata.resx">
+    <EmbeddedResource Include="TELAS\1_OUTROS\CONTROLES\UcReplicata.resx">
       <DependentUpon>UcReplicata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TELAS\1_OUTROS\CONTROLES\UcRTF.resx">
+      <DependentUpon>UcRTF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TELAS\FrmConsultaGeral.resx">
       <DependentUpon>FrmConsultaGeral.cs</DependentUpon>
@@ -221,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TELAS\Reagentes\FrmCadastroReagente.resx">
       <DependentUpon>FrmCadastroReagente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TELAS\Relatorios\FrmRelatorio.resx">
+      <DependentUpon>FrmRelatorio.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

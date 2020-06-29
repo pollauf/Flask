@@ -42,7 +42,7 @@ namespace Flask
             {
                 replicatas +=
                     $"Volume de Titulante: {item.VolumeTitulante.FormatarString()} mL\n" +
-                    $"Volume de Excesso: {item.VolumeTitulado.FormatarString()} mL\n\n";                     
+                    $"Volume de Excesso: {item.VolumeTitulado.FormatarString()} mL reagiram com o Analito\n\n";                     
             }
 
             relatorio = relatorio.Replace("@REPLICATAS", replicatas);

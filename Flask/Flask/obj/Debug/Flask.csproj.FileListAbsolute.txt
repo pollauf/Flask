@@ -33,3 +33,6 @@ C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\obj\Debug\Flask.TELAS.CONTROLES.
 C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\obj\Debug\Flask.TELAS.Analises.FrmRetrotitulacao.resources
 C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\obj\Debug\Flask.FrmCarregando.resources
 C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\obj\Debug\Flask.FrmLogin.resources
+C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\obj\Debug\Flask.TELAS.CONTROLES.UcRTF.resources
+C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\obj\Debug\Flask.FrmRelatorio.resources
+C:\Users\mathe\Desktop\FLASK_dotNET\Flask\Flask\obj\Debug\Flask.TELAS.Analises.FrmPotenciometrica.resources
