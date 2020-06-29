@@ -1,4 +1,5 @@
 ﻿using FlaskUI.CLASSES;
+using FlaskUI.COMPONENTES;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,13 +31,45 @@ namespace FlaskUI
 
         protected override void OnLoad(EventArgs e)
         {
+            SelectFirstControl();
             base.OnLoad(e);
         }
 
-       /* public void SendWndProcCommand(ref Message m)
+        protected void SelectFirstControl()
         {
-            this.DefWndProc(ref m);
-        }*/
+            var flaskTxts = new List<FlaskTextBox>();
+            foreach (Control item in GetAllControls(this))
+            {
+                if (item is FlaskTextBox)
+                {
+                    flaskTxts.Add((FlaskTextBox)item);
+                }
+            }
+
+            if (flaskTxts.Count > 0)
+                flaskTxts.OrderBy(x => x.TabIndex).FirstOrDefault().Select();
+        }
+
+        protected List<Control> GetAllControls(Control container, List<Control> list)
+        {
+            foreach (Control c in container.Controls)
+            {
+                if (c is TextBox) list.Add(c);
+                if (c.Controls.Count > 0)
+                    list = GetAllControls(c, list);
+            }
+
+            return list;
+        }
+        protected List<Control> GetAllControls(Control container)
+        {
+            return GetAllControls(container, new List<Control>());
+        }
+
+        /* public void SendWndProcCommand(ref Message m)
+         {
+             this.DefWndProc(ref m);
+         }*/
 
         protected override void WndProc(ref Message m)
         {

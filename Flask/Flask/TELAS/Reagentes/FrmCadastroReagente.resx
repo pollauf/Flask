@@ -374,4 +374,10 @@
         qqqqte0GVVVVtbbdoKqqqta2G1RVVdXadoOqqqpa2ZX/9f8A/ociB/ky0AcAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="clnVolume.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="clnH.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

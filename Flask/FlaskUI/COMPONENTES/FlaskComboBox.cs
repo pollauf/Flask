@@ -12,6 +12,7 @@ namespace FlaskUI.COMPONENTES
 {
     public partial class FlaskComboBox : ComboBox
     {
+        private bool aberta = false;
         public FlaskComboBox()
         {
             InitializeComponent();
@@ -21,6 +22,28 @@ namespace FlaskUI.COMPONENTES
         protected override void OnSelectedValueChanged(EventArgs e)
         {
             base.OnSelectedValueChanged(e);
+        }
+        protected override void OnKeyPress(KeyPressEventArgs e)
+        {
+            base.OnKeyPress(e);
+
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                if (!aberta)
+                {
+                    this.DroppedDown = true;
+                    aberta = true;
+                }
+                else SendKeys.Send("{TAB}");
+
+                e.Handled = true;
+            }
+
+        }
+        protected override void OnLeave(EventArgs e)
+        {
+            base.OnLeave(e);
+            aberta = false;
         }
     }
 }

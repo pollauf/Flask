@@ -51,8 +51,14 @@ namespace Flask
             {
                 using (FlaskDatabase db = new FlaskDatabase())
                 {
+                    var potenciometria = db.Potenciometria.Where(x => x.TituladoID == model.ID).FirstOrDefault();
+
                     db.Entry(model).State = EntityState.Deleted;
                     db.SaveChanges();
+
+                    if (potenciometria != null)
+                        potenciometria.Excluir();
+
                     Tela.InformarExcluidoSucesso();
                 }
 

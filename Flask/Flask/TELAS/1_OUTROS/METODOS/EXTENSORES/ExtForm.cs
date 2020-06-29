@@ -1,4 +1,5 @@
 ﻿using Flask.TELAS.CONTROLES;
+using FlaskUI;
 using FlaskUI.COMPONENTES;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace Flask.TELAS.METODOS.EXTENSORES
 {
     public static class ExtForm
     {
-        public static bool VerificarCamposObrigatorios(this Form form)
+        public static bool VerificarCamposObrigatorios(this FlaskForm form)
         {
             List<Control> controls = GetAllControls(form);
 
@@ -33,7 +34,7 @@ namespace Flask.TELAS.METODOS.EXTENSORES
             return true;
         }
 
-        public static void LimparCampos(this Form form)
+        public static void LimparCampos(this FlaskForm form)
         {
             List<Control> controls = GetAllControls(form);
 
@@ -45,7 +46,24 @@ namespace Flask.TELAS.METODOS.EXTENSORES
                     ((FlaskTextBox)control).Erro = false;
                 }
             }
+
+            form.SelectFirstControl();
         }
+        private static void SelectFirstControl(this FlaskForm form)
+        {
+            var flaskTxts = new List<FlaskTextBox>();
+            foreach (Control item in GetAllControls(form))
+            {
+                if (item is FlaskTextBox)
+                {
+                    flaskTxts.Add((FlaskTextBox)item);
+                }
+            }
+
+            if (flaskTxts.Count > 0)
+                flaskTxts.OrderBy(x => x.TabIndex).FirstOrDefault().Select();
+        }
+
         private static List<Control> GetAllControls(Control container, List<Control> list)
         {
             foreach (Control c in container.Controls)

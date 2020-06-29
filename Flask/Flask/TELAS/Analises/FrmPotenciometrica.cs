@@ -11,6 +11,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -33,9 +34,18 @@ namespace Flask.TELAS.Analises
             InitializeComponent();
             Titulacao = new List<Potenciometrica>();
         }
+        public FrmPotenciometrica(Reagente reagente)
+        {
+            InitializeComponent();
+            Titulacao = new List<Potenciometrica>();
+            UcTitulado.Reagente = reagente;
+        }
 
         private void BtnAdicionar_Click(object sender, EventArgs e)
         {
+            if (!btnAdicionar.Visible)
+                return;
+
             double volume = 0;
             double pH = 0;
 
@@ -60,10 +70,15 @@ namespace Flask.TELAS.Analises
             chart1.Series[0].Points.AddXY(volumeAdicionado, pH);
         }
 
-        private void TxtpH_KeyDown(object sender, KeyEventArgs e)
+        private async void TxtpH_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
+            {
                 BtnAdicionar_Click(null, new EventArgs());
+            }
+
+            await Task.Run(() => Thread.Sleep(100));
+            txtpH.Select();
         }
 
         private void FrmPotenciometrica_Load(object sender, EventArgs e)
@@ -85,13 +100,22 @@ namespace Flask.TELAS.Analises
 
         private void TxtVolume_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-                txtpH.Select();
+            /*if (e.KeyCode == Keys.Enter)
+                txtpH.Select();*/
         }
 
         private void UcTitulante_ReagenteChanged(object sender, EventArgs e)
         {
             AtualizarFiltros();
+
+            if (UcTitulado.Reagente != null && UcTitulante.Reagente != null)
+            {
+                txtVolume.Ativo = txtpH.Ativo = btnAdicionar.Visible = true;
+            }
+            else
+            {
+                txtVolume.Ativo = txtpH.Ativo = btnAdicionar.Visible = false;
+            }
         }
         private void LimparTudo()
         {
@@ -130,7 +154,7 @@ namespace Flask.TELAS.Analises
             var model = new Potenciometria();
 
             string grafico = Titulacao.GerarString();
-            string titulante = UcTitulante.Reagente.ObterDescricao();
+            string titulante = UcTitulante.Reagente.ResumirInformacoes();
             int titulado = UcTitulado.Reagente.ID;
 
             model.TituladoID = titulado;

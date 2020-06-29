@@ -29,8 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastroReagente));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txtFormula = new FlaskUI.COMPONENTES.FlaskTextBox();
+            this.flaskLabel13 = new FlaskUI.COMPONENTES.FlaskLabel();
             this.flaskLabel12 = new FlaskUI.COMPONENTES.FlaskLabel();
             this.txtMassaMolar = new FlaskUI.COMPONENTES.FlaskTextBox();
             this.flaskLabel11 = new FlaskUI.COMPONENTES.FlaskLabel();
@@ -70,12 +78,19 @@
             this.rbClasseDi = new System.Windows.Forms.RadioButton();
             this.rbClasseMono = new System.Windows.Forms.RadioButton();
             this.rbClasseDesconhecida = new System.Windows.Forms.RadioButton();
+            this.tabPotenciometria = new System.Windows.Forms.TabPage();
+            this.pnlOcultarGrafico = new FlaskUI.COMPONENTES.FlaskGroupBox();
+            this.btnTitulacaoPotenciometrica = new FlaskUI.COMPONENTES.FlaskButton();
+            this.btnExcluirGraficoPotenciometria = new FlaskUI.COMPONENTES.FlaskButton();
+            this.graficoPotenciometria = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.dgvPotenciometria = new FlaskUI.COMPONENTES.FlaskDataGridView();
+            this.clnVolume = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSalvar = new FlaskUI.COMPONENTES.FlaskButton();
             this.btnLimpar = new FlaskUI.COMPONENTES.FlaskButton();
             this.btnExcluir = new FlaskUI.COMPONENTES.FlaskButton();
             this.ucHeader1 = new Flask.UcHeader();
-            this.flaskLabel13 = new FlaskUI.COMPONENTES.FlaskLabel();
-            this.txtFormula = new FlaskUI.COMPONENTES.FlaskTextBox();
+            this.rtbTitultanteGrafico = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -86,12 +101,17 @@
             this.pnlK4.SuspendLayout();
             this.pnlK3.SuspendLayout();
             this.flaskGroupBox1.SuspendLayout();
+            this.tabPotenciometria.SuspendLayout();
+            this.pnlOcultarGrafico.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.graficoPotenciometria)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPotenciometria)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPotenciometria);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(1, 41);
@@ -130,6 +150,29 @@
             this.tabPage1.Size = new System.Drawing.Size(530, 280);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Capa";
+            // 
+            // txtFormula
+            // 
+            this.txtFormula.Ativo = true;
+            this.txtFormula.BackColor = System.Drawing.Color.White;
+            this.txtFormula.CampoObrigatorio = false;
+            this.txtFormula.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.Texto;
+            this.txtFormula.Erro = false;
+            this.txtFormula.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtFormula.Location = new System.Drawing.Point(107, 81);
+            this.txtFormula.Name = "txtFormula";
+            this.txtFormula.Size = new System.Drawing.Size(129, 23);
+            this.txtFormula.TabIndex = 2;
+            // 
+            // flaskLabel13
+            // 
+            this.flaskLabel13.AutoSize = true;
+            this.flaskLabel13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.flaskLabel13.Location = new System.Drawing.Point(42, 84);
+            this.flaskLabel13.Name = "flaskLabel13";
+            this.flaskLabel13.Size = new System.Drawing.Size(59, 17);
+            this.flaskLabel13.TabIndex = 18;
+            this.flaskLabel13.Text = "Fórmula";
             // 
             // flaskLabel12
             // 
@@ -592,6 +635,144 @@
             this.rbClasseDesconhecida.UseVisualStyleBackColor = true;
             this.rbClasseDesconhecida.CheckedChanged += new System.EventHandler(this.RbClasseMono_CheckedChanged);
             // 
+            // tabPotenciometria
+            // 
+            this.tabPotenciometria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
+            this.tabPotenciometria.Controls.Add(this.pnlOcultarGrafico);
+            this.tabPotenciometria.Controls.Add(this.rtbTitultanteGrafico);
+            this.tabPotenciometria.Controls.Add(this.btnExcluirGraficoPotenciometria);
+            this.tabPotenciometria.Controls.Add(this.graficoPotenciometria);
+            this.tabPotenciometria.Controls.Add(this.dgvPotenciometria);
+            this.tabPotenciometria.Location = new System.Drawing.Point(4, 25);
+            this.tabPotenciometria.Name = "tabPotenciometria";
+            this.tabPotenciometria.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPotenciometria.Size = new System.Drawing.Size(530, 280);
+            this.tabPotenciometria.TabIndex = 2;
+            this.tabPotenciometria.Text = "Potenciometria";
+            // 
+            // pnlOcultarGrafico
+            // 
+            this.pnlOcultarGrafico.Controls.Add(this.btnTitulacaoPotenciometrica);
+            this.pnlOcultarGrafico.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.pnlOcultarGrafico.Location = new System.Drawing.Point(6, 6);
+            this.pnlOcultarGrafico.Name = "pnlOcultarGrafico";
+            this.pnlOcultarGrafico.Padding = new System.Windows.Forms.Padding(3);
+            this.pnlOcultarGrafico.Size = new System.Drawing.Size(518, 269);
+            this.pnlOcultarGrafico.TabIndex = 13;
+            this.pnlOcultarGrafico.Titulo = "";
+            // 
+            // btnTitulacaoPotenciometrica
+            // 
+            this.btnTitulacaoPotenciometrica.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTitulacaoPotenciometrica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(54)))), ((int)(((byte)(76)))));
+            this.btnTitulacaoPotenciometrica.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTitulacaoPotenciometrica.FlatAppearance.BorderSize = 0;
+            this.btnTitulacaoPotenciometrica.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(60)))), ((int)(((byte)(195)))));
+            this.btnTitulacaoPotenciometrica.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(59)))), ((int)(((byte)(137)))));
+            this.btnTitulacaoPotenciometrica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTitulacaoPotenciometrica.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnTitulacaoPotenciometrica.ForeColor = System.Drawing.Color.White;
+            this.btnTitulacaoPotenciometrica.Location = new System.Drawing.Point(169, 119);
+            this.btnTitulacaoPotenciometrica.Name = "btnTitulacaoPotenciometrica";
+            this.btnTitulacaoPotenciometrica.Size = new System.Drawing.Size(180, 30);
+            this.btnTitulacaoPotenciometrica.TabIndex = 1;
+            this.btnTitulacaoPotenciometrica.TabStop = false;
+            this.btnTitulacaoPotenciometrica.Text = "Titulação Potenciométrica";
+            this.btnTitulacaoPotenciometrica.UseVisualStyleBackColor = false;
+            this.btnTitulacaoPotenciometrica.Click += new System.EventHandler(this.BtnTitulacaoPotenciometrica_Click);
+            // 
+            // btnExcluirGraficoPotenciometria
+            // 
+            this.btnExcluirGraficoPotenciometria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnExcluirGraficoPotenciometria.BackColor = System.Drawing.Color.Red;
+            this.btnExcluirGraficoPotenciometria.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExcluirGraficoPotenciometria.FlatAppearance.BorderSize = 0;
+            this.btnExcluirGraficoPotenciometria.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Tomato;
+            this.btnExcluirGraficoPotenciometria.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OrangeRed;
+            this.btnExcluirGraficoPotenciometria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluirGraficoPotenciometria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnExcluirGraficoPotenciometria.ForeColor = System.Drawing.Color.White;
+            this.btnExcluirGraficoPotenciometria.Location = new System.Drawing.Point(409, 226);
+            this.btnExcluirGraficoPotenciometria.Name = "btnExcluirGraficoPotenciometria";
+            this.btnExcluirGraficoPotenciometria.Size = new System.Drawing.Size(115, 30);
+            this.btnExcluirGraficoPotenciometria.TabIndex = 11;
+            this.btnExcluirGraficoPotenciometria.TabStop = false;
+            this.btnExcluirGraficoPotenciometria.Text = "Excluir Gráfico";
+            this.btnExcluirGraficoPotenciometria.UseVisualStyleBackColor = false;
+            this.btnExcluirGraficoPotenciometria.Click += new System.EventHandler(this.BtnExcluirGraficoPotenciometria_Click);
+            // 
+            // graficoPotenciometria
+            // 
+            this.graficoPotenciometria.BorderlineColor = System.Drawing.Color.Black;
+            this.graficoPotenciometria.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            chartArea1.Name = "ChartArea1";
+            this.graficoPotenciometria.ChartAreas.Add(chartArea1);
+            this.graficoPotenciometria.Location = new System.Drawing.Point(199, 6);
+            this.graficoPotenciometria.Name = "graficoPotenciometria";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Name = "Series1";
+            this.graficoPotenciometria.Series.Add(series1);
+            this.graficoPotenciometria.Size = new System.Drawing.Size(325, 211);
+            this.graficoPotenciometria.TabIndex = 9;
+            this.graficoPotenciometria.Text = "chart1";
+            // 
+            // dgvPotenciometria
+            // 
+            this.dgvPotenciometria.AllowUserToAddRows = false;
+            this.dgvPotenciometria.AllowUserToDeleteRows = false;
+            this.dgvPotenciometria.AllowUserToResizeColumns = false;
+            this.dgvPotenciometria.AllowUserToResizeRows = false;
+            this.dgvPotenciometria.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPotenciometria.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(54)))), ((int)(((byte)(76)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(54)))), ((int)(((byte)(76)))));
+            this.dgvPotenciometria.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPotenciometria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPotenciometria.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clnVolume,
+            this.clnH});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(59)))), ((int)(((byte)(137)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPotenciometria.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvPotenciometria.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvPotenciometria.EnableHeadersVisualStyles = false;
+            this.dgvPotenciometria.Location = new System.Drawing.Point(6, 6);
+            this.dgvPotenciometria.MultiSelect = false;
+            this.dgvPotenciometria.Name = "dgvPotenciometria";
+            this.dgvPotenciometria.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvPotenciometria.RowHeadersVisible = false;
+            this.dgvPotenciometria.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvPotenciometria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPotenciometria.Size = new System.Drawing.Size(187, 211);
+            this.dgvPotenciometria.TabIndex = 2;
+            // 
+            // clnVolume
+            // 
+            this.clnVolume.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.clnVolume.DefaultCellStyle = dataGridViewCellStyle2;
+            this.clnVolume.FillWeight = 116.7513F;
+            this.clnVolume.HeaderText = "Volume (mL)";
+            this.clnVolume.Name = "clnVolume";
+            // 
+            // clnH
+            // 
+            this.clnH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.clnH.DefaultCellStyle = dataGridViewCellStyle3;
+            this.clnH.FillWeight = 83.24873F;
+            this.clnH.HeaderText = "pH";
+            this.clnH.Name = "clnH";
+            // 
             // btnSalvar
             // 
             this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -666,28 +847,15 @@
             this.ucHeader1.TabStop = false;
             this.ucHeader1.Titulo = "Cadastro de Reagente";
             // 
-            // flaskLabel13
+            // rtbTitultanteGrafico
             // 
-            this.flaskLabel13.AutoSize = true;
-            this.flaskLabel13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.flaskLabel13.Location = new System.Drawing.Point(42, 84);
-            this.flaskLabel13.Name = "flaskLabel13";
-            this.flaskLabel13.Size = new System.Drawing.Size(59, 17);
-            this.flaskLabel13.TabIndex = 18;
-            this.flaskLabel13.Text = "Fórmula";
-            // 
-            // txtFormula
-            // 
-            this.txtFormula.Ativo = true;
-            this.txtFormula.BackColor = System.Drawing.Color.White;
-            this.txtFormula.CampoObrigatorio = false;
-            this.txtFormula.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.Texto;
-            this.txtFormula.Erro = false;
-            this.txtFormula.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtFormula.Location = new System.Drawing.Point(107, 81);
-            this.txtFormula.Name = "txtFormula";
-            this.txtFormula.Size = new System.Drawing.Size(129, 23);
-            this.txtFormula.TabIndex = 2;
+            this.rtbTitultanteGrafico.Location = new System.Drawing.Point(6, 220);
+            this.rtbTitultanteGrafico.Name = "rtbTitultanteGrafico";
+            this.rtbTitultanteGrafico.ReadOnly = true;
+            this.rtbTitultanteGrafico.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.rtbTitultanteGrafico.Size = new System.Drawing.Size(289, 57);
+            this.rtbTitultanteGrafico.TabIndex = 15;
+            this.rtbTitultanteGrafico.Text = "";
             // 
             // FrmCadastroReagente
             // 
@@ -720,6 +888,11 @@
             this.pnlK3.PerformLayout();
             this.flaskGroupBox1.ResumeLayout(false);
             this.flaskGroupBox1.PerformLayout();
+            this.tabPotenciometria.ResumeLayout(false);
+            this.pnlOcultarGrafico.ResumeLayout(false);
+            this.pnlOcultarGrafico.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.graficoPotenciometria)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPotenciometria)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -773,5 +946,14 @@
         private FlaskUI.COMPONENTES.FlaskLabel flaskLabel11;
         private FlaskUI.COMPONENTES.FlaskTextBox txtFormula;
         private FlaskUI.COMPONENTES.FlaskLabel flaskLabel13;
+        private System.Windows.Forms.TabPage tabPotenciometria;
+        private FlaskUI.COMPONENTES.FlaskDataGridView dgvPotenciometria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clnVolume;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clnH;
+        private FlaskUI.COMPONENTES.FlaskButton btnExcluirGraficoPotenciometria;
+        private System.Windows.Forms.DataVisualization.Charting.Chart graficoPotenciometria;
+        private FlaskUI.COMPONENTES.FlaskGroupBox pnlOcultarGrafico;
+        private FlaskUI.COMPONENTES.FlaskButton btnTitulacaoPotenciometrica;
+        private System.Windows.Forms.RichTextBox rtbTitultanteGrafico;
     }
 }

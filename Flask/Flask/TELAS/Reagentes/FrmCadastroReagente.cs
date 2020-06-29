@@ -1,7 +1,9 @@
-﻿using Flask.TELAS.METODOS;
+﻿using Flask.TELAS.Analises;
+using Flask.TELAS.METODOS;
 using Flask.TELAS.METODOS.EXTENSORES;
 using FlaskMODEL;
 using FlaskMODEL.CONSULTAS;
+using FlaskMODEL.TABELAS;
 using FlaskUI;
 using FlaskUI.CLASSES;
 using System;
@@ -48,6 +50,7 @@ namespace Flask.TELAS.Reagentes
             txtForca.Carregar(Metodos.EnumToList<ForcaReagente>());
             txtComboConcentracao.Carregar(Metodos.EnumToList<Concentracao>());
             AtualizarControlesConstanteIonizacao();
+            //txtID.Select();
         }
 
         private void flaskGroupBox1_Paint(object sender, PaintEventArgs e)
@@ -217,6 +220,11 @@ namespace Flask.TELAS.Reagentes
         {
             try
             {
+                if (model.ID == id)
+                    return;
+
+                OcultarGrafico();
+
                 using (FlaskDatabase db = new FlaskDatabase())
                 {
                     var query = db.Reagente.Where(x => x.ID == id).FirstOrDefault();
@@ -263,6 +271,12 @@ namespace Flask.TELAS.Reagentes
                     txtK3.Text = model.KI3 == 0 ? string.Empty : model.KI3.FormatarString();
                     txtK4.Text = model.KI4 == 0 ? string.Empty : model.KI4.FormatarString();
 
+                    var potenciometria = db.Potenciometria.Where(x => x.TituladoID == model.ID).FirstOrDefault();
+                    if (potenciometria != null)
+                        CarregarGrafico(potenciometria);
+                    else
+                        OcultarGrafico();
+
                     Modo = Modo.Alteracao;
                     txtNome.Select();
                 }
@@ -285,9 +299,10 @@ namespace Flask.TELAS.Reagentes
             txtTipo.SelectedIndex = (int)TipoReagente.Acido;
             txtForca.SelectedIndex = (int)ForcaReagente.Desconhecida;
             rbClasseDesconhecida.Checked = true;
-            tabControl1.SelectedIndex = 0;
+            tabControl1.SelectTab(0);
 
             txtID.Select();
+            OcultarGrafico();
         }
 
         private void BtnExcluir_Click(object sender, EventArgs e)
@@ -308,6 +323,65 @@ namespace Flask.TELAS.Reagentes
             {
                 Tela.InformarErroFatal(ex);
             }
+        }
+
+        private void BtnExcluirGraficoPotenciometria_Click(object sender, EventArgs e)
+        {
+            var potenciometria = new FlaskDatabase().Potenciometria.Where(x => x.TituladoID == model.ID).FirstOrDefault();
+
+            if (potenciometria != null)
+            {
+                potenciometria.Excluir();
+                Tela.InformarExcluidoSucesso();
+                OcultarGrafico();
+            }
+        }
+
+        private void OcultarGrafico()
+        {
+            rtbTitultanteGrafico.Text = string.Empty;
+            dgvPotenciometria.Rows.Clear();
+            graficoPotenciometria.Series[0].Points.Clear();
+            pnlOcultarGrafico.Show();
+        }
+
+        private void MostrarGrafico()
+        {
+            pnlOcultarGrafico.Hide();
+        }
+
+        private void CarregarGrafico(Potenciometria potenciometria)
+        {
+            var lista = new List<Potenciometrica>();
+            lista = lista.GerarLista(potenciometria.Valores);
+
+            foreach (var item in lista)
+            {
+                dgvPotenciometria.Rows.Add(item.Volume.FormatarString(), item.pH.FormatarString());
+                graficoPotenciometria.Series[0].Points.AddXY(item.Volume, item.pH);
+            }
+
+            rtbTitultanteGrafico.Text = "TITULANTE:\n" + potenciometria.DescricaoTitulante;
+
+            MostrarGrafico();
+        }
+
+        private void BtnTitulacaoPotenciometrica_Click(object sender, EventArgs e)
+        {
+            if (model == null)
+            {
+                MessageBox.Show("Crie ou abra um cadastro antes de continuar.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (model.ID == 0)
+            {
+                MessageBox.Show("Salve este cadastro antes de continuar.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            Tela.Fechar();
+            Tela.Abrir(new FrmPotenciometrica(model), "POTENCIOMETRIA");            
         }
     }
 }

@@ -48,10 +48,10 @@
             this.btnAdicionar = new FlaskUI.COMPONENTES.FlaskButton();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.flaskGroupBox1 = new FlaskUI.COMPONENTES.FlaskGroupBox();
-            this.UcTitulante = new Flask.TELAS.CONTROLES.UcFichaReagente();
             this.flaskGroupBox2 = new FlaskUI.COMPONENTES.FlaskGroupBox();
-            this.UcTitulado = new Flask.TELAS.CONTROLES.UcFichaReagente();
             this.btnSalvarGrafico = new FlaskUI.COMPONENTES.FlaskButton();
+            this.UcTitulado = new Flask.TELAS.CONTROLES.UcFichaReagente();
+            this.UcTitulante = new Flask.TELAS.CONTROLES.UcFichaReagente();
             this.ucHeader1 = new Flask.UcHeader();
             ((System.ComponentModel.ISupportInitialize)(this.flaskDataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -143,14 +143,15 @@
             // 
             // txtVolume
             // 
-            this.txtVolume.Ativo = true;
-            this.txtVolume.BackColor = System.Drawing.Color.White;
+            this.txtVolume.Ativo = false;
+            this.txtVolume.BackColor = System.Drawing.Color.LightGray;
             this.txtVolume.CampoObrigatorio = true;
             this.txtVolume.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.NumeroReal;
             this.txtVolume.Erro = false;
             this.txtVolume.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtVolume.Location = new System.Drawing.Point(16, 76);
             this.txtVolume.Name = "txtVolume";
+            this.txtVolume.ReadOnly = true;
             this.txtVolume.Size = new System.Drawing.Size(100, 23);
             this.txtVolume.TabIndex = 3;
             this.txtVolume.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -158,14 +159,15 @@
             // 
             // txtpH
             // 
-            this.txtpH.Ativo = true;
-            this.txtpH.BackColor = System.Drawing.Color.White;
+            this.txtpH.Ativo = false;
+            this.txtpH.BackColor = System.Drawing.Color.LightGray;
             this.txtpH.CampoObrigatorio = true;
             this.txtpH.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.NumeroReal;
             this.txtpH.Erro = false;
             this.txtpH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtpH.Location = new System.Drawing.Point(16, 122);
             this.txtpH.Name = "txtpH";
+            this.txtpH.ReadOnly = true;
             this.txtpH.Size = new System.Drawing.Size(100, 23);
             this.txtpH.TabIndex = 5;
             this.txtpH.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -207,6 +209,7 @@
             this.btnAdicionar.TabIndex = 7;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = false;
+            this.btnAdicionar.Visible = false;
             this.btnAdicionar.Click += new System.EventHandler(this.BtnAdicionar_Click);
             // 
             // chart1
@@ -236,20 +239,6 @@
             this.flaskGroupBox1.TabIndex = 9;
             this.flaskGroupBox1.Titulo = "Titulante";
             // 
-            // UcTitulante
-            // 
-            this.UcTitulante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
-            this.UcTitulante.Consulta = null;
-            this.UcTitulante.Location = new System.Drawing.Point(6, 28);
-            this.UcTitulante.ManterFixo = false;
-            this.UcTitulante.MaximumSize = new System.Drawing.Size(280, 95);
-            this.UcTitulante.MinimumSize = new System.Drawing.Size(280, 95);
-            this.UcTitulante.Name = "UcTitulante";
-            this.UcTitulante.Reagente = null;
-            this.UcTitulante.Size = new System.Drawing.Size(280, 95);
-            this.UcTitulante.TabIndex = 2;
-            this.UcTitulante.ReagenteChanged += new System.EventHandler(this.UcTitulante_ReagenteChanged);
-            // 
             // flaskGroupBox2
             // 
             this.flaskGroupBox2.Controls.Add(this.UcTitulado);
@@ -260,20 +249,6 @@
             this.flaskGroupBox2.Size = new System.Drawing.Size(293, 130);
             this.flaskGroupBox2.TabIndex = 10;
             this.flaskGroupBox2.Titulo = "Titulado";
-            // 
-            // UcTitulado
-            // 
-            this.UcTitulado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
-            this.UcTitulado.Consulta = null;
-            this.UcTitulado.Location = new System.Drawing.Point(6, 28);
-            this.UcTitulado.ManterFixo = false;
-            this.UcTitulado.MaximumSize = new System.Drawing.Size(280, 95);
-            this.UcTitulado.MinimumSize = new System.Drawing.Size(280, 95);
-            this.UcTitulado.Name = "UcTitulado";
-            this.UcTitulado.Reagente = null;
-            this.UcTitulado.Size = new System.Drawing.Size(280, 95);
-            this.UcTitulado.TabIndex = 2;
-            this.UcTitulado.ReagenteChanged += new System.EventHandler(this.UcTitulante_ReagenteChanged);
             // 
             // btnSalvarGrafico
             // 
@@ -292,6 +267,34 @@
             this.btnSalvarGrafico.Text = "Salvar Gráfico";
             this.btnSalvarGrafico.UseVisualStyleBackColor = false;
             this.btnSalvarGrafico.Click += new System.EventHandler(this.BtnSalvarGrafico_Click);
+            // 
+            // UcTitulado
+            // 
+            this.UcTitulado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
+            this.UcTitulado.Consulta = null;
+            this.UcTitulado.Location = new System.Drawing.Point(6, 28);
+            this.UcTitulado.ManterFixo = false;
+            this.UcTitulado.MaximumSize = new System.Drawing.Size(280, 95);
+            this.UcTitulado.MinimumSize = new System.Drawing.Size(280, 95);
+            this.UcTitulado.Name = "UcTitulado";
+            this.UcTitulado.Reagente = null;
+            this.UcTitulado.Size = new System.Drawing.Size(280, 95);
+            this.UcTitulado.TabIndex = 2;
+            this.UcTitulado.ReagenteChanged += new System.EventHandler(this.UcTitulante_ReagenteChanged);
+            // 
+            // UcTitulante
+            // 
+            this.UcTitulante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
+            this.UcTitulante.Consulta = null;
+            this.UcTitulante.Location = new System.Drawing.Point(6, 28);
+            this.UcTitulante.ManterFixo = false;
+            this.UcTitulante.MaximumSize = new System.Drawing.Size(280, 95);
+            this.UcTitulante.MinimumSize = new System.Drawing.Size(280, 95);
+            this.UcTitulante.Name = "UcTitulante";
+            this.UcTitulante.Reagente = null;
+            this.UcTitulante.Size = new System.Drawing.Size(280, 95);
+            this.UcTitulante.TabIndex = 2;
+            this.UcTitulante.ReagenteChanged += new System.EventHandler(this.UcTitulante_ReagenteChanged);
             // 
             // ucHeader1
             // 

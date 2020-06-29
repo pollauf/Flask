@@ -15,6 +15,7 @@ using FlaskUI.CLASSES;
 using Flask.TELAS.CONTROLES;
 using Flask.TELAS.METODOS;
 using FlaskMODEL.TABELAS;
+using System.Threading;
 
 namespace Flask.TELAS.Analises
 {
@@ -134,10 +135,11 @@ namespace Flask.TELAS.Analises
             {
                 AtualizarFiltros();
             }
+            txtVolumeTitulado.Select();
         }
 
         private void FlaskButton1_Click(object sender, EventArgs e)
-        {
+        {          
             if (!this.VerificarCamposObrigatorios())
                 return;
 
@@ -255,12 +257,15 @@ namespace Flask.TELAS.Analises
             }
         }
 
-        private void TxtVolumeTitulante_KeyDown(object sender, KeyEventArgs e)
+        private async void TxtVolumeTitulante_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 FlaskButton1_Click(null, new EventArgs());
             }
+
+            await Task.Run(() => Thread.Sleep(100));
+            txtVolumeTitulante.Select();
         }
 
         private void FlaskButton4_Click(object sender, EventArgs e)

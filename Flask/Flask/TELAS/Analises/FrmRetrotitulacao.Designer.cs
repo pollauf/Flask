@@ -69,7 +69,7 @@
             this.flaskButton4.Location = new System.Drawing.Point(14, 432);
             this.flaskButton4.Name = "flaskButton4";
             this.flaskButton4.Size = new System.Drawing.Size(168, 30);
-            this.flaskButton4.TabIndex = 13;
+            this.flaskButton4.TabIndex = 2;
             this.flaskButton4.Text = "Gerar Relatório";
             this.flaskButton4.UseVisualStyleBackColor = false;
             this.flaskButton4.Visible = false;
@@ -172,7 +172,7 @@
             this.flaskButton1.Location = new System.Drawing.Point(445, 160);
             this.flaskButton1.Name = "flaskButton1";
             this.flaskButton1.Size = new System.Drawing.Size(159, 30);
-            this.flaskButton1.TabIndex = 2;
+            this.flaskButton1.TabIndex = 0;
             this.flaskButton1.Text = "Titulação do Excesso";
             this.flaskButton1.UseVisualStyleBackColor = false;
             this.flaskButton1.Click += new System.EventHandler(this.FlaskButton1_Click);
@@ -274,7 +274,7 @@
             this.btnCalcular.Location = new System.Drawing.Point(445, 296);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(159, 30);
-            this.btnCalcular.TabIndex = 16;
+            this.btnCalcular.TabIndex = 1;
             this.btnCalcular.Text = "Calcular";
             this.btnCalcular.UseVisualStyleBackColor = false;
             this.btnCalcular.Click += new System.EventHandler(this.BtnCalcular_Click);
@@ -313,7 +313,7 @@
             this.flaskButton3.Location = new System.Drawing.Point(436, 432);
             this.flaskButton3.Name = "flaskButton3";
             this.flaskButton3.Size = new System.Drawing.Size(168, 30);
-            this.flaskButton3.TabIndex = 19;
+            this.flaskButton3.TabIndex = 3;
             this.flaskButton3.Text = "Salvar Concentração";
             this.flaskButton3.UseVisualStyleBackColor = false;
             this.flaskButton3.Visible = false;

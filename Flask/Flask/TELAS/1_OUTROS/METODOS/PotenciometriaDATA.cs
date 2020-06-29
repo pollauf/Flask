@@ -39,7 +39,7 @@ namespace Flask
                     db.SaveChanges();
                 }
 
-                MessageBox.Show($"Gráfico Potenciométrico anexado no Reagente Nº {model.TituladoID.ToString("000000")} com sucesso.",
+                MessageBox.Show($"Gráfico Potenciométrico anexado ao Reagente Nº {model.TituladoID.ToString("000000")} com sucesso.",
                     $"Gráfico Anexado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 return true;
@@ -59,7 +59,7 @@ namespace Flask
                 {
                     db.Entry(model).State = EntityState.Deleted;
                     db.SaveChanges();
-                    Tela.InformarExcluidoSucesso();
+                    //Tela.InformarExcluidoSucesso();
                 }
 
                 return true;

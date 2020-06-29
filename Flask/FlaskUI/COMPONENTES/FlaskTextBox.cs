@@ -71,6 +71,18 @@ namespace FlaskUI.COMPONENTES
         protected override void OnKeyDown(KeyEventArgs e)
         {
             base.OnKeyDown(e);
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                SendKeys.Send("{TAB}");
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }               
+        }
+
+        protected override void OnTextChanged(EventArgs e)
+        {
+            base.OnTextChanged(e);
             Erro = false;
         }
 

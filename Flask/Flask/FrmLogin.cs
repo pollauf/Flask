@@ -128,14 +128,17 @@ namespace Flask
 
         private void TxtUsuario_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-                txtSenha.Select();
+           /* if (e.KeyCode == Keys.Enter)
+                txtSenha.Select();*/
         }
 
         private void TxtSenha_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
+            {
                 BtnEntrar_Click(null, new EventArgs());
+                e.Handled = true;
+            }                
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)

@@ -56,12 +56,13 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(295, 0);
+            this.button1.Location = new System.Drawing.Point(263, 0);
             this.button1.MaximumSize = new System.Drawing.Size(40, 40);
             this.button1.MinimumSize = new System.Drawing.Size(40, 40);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(40, 40);
             this.button1.TabIndex = 7;
+            this.button1.TabStop = false;
             this.button1.Text = "X";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
@@ -76,7 +77,7 @@
             this.MaximumSize = new System.Drawing.Size(0, 40);
             this.MinimumSize = new System.Drawing.Size(100, 40);
             this.Name = "UcHeader";
-            this.Size = new System.Drawing.Size(335, 40);
+            this.Size = new System.Drawing.Size(303, 40);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.UcHeader_MouseDown);
             this.ResumeLayout(false);
             this.PerformLayout();
