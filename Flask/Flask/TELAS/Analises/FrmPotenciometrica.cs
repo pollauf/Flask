@@ -1,4 +1,9 @@
-﻿using FlaskUI;
+﻿using Flask.TELAS.METODOS.EXTENSORES;
+using FlaskMODEL;
+using FlaskMODEL.CONSULTAS;
+using FlaskMODEL.TABELAS;
+using FlaskUI;
+using FlaskUI.CLASSES;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,8 +30,8 @@ namespace Flask.TELAS.Analises
 
         public FrmPotenciometrica()
         {
-            InitializeComponent();            
-            Titulacao = new List<Potenciometrica>();                       
+            InitializeComponent();
+            Titulacao = new List<Potenciometrica>();
         }
 
         private void BtnAdicionar_Click(object sender, EventArgs e)
@@ -40,6 +45,9 @@ namespace Flask.TELAS.Analises
             if (!double.TryParse(txtpH.Text, out pH))
                 return;
 
+            volume = Math.Round(volume, 5);
+            pH = Math.Round(pH, 5);
+
             double volumeAdicionado = volume;
             if (Titulacao.Count > 0)
                 volumeAdicionado += Titulacao[Titulacao.Count - 1].Volume;
@@ -48,7 +56,7 @@ namespace Flask.TELAS.Analises
             Titulacao.Add(potenciometria);
             txtpH.Text = string.Empty;
             txtpH.Select();
-            flaskDataGridView1.Rows.Add(volumeAdicionado, pH);
+            flaskDataGridView1.Rows.Add(volumeAdicionado.FormatarString(), pH.FormatarString());
             chart1.Series[0].Points.AddXY(volumeAdicionado, pH);
         }
 
@@ -60,7 +68,7 @@ namespace Flask.TELAS.Analises
 
         private void FrmPotenciometrica_Load(object sender, EventArgs e)
         {
-
+            AtualizarFiltros();
         }
 
         private void RemoverToolStripMenuItem_Click(object sender, EventArgs e)
@@ -73,6 +81,65 @@ namespace Flask.TELAS.Analises
             flaskDataGridView1.Rows.RemoveAt(index);
             chart1.Series[0].Points.RemoveAt(index);
             Titulacao.RemoveAt(index);
+        }
+
+        private void TxtVolume_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                txtpH.Select();
+        }
+
+        private void UcTitulante_ReagenteChanged(object sender, EventArgs e)
+        {
+            AtualizarFiltros();
+        }
+        private void LimparTudo()
+        {
+            this.LimparCampos();
+            flaskDataGridView1.Rows.Clear();
+            titulacao.Clear();
+            chart1.Series[0].Points.Clear();
+        }
+
+        private void AtualizarFiltros()
+        {
+            var tipoTitulante = TipoReagente.Anfotero;
+            var tipoTitulado = TipoReagente.Anfotero;
+
+            if (UcTitulado.Reagente != null)
+                tipoTitulante = UcTitulado.Reagente.Tipo.RetornarReagenteOposto();
+
+            if (UcTitulante.Reagente != null)
+                tipoTitulado = UcTitulante.Reagente.Tipo.RetornarReagenteOposto();
+
+            UcTitulante.Consulta = new ConsultaReagenteTitulacao(tipoTitulante, true, true);
+            UcTitulado.Consulta = new ConsultaReagenteTitulacao(tipoTitulado, false);
+
+            LimparTudo();
+            txtVolume.Select();
+        }
+
+        private void BtnSalvarGrafico_Click(object sender, EventArgs e)
+        {
+            if (Titulacao.Count == 0 || UcTitulante.Reagente == null || UcTitulado.Reagente == null)
+            {
+                MessageBox.Show("Há campos sem preenchimento.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var model = new Potenciometria();
+
+            string grafico = Titulacao.GerarString();
+            string titulante = UcTitulante.Reagente.ObterDescricao();
+            int titulado = UcTitulado.Reagente.ID;
+
+            model.TituladoID = titulado;
+            model.DescricaoTitulante = titulante;
+            model.Valores = grafico;
+
+            model.Salvar();
+
+            LimparTudo();
         }
     }
 }

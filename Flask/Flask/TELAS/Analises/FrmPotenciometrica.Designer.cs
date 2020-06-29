@@ -47,10 +47,17 @@
             this.flaskLabel3 = new FlaskUI.COMPONENTES.FlaskLabel();
             this.btnAdicionar = new FlaskUI.COMPONENTES.FlaskButton();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.flaskGroupBox1 = new FlaskUI.COMPONENTES.FlaskGroupBox();
+            this.UcTitulante = new Flask.TELAS.CONTROLES.UcFichaReagente();
+            this.flaskGroupBox2 = new FlaskUI.COMPONENTES.FlaskGroupBox();
+            this.UcTitulado = new Flask.TELAS.CONTROLES.UcFichaReagente();
+            this.btnSalvarGrafico = new FlaskUI.COMPONENTES.FlaskButton();
             this.ucHeader1 = new Flask.UcHeader();
             ((System.ComponentModel.ISupportInitialize)(this.flaskDataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.flaskGroupBox1.SuspendLayout();
+            this.flaskGroupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // flaskDataGridView1
@@ -146,6 +153,8 @@
             this.txtVolume.Name = "txtVolume";
             this.txtVolume.Size = new System.Drawing.Size(100, 23);
             this.txtVolume.TabIndex = 3;
+            this.txtVolume.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtVolume.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtVolume_KeyDown);
             // 
             // txtpH
             // 
@@ -159,6 +168,7 @@
             this.txtpH.Name = "txtpH";
             this.txtpH.Size = new System.Drawing.Size(100, 23);
             this.txtpH.TabIndex = 5;
+            this.txtpH.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtpH.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtpH_KeyDown);
             // 
             // flaskLabel2
@@ -215,6 +225,74 @@
             this.chart1.TabIndex = 8;
             this.chart1.Text = "chart1";
             // 
+            // flaskGroupBox1
+            // 
+            this.flaskGroupBox1.Controls.Add(this.UcTitulante);
+            this.flaskGroupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.flaskGroupBox1.Location = new System.Drawing.Point(16, 368);
+            this.flaskGroupBox1.Name = "flaskGroupBox1";
+            this.flaskGroupBox1.Padding = new System.Windows.Forms.Padding(3);
+            this.flaskGroupBox1.Size = new System.Drawing.Size(293, 130);
+            this.flaskGroupBox1.TabIndex = 9;
+            this.flaskGroupBox1.Titulo = "Titulante";
+            // 
+            // UcTitulante
+            // 
+            this.UcTitulante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
+            this.UcTitulante.Consulta = null;
+            this.UcTitulante.Location = new System.Drawing.Point(6, 28);
+            this.UcTitulante.ManterFixo = false;
+            this.UcTitulante.MaximumSize = new System.Drawing.Size(280, 95);
+            this.UcTitulante.MinimumSize = new System.Drawing.Size(280, 95);
+            this.UcTitulante.Name = "UcTitulante";
+            this.UcTitulante.Reagente = null;
+            this.UcTitulante.Size = new System.Drawing.Size(280, 95);
+            this.UcTitulante.TabIndex = 2;
+            this.UcTitulante.ReagenteChanged += new System.EventHandler(this.UcTitulante_ReagenteChanged);
+            // 
+            // flaskGroupBox2
+            // 
+            this.flaskGroupBox2.Controls.Add(this.UcTitulado);
+            this.flaskGroupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.flaskGroupBox2.Location = new System.Drawing.Point(315, 368);
+            this.flaskGroupBox2.Name = "flaskGroupBox2";
+            this.flaskGroupBox2.Padding = new System.Windows.Forms.Padding(3);
+            this.flaskGroupBox2.Size = new System.Drawing.Size(293, 130);
+            this.flaskGroupBox2.TabIndex = 10;
+            this.flaskGroupBox2.Titulo = "Titulado";
+            // 
+            // UcTitulado
+            // 
+            this.UcTitulado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
+            this.UcTitulado.Consulta = null;
+            this.UcTitulado.Location = new System.Drawing.Point(6, 28);
+            this.UcTitulado.ManterFixo = false;
+            this.UcTitulado.MaximumSize = new System.Drawing.Size(280, 95);
+            this.UcTitulado.MinimumSize = new System.Drawing.Size(280, 95);
+            this.UcTitulado.Name = "UcTitulado";
+            this.UcTitulado.Reagente = null;
+            this.UcTitulado.Size = new System.Drawing.Size(280, 95);
+            this.UcTitulado.TabIndex = 2;
+            this.UcTitulado.ReagenteChanged += new System.EventHandler(this.UcTitulante_ReagenteChanged);
+            // 
+            // btnSalvarGrafico
+            // 
+            this.btnSalvarGrafico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(54)))), ((int)(((byte)(76)))));
+            this.btnSalvarGrafico.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvarGrafico.FlatAppearance.BorderSize = 0;
+            this.btnSalvarGrafico.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(60)))), ((int)(((byte)(195)))));
+            this.btnSalvarGrafico.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(59)))), ((int)(((byte)(137)))));
+            this.btnSalvarGrafico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvarGrafico.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnSalvarGrafico.ForeColor = System.Drawing.Color.White;
+            this.btnSalvarGrafico.Location = new System.Drawing.Point(507, 504);
+            this.btnSalvarGrafico.Name = "btnSalvarGrafico";
+            this.btnSalvarGrafico.Size = new System.Drawing.Size(168, 30);
+            this.btnSalvarGrafico.TabIndex = 11;
+            this.btnSalvarGrafico.Text = "Salvar Gráfico";
+            this.btnSalvarGrafico.UseVisualStyleBackColor = false;
+            this.btnSalvarGrafico.Click += new System.EventHandler(this.BtnSalvarGrafico_Click);
+            // 
             // ucHeader1
             // 
             this.ucHeader1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(54)))), ((int)(((byte)(76)))));
@@ -226,13 +304,17 @@
             this.ucHeader1.NaoEhFilho = false;
             this.ucHeader1.Size = new System.Drawing.Size(683, 40);
             this.ucHeader1.TabIndex = 0;
+            this.ucHeader1.TabStop = false;
             this.ucHeader1.Titulo = "Titulação Potenciométrica";
             // 
             // FrmPotenciometrica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(685, 388);
+            this.ClientSize = new System.Drawing.Size(685, 543);
+            this.Controls.Add(this.btnSalvarGrafico);
+            this.Controls.Add(this.flaskGroupBox2);
+            this.Controls.Add(this.flaskGroupBox1);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.btnAdicionar);
             this.Controls.Add(this.flaskLabel3);
@@ -248,6 +330,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.flaskDataGridView1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.flaskGroupBox1.ResumeLayout(false);
+            this.flaskGroupBox1.PerformLayout();
+            this.flaskGroupBox2.ResumeLayout(false);
+            this.flaskGroupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,5 +354,10 @@
         private System.Windows.Forms.ToolStripMenuItem removerToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnVolume;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnH;
+        private FlaskUI.COMPONENTES.FlaskGroupBox flaskGroupBox1;
+        private CONTROLES.UcFichaReagente UcTitulante;
+        private FlaskUI.COMPONENTES.FlaskGroupBox flaskGroupBox2;
+        private CONTROLES.UcFichaReagente UcTitulado;
+        private FlaskUI.COMPONENTES.FlaskButton btnSalvarGrafico;
     }
 }

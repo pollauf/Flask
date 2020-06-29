@@ -131,5 +131,10 @@ namespace Flask
                 TxtID_Leave(null, new EventArgs());
             }
         }
+
+        private void FrmRelatorio_Load(object sender, EventArgs e)
+        {
+            Limpar(null, new EventArgs());
+        }
     }
 }

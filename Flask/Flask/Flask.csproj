@@ -90,6 +90,7 @@
     <Compile Include="INTERFACES\ITitulanteTitulado.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TELAS\1_OUTROS\METODOS\PotenciometriaDATA.cs" />
     <Compile Include="TELAS\1_OUTROS\METODOS\ReagenteDATA.cs" />
     <Compile Include="TELAS\1_OUTROS\REGRAS\TITULACAO\Potenciometrica.cs" />
     <Compile Include="TELAS\Analises\FrmPotenciometrica.cs">

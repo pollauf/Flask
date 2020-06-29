@@ -164,10 +164,15 @@
     <Compile Include="Migrations\202006290134083_second1.designer.cs">
       <DependentUpon>202006290134083_second1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006291240559_fifth.cs" />
+    <Compile Include="Migrations\202006291240559_fifth.designer.cs">
+      <DependentUpon>202006291240559_fifth.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OUTROS\Metodos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TABELAS\Potenciometria.cs" />
     <Compile Include="TABELAS\Reagente.cs" />
     <Compile Include="TABELAS\Relatorio.cs" />
     <Compile Include="TABELAS\Usuario.cs" />
@@ -182,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006290134083_second1.resx">
       <DependentUpon>202006290134083_second1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006291240559_fifth.resx">
+      <DependentUpon>202006291240559_fifth.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

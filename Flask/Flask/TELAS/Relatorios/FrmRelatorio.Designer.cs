@@ -229,6 +229,7 @@
             this.Name = "FrmRelatorio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro";
+            this.Load += new System.EventHandler(this.FrmRelatorio_Load);
             this.flaskGroupBox1.ResumeLayout(false);
             this.flaskGroupBox1.PerformLayout();
             this.ResumeLayout(false);

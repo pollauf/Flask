@@ -10,10 +10,12 @@ namespace FlaskMODEL.CONSULTAS
     {
         public TipoReagente TipoReagente { get; set; }
         public bool Titulante { get; set; }
-        public ConsultaReagenteTitulacao(TipoReagente tipoReagente, bool titulante)
+        public bool Potenciometria { get; set; }
+        public ConsultaReagenteTitulacao(TipoReagente tipoReagente, bool titulante, bool potenciometria = false)
         {
             TipoReagente = tipoReagente;
             Titulante = titulante;
+            Potenciometria = potenciometria;
         }
         public override object Pesquisar()
         {
@@ -35,7 +37,12 @@ namespace FlaskMODEL.CONSULTAS
                     }
 
                     if (Titulante)
+                    {
                         query = query.Where(x => x.Concentracao != 0 && x.Forca == ForcaReagente.Forte).ToList();
+
+                        if (Potenciometria)
+                            query = query.Where(x => x.Classe == ClasseReagente.Mono).ToList();
+                    }                        
 
                     if (query.Count == 0)
                         return null;
