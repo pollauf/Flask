@@ -22,6 +22,8 @@ namespace Flask.TELAS.Reagentes
 {
     public partial class FrmCadastroReagente : FlaskForm
     {
+        private Grafico graficoExpansor;
+
         Reagente model;
         public FrmCadastroReagente()
         {
@@ -50,12 +52,14 @@ namespace Flask.TELAS.Reagentes
             txtForca.Carregar(Metodos.EnumToList<ForcaReagente>());
             txtComboConcentracao.Carregar(Metodos.EnumToList<Concentracao>());
             AtualizarControlesConstanteIonizacao();
+
+            /*graficoPotenciometria.ChartAreas[0].AxisX.Title = "Volume (mL)";
+            graficoPotenciometria.ChartAreas[0].AxisY.Title = "pH";*/
+
+            graficoExpansor = new Grafico();
+            graficoExpansor.InicializarGrafico(graficoPotenciometria);
+
             //txtID.Select();
-        }
-
-        private void flaskGroupBox1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void FlaskComboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -362,6 +366,8 @@ namespace Flask.TELAS.Reagentes
             }
 
             rtbTitultanteGrafico.Text = "TITULANTE:\n" + potenciometria.DescricaoTitulante;
+
+            graficoExpansor.AdicionarTagGrafico(potenciometria);
 
             MostrarGrafico();
         }

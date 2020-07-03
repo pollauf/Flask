@@ -19,6 +19,8 @@ namespace Flask.TELAS.Analises
 {
     public partial class FrmPotenciometrica : FlaskForm
     {
+        private Grafico graficoExpansor;
+
         private List<Potenciometrica> titulacao;
         public List<Potenciometrica> Titulacao
         {
@@ -68,6 +70,8 @@ namespace Flask.TELAS.Analises
             txtpH.Select();
             flaskDataGridView1.Rows.Add(volumeAdicionado.FormatarString(), pH.FormatarString());
             chart1.Series[0].Points.AddXY(volumeAdicionado, pH);
+
+            graficoExpansor.AdicionarTagGrafico(Titulacao);
         }
 
         private async void TxtpH_KeyDown(object sender, KeyEventArgs e)
@@ -84,6 +88,12 @@ namespace Flask.TELAS.Analises
         private void FrmPotenciometrica_Load(object sender, EventArgs e)
         {
             AtualizarFiltros();
+
+            chart1.ChartAreas[0].AxisX.Title = "Volume (mL)";
+            chart1.ChartAreas[0].AxisY.Title = "pH";
+
+            graficoExpansor = new Grafico();
+            graficoExpansor.InicializarGrafico(chart1);
         }
 
         private void RemoverToolStripMenuItem_Click(object sender, EventArgs e)

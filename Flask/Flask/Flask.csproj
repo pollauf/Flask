@@ -90,6 +90,8 @@
     <Compile Include="INTERFACES\ITitulanteTitulado.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TELAS\1_OUTROS\METODOS\EXTENSORES\ExtString.cs" />
+    <Compile Include="TELAS\1_OUTROS\METODOS\Grafico.cs" />
     <Compile Include="TELAS\1_OUTROS\METODOS\PotenciometriaDATA.cs" />
     <Compile Include="TELAS\1_OUTROS\METODOS\ReagenteDATA.cs" />
     <Compile Include="TELAS\1_OUTROS\REGRAS\TITULACAO\Potenciometrica.cs" />
@@ -104,6 +106,12 @@
     </Compile>
     <Compile Include="TELAS\Analises\FrmRetrotitulacao.Designer.cs">
       <DependentUpon>FrmRetrotitulacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TELAS\Analises\FrmSalvarGrafico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TELAS\Analises\FrmSalvarGrafico.Designer.cs">
+      <DependentUpon>FrmSalvarGrafico.cs</DependentUpon>
     </Compile>
     <Compile Include="TELAS\Analises\FrmTitulacaoAcidoBaseNormal.cs">
       <SubType>Form</SubType>
@@ -216,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TELAS\Analises\FrmRetrotitulacao.resx">
       <DependentUpon>FrmRetrotitulacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TELAS\Analises\FrmSalvarGrafico.resx">
+      <DependentUpon>FrmSalvarGrafico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TELAS\Analises\FrmTitulacaoAcidoBaseNormal.resx">
       <DependentUpon>FrmTitulacaoAcidoBaseNormal.cs</DependentUpon>

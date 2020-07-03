@@ -81,6 +81,7 @@
             this.tabPotenciometria = new System.Windows.Forms.TabPage();
             this.pnlOcultarGrafico = new FlaskUI.COMPONENTES.FlaskGroupBox();
             this.btnTitulacaoPotenciometrica = new FlaskUI.COMPONENTES.FlaskButton();
+            this.rtbTitultanteGrafico = new System.Windows.Forms.RichTextBox();
             this.btnExcluirGraficoPotenciometria = new FlaskUI.COMPONENTES.FlaskButton();
             this.graficoPotenciometria = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dgvPotenciometria = new FlaskUI.COMPONENTES.FlaskDataGridView();
@@ -90,7 +91,6 @@
             this.btnLimpar = new FlaskUI.COMPONENTES.FlaskButton();
             this.btnExcluir = new FlaskUI.COMPONENTES.FlaskButton();
             this.ucHeader1 = new Flask.UcHeader();
-            this.rtbTitultanteGrafico = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -681,6 +681,16 @@
             this.btnTitulacaoPotenciometrica.UseVisualStyleBackColor = false;
             this.btnTitulacaoPotenciometrica.Click += new System.EventHandler(this.BtnTitulacaoPotenciometrica_Click);
             // 
+            // rtbTitultanteGrafico
+            // 
+            this.rtbTitultanteGrafico.Location = new System.Drawing.Point(6, 220);
+            this.rtbTitultanteGrafico.Name = "rtbTitultanteGrafico";
+            this.rtbTitultanteGrafico.ReadOnly = true;
+            this.rtbTitultanteGrafico.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.rtbTitultanteGrafico.Size = new System.Drawing.Size(289, 57);
+            this.rtbTitultanteGrafico.TabIndex = 15;
+            this.rtbTitultanteGrafico.Text = "";
+            // 
             // btnExcluirGraficoPotenciometria
             // 
             this.btnExcluirGraficoPotenciometria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -846,16 +856,6 @@
             this.ucHeader1.TabIndex = 0;
             this.ucHeader1.TabStop = false;
             this.ucHeader1.Titulo = "Cadastro de Reagente";
-            // 
-            // rtbTitultanteGrafico
-            // 
-            this.rtbTitultanteGrafico.Location = new System.Drawing.Point(6, 220);
-            this.rtbTitultanteGrafico.Name = "rtbTitultanteGrafico";
-            this.rtbTitultanteGrafico.ReadOnly = true;
-            this.rtbTitultanteGrafico.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbTitultanteGrafico.Size = new System.Drawing.Size(289, 57);
-            this.rtbTitultanteGrafico.TabIndex = 15;
-            this.rtbTitultanteGrafico.Text = "";
             // 
             // FrmCadastroReagente
             // 
