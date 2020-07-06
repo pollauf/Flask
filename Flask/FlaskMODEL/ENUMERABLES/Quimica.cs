@@ -41,8 +41,7 @@ namespace FlaskMODEL
 
     public enum TipoAnalise
     {
-        Acidimetria = 0,
-        Alcalimetria = 1,
-        Retrotitulacao = 3,
+        Titulacao = 0,
+        Retrotitulacao = 1,
     }
 }

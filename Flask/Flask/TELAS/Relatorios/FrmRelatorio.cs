@@ -20,6 +20,8 @@ namespace Flask
 {
     public partial class FrmRelatorio : FlaskForm
     {
+        private int? abrirID = null;
+
         Relatorio model;
         public FrmRelatorio()
         {
@@ -29,8 +31,7 @@ namespace Flask
         {
             InitializeComponent();
 
-            txtID.Text = id.ToString();
-            TxtID_Leave(null, new EventArgs());
+            abrirID = id;
         }
         private void TxtID_Leave(object sender, EventArgs e)
         {
@@ -135,6 +136,12 @@ namespace Flask
         private void FrmRelatorio_Load(object sender, EventArgs e)
         {
             Limpar(null, new EventArgs());
+            
+            if (abrirID != null)
+            {
+                txtID.Text = abrirID.Value.ToString("000000");
+                TxtID_Leave(null, new EventArgs());
+            }
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Flask.TELAS.CONTROLES
     {       
         public ResultadoTitulacao Titulacao { get; set; }
         public event EventHandler ButtonRemoveClick;
-        public UcReplicata(string valor, TipoAnalise tipoAnalise = TipoAnalise.Acidimetria)
+        public UcReplicata(string valor, TipoAnalise tipoAnalise = TipoAnalise.Titulacao)
         {
             InitializeComponent();
             

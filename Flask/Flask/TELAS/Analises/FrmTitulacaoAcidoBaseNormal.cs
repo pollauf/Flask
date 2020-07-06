@@ -47,7 +47,7 @@ namespace Flask.TELAS.Analises
 
         public TipoAnalise TipoAnalise { get; set; }
 
-        private bool manterConsultaFixa = false;
+        //private bool manterConsultaFixa = false;
         public FrmTitulacaoAcidoBaseNormal()
         {
             InitializeComponent();
@@ -57,15 +57,12 @@ namespace Flask.TELAS.Analises
         {
             InitializeComponent();
 
-            manterConsultaFixa = true;
+            //manterConsultaFixa = true;
 
-            if (tipoAnalise == TipoAnalise.Alcalimetria)
+            if (tipoAnalise == TipoAnalise.Titulacao)
             {
-                this.Name = this.Text = "Alcalimetria";
-            }
-            else if (tipoAnalise == TipoAnalise.Acidimetria)
-            {
-                this.Name = this.Text = "Acidimetria";
+                this.Name = "TitulacaoAcidoBase";
+                //this.Text = "Titulação Ácido-Base";
             }
 
             TipoAnalise = tipoAnalise;
@@ -104,24 +101,11 @@ namespace Flask.TELAS.Analises
             var tipoTitulante = TipoReagente.Anfotero;
             var tipoTitulado = TipoReagente.Anfotero;
 
-            if (TipoAnalise == TipoAnalise.Acidimetria)
-            {
-                tipoTitulante = TipoReagente.Base;
-                tipoTitulado = TipoReagente.Acido;
-            }
-            else if (TipoAnalise == TipoAnalise.Alcalimetria)
-            {
-                tipoTitulante = TipoReagente.Acido;
-                tipoTitulado = TipoReagente.Base;
-            }
-            else
-            {
-                if (UcTitulado.Reagente != null)
-                    tipoTitulante = UcTitulado.Reagente.Tipo.RetornarReagenteOposto();
+            if (UcTitulado.Reagente != null)
+                tipoTitulante = UcTitulado.Reagente.Tipo.RetornarReagenteOposto();
 
-                if (UcTitulante.Reagente != null)
-                    tipoTitulado = UcTitulante.Reagente.Tipo.RetornarReagenteOposto();
-            }
+            if (UcTitulante.Reagente != null)
+                tipoTitulado = UcTitulante.Reagente.Tipo.RetornarReagenteOposto();
 
             UcTitulante.Consulta = new ConsultaReagenteTitulacao(tipoTitulante, true);
             UcTitulado.Consulta = new ConsultaReagenteTitulacao(tipoTitulado, false);
@@ -131,15 +115,15 @@ namespace Flask.TELAS.Analises
         {
             this.Relatorio = null;
             FLP.Controls.Clear();
-            if (!manterConsultaFixa)
-            {
+            //if (!manterConsultaFixa)
+            //{
                 AtualizarFiltros();
-            }
+            //}
             txtVolumeTitulado.Select();
         }
 
         private void FlaskButton1_Click(object sender, EventArgs e)
-        {          
+        {
             if (!this.VerificarCamposObrigatorios())
                 return;
 
@@ -243,16 +227,16 @@ namespace Flask.TELAS.Analises
                     return;
             }
 
-            double media = Math.Round(selecionados.Average(), 5); ;            
+            double media = Math.Round(selecionados.Average(), 5); ;
 
             if (TipoAnalise != TipoAnalise.Retrotitulacao)
             {
-                Relatorio = new RelatorioTitulacao(TipoAnalise, UcTitulante.Reagente, UcTitulado.Reagente, resultadosSelecionados, media);
+                Relatorio = new RelatorioTitulacao(UcTitulante.Reagente, UcTitulado.Reagente, resultadosSelecionados, media);
                 lblResultado.Text = $"Resultado: {media.FormatarString()} mol/L";
             }
             else
             {
-                Relatorio = new RelatorioTitulacao(TipoAnalise, UcTitulante.Reagente, UcTitulado.Reagente, resultadosSelecionados, UcTitulado.Reagente.Concentracao);
+                Relatorio = new RelatorioTitulacao(UcTitulante.Reagente, UcTitulado.Reagente, resultadosSelecionados, UcTitulado.Reagente.Concentracao);
                 lblResultado.Text = $"Resultado: {media.FormatarString()} mL";
             }
         }
@@ -295,7 +279,7 @@ namespace Flask.TELAS.Analises
                 {
                     Close();
                     return;
-                }                    
+                }
 
                 if (!Tela.PerguntarDesejaAlterar("Deseja alterar a concentração do analito em seu registro?"))
                     return;

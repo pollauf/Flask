@@ -50,13 +50,11 @@ namespace Flask.TELAS
                     case AbasMenu.Analises:
                         SetMenu("ANÁLISES", new string[]
                         {
-                            "{title}TITULAÇÃO ÁCIDO-BASE",
+                            "{title}ÁCIDO-BASE",
                             "{sep}",
-                            "ACIDIMETRIA",
-                            "ALCALIMETRIA",
+                            "TITULAÇÃO",
                             "RETROTITULAÇÃO",
-                            "POTENCIOMETRIA",
-                            "CÁLCULO KI"
+                            "POTENCIOMETRIA",                            
                         });
                         btnAnalises.BackColor = Color.FromArgb(90, 59, 137);
                         break;
@@ -130,11 +128,8 @@ namespace Flask.TELAS
             {
                 switch (janelaAbrir)
                 {
-                    case "ACIDIMETRIA":
-                        Tela.Abrir(new FrmTitulacaoAcidoBaseNormal(TipoAnalise.Acidimetria), janelaAbrir);
-                        break;
-                    case "ALCALIMETRIA":
-                        Tela.Abrir(new FrmTitulacaoAcidoBaseNormal(TipoAnalise.Alcalimetria), janelaAbrir);
+                    case "TITULAÇÃO":
+                        Tela.Abrir(new FrmTitulacaoAcidoBaseNormal(TipoAnalise.Titulacao), janelaAbrir);
                         break;
                     case "RETROTITULAÇÃO":
                         Tela.Abrir(new FrmRetrotitulacao(), janelaAbrir);

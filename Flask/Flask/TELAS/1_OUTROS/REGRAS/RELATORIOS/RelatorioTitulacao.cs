@@ -11,14 +11,12 @@ namespace Flask
 {
     public class RelatorioTitulacao : IRelatorioTitulacao, ITitulanteTitulado, IReplicatas
     {
-        public TipoAnalise TipoAnalise { get; set; }
         public Reagente Titulante { get; set; }
         public Reagente Titulado { get; set; }
         public List<ResultadoTitulacao> Replicatas { get; set; }
         public double ConcentracaoTitulado { get; set; }
-        public RelatorioTitulacao(TipoAnalise tipoAnalise, Reagente titulante, Reagente titulado, List<ResultadoTitulacao> replicatas, double concentracaoTitulado)
+        public RelatorioTitulacao(Reagente titulante, Reagente titulado, List<ResultadoTitulacao> replicatas, double concentracaoTitulado)
         {
-            TipoAnalise = tipoAnalise;
             Titulante = titulante;
             Titulado = titulado;
             Replicatas = replicatas;
@@ -28,8 +26,8 @@ namespace Flask
         {
             var relatorioDe = "TITULAÇÃO ÁCIDO-BASE";
 
-            if (TipoAnalise != TipoAnalise.Retrotitulacao)
-                relatorioDe = $"ANÁLISE DE {TipoAnalise.ObterDescricao().ToUpper()}";
+            /*if (TipoAnalise != TipoAnalise.Retrotitulacao)
+                relatorioDe = $"ANÁLISE DE {TipoAnalise.ObterDescricao().ToUpper()}";*/
 
             var relatorio =
                 $"{relatorioDe}\n\nResultado: {this.ConcentracaoTitulado.FormatarString()} mol/L\n\n" +
