@@ -19,9 +19,8 @@ namespace Flask
             var nTitulado = (int)titulado.Classe;
             var nTitulante = (int)titulante.Classe;
 
-            double volumeDeTitulado = 0;
-
-            volumeDeTitulado = (nTitulado * concentracaoTitulante * volumeDeTitulante) / (nTitulante * concentracaoTitulado);
+            double volumeDeTitulado =
+                (nTitulante * concentracaoTitulante * volumeDeTitulante) / (nTitulado * concentracaoTitulado);
 
             return volumeDeTitulado;
         }

@@ -21,8 +21,11 @@ namespace Flask
         }
         public double CalcularConcentracao(double volumeDeAnalito, double volumeExcessoReagido)
         {
+            int nAnalito = (int)Analito.Classe;
+            int nExcesso = (int)ReagenteExcesso.Classe;
+
             double concentracaoAnalito = 
-                ((int)Analito.Classe * volumeExcessoReagido * ReagenteExcesso.Concentracao) / (volumeDeAnalito * (int)ReagenteExcesso.Classe);
+                (nExcesso * volumeExcessoReagido * ReagenteExcesso.Concentracao) / (volumeDeAnalito * nAnalito);
 
             return concentracaoAnalito;
         }
