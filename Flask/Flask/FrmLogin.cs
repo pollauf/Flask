@@ -81,7 +81,9 @@ namespace Flask
                 {
                     if (PossuiUsuario)
                     {
-                        if (db.Usuario.Any(x => x.Login == txtUsuario.Text && x.Senha == txtSenha.Text))
+                        string hashSenha = HashMD5.Gerar(txtSenha.Text);
+
+                        if (db.Usuario.Any(x => x.Login == txtUsuario.Text && x.Senha == hashSenha))
                         {
                             GravarCredenciais();
 
@@ -104,7 +106,9 @@ namespace Flask
                             return;
                         }
 
-                        var usuario = new Usuario { Login = txtUsuario.Text, Senha = txtSenha.Text };
+                        string hashSenhaCriada = HashMD5.Gerar(txtSenha.Text);
+
+                        var usuario = new Usuario { Login = txtUsuario.Text, Senha = hashSenhaCriada };
 
                         Usuario oldestModel = db.Usuario.OrderByDescending(x => x.ID).FirstOrDefault();
                         usuario.ID = oldestModel == null ? 1 : oldestModel.ID + 1;

@@ -27,7 +27,8 @@ namespace FlaskMODEL
     {
         Desconhecida = 0,
         Fraca = 1,
-        Forte = 2,
+        Moderada = 2,
+        Forte = 3,
     }
 
     public enum ClasseReagente

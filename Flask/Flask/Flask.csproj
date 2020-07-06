@@ -94,6 +94,7 @@
     <Compile Include="TELAS\1_OUTROS\METODOS\Grafico.cs" />
     <Compile Include="TELAS\1_OUTROS\METODOS\PotenciometriaDATA.cs" />
     <Compile Include="TELAS\1_OUTROS\METODOS\ReagenteDATA.cs" />
+    <Compile Include="TELAS\1_OUTROS\REGRAS\HashMD5.cs" />
     <Compile Include="TELAS\1_OUTROS\REGRAS\TITULACAO\Potenciometrica.cs" />
     <Compile Include="TELAS\Analises\FrmPotenciometrica.cs">
       <SubType>Form</SubType>
