@@ -35,11 +35,11 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(17, 8);
+            this.lblTitulo.Location = new System.Drawing.Point(3, 3);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(56, 24);
+            this.lblTitulo.Size = new System.Drawing.Size(44, 18);
             this.lblTitulo.TabIndex = 6;
             this.lblTitulo.Text = "Título";
             this.lblTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.UcHeader_MouseDown);
@@ -54,13 +54,13 @@
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Tomato;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OrangeRed;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(263, 0);
-            this.button1.MaximumSize = new System.Drawing.Size(40, 40);
-            this.button1.MinimumSize = new System.Drawing.Size(40, 40);
+            this.button1.Location = new System.Drawing.Point(75, 0);
+            this.button1.MaximumSize = new System.Drawing.Size(25, 25);
+            this.button1.MinimumSize = new System.Drawing.Size(25, 25);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(40, 40);
+            this.button1.Size = new System.Drawing.Size(25, 25);
             this.button1.TabIndex = 7;
             this.button1.TabStop = false;
             this.button1.Text = "X";
@@ -74,10 +74,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(54)))), ((int)(((byte)(76)))));
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblTitulo);
-            this.MaximumSize = new System.Drawing.Size(0, 40);
-            this.MinimumSize = new System.Drawing.Size(100, 40);
+            this.MaximumSize = new System.Drawing.Size(0, 25);
+            this.MinimumSize = new System.Drawing.Size(100, 25);
             this.Name = "UcHeader";
-            this.Size = new System.Drawing.Size(303, 40);
+            this.Size = new System.Drawing.Size(100, 25);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.UcHeader_MouseDown);
             this.ResumeLayout(false);
             this.PerformLayout();

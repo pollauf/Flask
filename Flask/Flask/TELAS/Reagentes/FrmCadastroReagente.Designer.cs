@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastroReagente));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.txtFormula = new FlaskUI.COMPONENTES.FlaskTextBox();
@@ -114,10 +114,10 @@
             this.tabControl1.Controls.Add(this.tabPotenciometria);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(1, 41);
+            this.tabControl1.Location = new System.Drawing.Point(1, 26);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(538, 309);
+            this.tabControl1.Size = new System.Drawing.Size(538, 324);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -147,7 +147,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(530, 280);
+            this.tabPage1.Size = new System.Drawing.Size(530, 295);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Capa";
             // 
@@ -400,7 +400,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(530, 280);
+            this.tabPage2.Size = new System.Drawing.Size(530, 295);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Propriedades";
             // 
@@ -646,7 +646,7 @@
             this.tabPotenciometria.Location = new System.Drawing.Point(4, 25);
             this.tabPotenciometria.Name = "tabPotenciometria";
             this.tabPotenciometria.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPotenciometria.Size = new System.Drawing.Size(530, 280);
+            this.tabPotenciometria.Size = new System.Drawing.Size(530, 295);
             this.tabPotenciometria.TabIndex = 2;
             this.tabPotenciometria.Text = "Potenciometria";
             // 
@@ -702,7 +702,7 @@
             this.btnExcluirGraficoPotenciometria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluirGraficoPotenciometria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnExcluirGraficoPotenciometria.ForeColor = System.Drawing.Color.White;
-            this.btnExcluirGraficoPotenciometria.Location = new System.Drawing.Point(409, 226);
+            this.btnExcluirGraficoPotenciometria.Location = new System.Drawing.Point(409, 241);
             this.btnExcluirGraficoPotenciometria.Name = "btnExcluirGraficoPotenciometria";
             this.btnExcluirGraficoPotenciometria.Size = new System.Drawing.Size(115, 30);
             this.btnExcluirGraficoPotenciometria.TabIndex = 11;
@@ -715,14 +715,14 @@
             // 
             this.graficoPotenciometria.BorderlineColor = System.Drawing.Color.Black;
             this.graficoPotenciometria.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea1.Name = "ChartArea1";
-            this.graficoPotenciometria.ChartAreas.Add(chartArea1);
+            chartArea2.Name = "ChartArea1";
+            this.graficoPotenciometria.ChartAreas.Add(chartArea2);
             this.graficoPotenciometria.Location = new System.Drawing.Point(199, 6);
             this.graficoPotenciometria.Name = "graficoPotenciometria";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Name = "Series1";
-            this.graficoPotenciometria.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Name = "Series1";
+            this.graficoPotenciometria.Series.Add(series2);
             this.graficoPotenciometria.Size = new System.Drawing.Size(325, 211);
             this.graficoPotenciometria.TabIndex = 9;
             this.graficoPotenciometria.Text = "chart1";
@@ -735,24 +735,24 @@
             this.dgvPotenciometria.AllowUserToResizeRows = false;
             this.dgvPotenciometria.BackgroundColor = System.Drawing.Color.White;
             this.dgvPotenciometria.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(54)))), ((int)(((byte)(76)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(54)))), ((int)(((byte)(76)))));
-            this.dgvPotenciometria.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(54)))), ((int)(((byte)(76)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(54)))), ((int)(((byte)(76)))));
+            this.dgvPotenciometria.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPotenciometria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPotenciometria.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clnVolume,
             this.clnH});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(59)))), ((int)(((byte)(137)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPotenciometria.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(59)))), ((int)(((byte)(137)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPotenciometria.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvPotenciometria.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvPotenciometria.EnableHeadersVisualStyles = false;
             this.dgvPotenciometria.Location = new System.Drawing.Point(6, 6);
@@ -768,8 +768,8 @@
             // clnVolume
             // 
             this.clnVolume.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.clnVolume.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.clnVolume.DefaultCellStyle = dataGridViewCellStyle6;
             this.clnVolume.FillWeight = 116.7513F;
             this.clnVolume.HeaderText = "Volume (mL)";
             this.clnVolume.Name = "clnVolume";
@@ -777,8 +777,8 @@
             // clnH
             // 
             this.clnH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.clnH.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.clnH.DefaultCellStyle = dataGridViewCellStyle7;
             this.clnH.FillWeight = 83.24873F;
             this.clnH.HeaderText = "pH";
             this.clnH.Name = "clnH";
@@ -848,11 +848,11 @@
             this.ucHeader1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(54)))), ((int)(((byte)(76)))));
             this.ucHeader1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ucHeader1.Location = new System.Drawing.Point(1, 1);
-            this.ucHeader1.MaximumSize = new System.Drawing.Size(0, 40);
-            this.ucHeader1.MinimumSize = new System.Drawing.Size(400, 40);
+            this.ucHeader1.MaximumSize = new System.Drawing.Size(0, 25);
+            this.ucHeader1.MinimumSize = new System.Drawing.Size(400, 25);
             this.ucHeader1.Name = "ucHeader1";
             this.ucHeader1.NaoEhFilho = false;
-            this.ucHeader1.Size = new System.Drawing.Size(538, 40);
+            this.ucHeader1.Size = new System.Drawing.Size(538, 25);
             this.ucHeader1.TabIndex = 0;
             this.ucHeader1.TabStop = false;
             this.ucHeader1.Titulo = "Cadastro de Reagente";

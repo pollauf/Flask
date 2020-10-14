@@ -44,7 +44,7 @@
             // 
             this.flaskLabel1.AutoSize = true;
             this.flaskLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.flaskLabel1.Location = new System.Drawing.Point(123, 56);
+            this.flaskLabel1.Location = new System.Drawing.Point(123, 46);
             this.flaskLabel1.Name = "flaskLabel1";
             this.flaskLabel1.Size = new System.Drawing.Size(57, 17);
             this.flaskLabel1.TabIndex = 2;
@@ -58,7 +58,7 @@
             this.txtUsuario.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.Texto;
             this.txtUsuario.Erro = false;
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtUsuario.Location = new System.Drawing.Point(126, 76);
+            this.txtUsuario.Location = new System.Drawing.Point(126, 66);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(200, 23);
             this.txtUsuario.TabIndex = 0;
@@ -72,7 +72,7 @@
             this.txtSenha.DefinicaoCampo = FlaskUI.CLASSES.DefinicaoCampo.Texto;
             this.txtSenha.Erro = false;
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtSenha.Location = new System.Drawing.Point(126, 122);
+            this.txtSenha.Location = new System.Drawing.Point(126, 112);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '•';
             this.txtSenha.Size = new System.Drawing.Size(200, 23);
@@ -83,7 +83,7 @@
             // 
             this.flaskLabel2.AutoSize = true;
             this.flaskLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.flaskLabel2.Location = new System.Drawing.Point(123, 102);
+            this.flaskLabel2.Location = new System.Drawing.Point(123, 92);
             this.flaskLabel2.Name = "flaskLabel2";
             this.flaskLabel2.Size = new System.Drawing.Size(49, 17);
             this.flaskLabel2.TabIndex = 4;
@@ -99,7 +99,7 @@
             this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnEntrar.ForeColor = System.Drawing.Color.White;
-            this.btnEntrar.Location = new System.Drawing.Point(211, 151);
+            this.btnEntrar.Location = new System.Drawing.Point(211, 141);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(115, 30);
             this.btnEntrar.TabIndex = 2;
@@ -110,7 +110,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(14, 57);
+            this.pictureBox1.Location = new System.Drawing.Point(14, 47);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(95, 95);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -121,7 +121,7 @@
             // 
             this.ckbLembrar.AutoSize = true;
             this.ckbLembrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.ckbLembrar.Location = new System.Drawing.Point(14, 157);
+            this.ckbLembrar.Location = new System.Drawing.Point(14, 147);
             this.ckbLembrar.Name = "ckbLembrar";
             this.ckbLembrar.Size = new System.Drawing.Size(114, 21);
             this.ckbLembrar.TabIndex = 5;
@@ -133,11 +133,11 @@
             this.ucHeader1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(54)))), ((int)(((byte)(76)))));
             this.ucHeader1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ucHeader1.Location = new System.Drawing.Point(1, 1);
-            this.ucHeader1.MaximumSize = new System.Drawing.Size(0, 40);
-            this.ucHeader1.MinimumSize = new System.Drawing.Size(330, 40);
+            this.ucHeader1.MaximumSize = new System.Drawing.Size(0, 25);
+            this.ucHeader1.MinimumSize = new System.Drawing.Size(330, 25);
             this.ucHeader1.Name = "ucHeader1";
             this.ucHeader1.NaoEhFilho = true;
-            this.ucHeader1.Size = new System.Drawing.Size(338, 40);
+            this.ucHeader1.Size = new System.Drawing.Size(338, 25);
             this.ucHeader1.TabIndex = 1;
             this.ucHeader1.TabStop = false;
             this.ucHeader1.Titulo = "Login";

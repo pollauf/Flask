@@ -60,7 +60,7 @@
             // 
             this.flaskGroupBox1.Controls.Add(this.UcTitulante);
             this.flaskGroupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.flaskGroupBox1.Location = new System.Drawing.Point(147, 160);
+            this.flaskGroupBox1.Location = new System.Drawing.Point(147, 151);
             this.flaskGroupBox1.Name = "flaskGroupBox1";
             this.flaskGroupBox1.Padding = new System.Windows.Forms.Padding(3);
             this.flaskGroupBox1.Size = new System.Drawing.Size(293, 130);
@@ -85,7 +85,7 @@
             // 
             this.flaskGroupBox2.Controls.Add(this.UcTitulado);
             this.flaskGroupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.flaskGroupBox2.Location = new System.Drawing.Point(147, 296);
+            this.flaskGroupBox2.Location = new System.Drawing.Point(147, 287);
             this.flaskGroupBox2.Name = "flaskGroupBox2";
             this.flaskGroupBox2.Padding = new System.Windows.Forms.Padding(3);
             this.flaskGroupBox2.Size = new System.Drawing.Size(293, 130);
@@ -116,7 +116,7 @@
             this.flaskGroupBox3.Controls.Add(this.flaskLabel1);
             this.flaskGroupBox3.Controls.Add(this.txtVolumeTitulante);
             this.flaskGroupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.flaskGroupBox3.Location = new System.Drawing.Point(147, 47);
+            this.flaskGroupBox3.Location = new System.Drawing.Point(147, 38);
             this.flaskGroupBox3.Name = "flaskGroupBox3";
             this.flaskGroupBox3.Padding = new System.Windows.Forms.Padding(3);
             this.flaskGroupBox3.Size = new System.Drawing.Size(496, 107);
@@ -215,7 +215,7 @@
             this.gpbReplicatas.Controls.Add(this.FLP);
             this.gpbReplicatas.Controls.Add(this.flaskButton2);
             this.gpbReplicatas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.gpbReplicatas.Location = new System.Drawing.Point(446, 160);
+            this.gpbReplicatas.Location = new System.Drawing.Point(446, 151);
             this.gpbReplicatas.Name = "gpbReplicatas";
             this.gpbReplicatas.Padding = new System.Windows.Forms.Padding(3);
             this.gpbReplicatas.Size = new System.Drawing.Size(197, 238);
@@ -260,7 +260,7 @@
             this.flaskButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.flaskButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.flaskButton3.ForeColor = System.Drawing.Color.White;
-            this.flaskButton3.Location = new System.Drawing.Point(475, 432);
+            this.flaskButton3.Location = new System.Drawing.Point(475, 423);
             this.flaskButton3.Name = "flaskButton3";
             this.flaskButton3.Size = new System.Drawing.Size(168, 30);
             this.flaskButton3.TabIndex = 7;
@@ -279,7 +279,7 @@
             this.flaskButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.flaskButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.flaskButton4.ForeColor = System.Drawing.Color.White;
-            this.flaskButton4.Location = new System.Drawing.Point(15, 432);
+            this.flaskButton4.Location = new System.Drawing.Point(15, 423);
             this.flaskButton4.Name = "flaskButton4";
             this.flaskButton4.Size = new System.Drawing.Size(168, 30);
             this.flaskButton4.TabIndex = 8;
@@ -292,7 +292,7 @@
             // 
             this.lblResultado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblResultado.Location = new System.Drawing.Point(446, 401);
+            this.lblResultado.Location = new System.Drawing.Point(446, 392);
             this.lblResultado.Name = "lblResultado";
             this.lblResultado.Size = new System.Drawing.Size(197, 25);
             this.lblResultado.TabIndex = 9;
@@ -304,10 +304,11 @@
             this.ucHeader1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(54)))), ((int)(((byte)(76)))));
             this.ucHeader1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ucHeader1.Location = new System.Drawing.Point(1, 1);
-            this.ucHeader1.MaximumSize = new System.Drawing.Size(0, 40);
-            this.ucHeader1.MinimumSize = new System.Drawing.Size(330, 40);
+            this.ucHeader1.MaximumSize = new System.Drawing.Size(0, 25);
+            this.ucHeader1.MinimumSize = new System.Drawing.Size(330, 25);
             this.ucHeader1.Name = "ucHeader1";
-            this.ucHeader1.Size = new System.Drawing.Size(653, 40);
+            this.ucHeader1.NaoEhFilho = false;
+            this.ucHeader1.Size = new System.Drawing.Size(653, 25);
             this.ucHeader1.TabIndex = 0;
             this.ucHeader1.Titulo = "Titulação";
             // 
@@ -315,7 +316,7 @@
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(15, 47);
+            this.pictureBox1.Location = new System.Drawing.Point(15, 38);
             this.pictureBox1.MaximumSize = new System.Drawing.Size(126, 379);
             this.pictureBox1.MinimumSize = new System.Drawing.Size(126, 379);
             this.pictureBox1.Name = "pictureBox1";
@@ -328,7 +329,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(655, 468);
+            this.ClientSize = new System.Drawing.Size(655, 461);
             this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.flaskButton4);
             this.Controls.Add(this.flaskButton3);

@@ -48,11 +48,11 @@
             this.ucHeader1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(54)))), ((int)(((byte)(76)))));
             this.ucHeader1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ucHeader1.Location = new System.Drawing.Point(1, 1);
-            this.ucHeader1.MaximumSize = new System.Drawing.Size(0, 40);
-            this.ucHeader1.MinimumSize = new System.Drawing.Size(330, 40);
+            this.ucHeader1.MaximumSize = new System.Drawing.Size(0, 25);
+            this.ucHeader1.MinimumSize = new System.Drawing.Size(330, 25);
             this.ucHeader1.Name = "ucHeader1";
             this.ucHeader1.NaoEhFilho = false;
-            this.ucHeader1.Size = new System.Drawing.Size(615, 40);
+            this.ucHeader1.Size = new System.Drawing.Size(615, 25);
             this.ucHeader1.TabIndex = 0;
             this.ucHeader1.TabStop = false;
             this.ucHeader1.Titulo = "Registro";
@@ -67,7 +67,7 @@
             this.flaskGroupBox1.Controls.Add(this.flaskSearchButton1);
             this.flaskGroupBox1.Controls.Add(this.txtID);
             this.flaskGroupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.flaskGroupBox1.Location = new System.Drawing.Point(4, 47);
+            this.flaskGroupBox1.Location = new System.Drawing.Point(4, 38);
             this.flaskGroupBox1.Name = "flaskGroupBox1";
             this.flaskGroupBox1.Padding = new System.Windows.Forms.Padding(3);
             this.flaskGroupBox1.Size = new System.Drawing.Size(609, 67);
@@ -149,9 +149,9 @@
             this.ucRTF1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ucRTF1.Location = new System.Drawing.Point(4, 120);
+            this.ucRTF1.Location = new System.Drawing.Point(4, 111);
             this.ucRTF1.Name = "ucRTF1";
-            this.ucRTF1.Size = new System.Drawing.Size(609, 318);
+            this.ucRTF1.Size = new System.Drawing.Size(609, 319);
             this.ucRTF1.TabIndex = 2;
             this.ucRTF1.TabStop = false;
             // 
@@ -166,7 +166,7 @@
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnExcluir.ForeColor = System.Drawing.Color.White;
-            this.btnExcluir.Location = new System.Drawing.Point(4, 444);
+            this.btnExcluir.Location = new System.Drawing.Point(4, 436);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(115, 30);
             this.btnExcluir.TabIndex = 2;
@@ -186,7 +186,7 @@
             this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnLimpar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpar.Location = new System.Drawing.Point(377, 444);
+            this.btnLimpar.Location = new System.Drawing.Point(377, 436);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(115, 30);
             this.btnLimpar.TabIndex = 1;
@@ -206,7 +206,7 @@
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnSalvar.Location = new System.Drawing.Point(498, 444);
+            this.btnSalvar.Location = new System.Drawing.Point(498, 436);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(115, 30);
             this.btnSalvar.TabIndex = 0;
@@ -219,7 +219,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 481);
+            this.ClientSize = new System.Drawing.Size(617, 474);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnSalvar);

@@ -62,14 +62,14 @@
             this.flaskDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flaskDataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.flaskDataGridView1.EnableHeadersVisualStyles = false;
-            this.flaskDataGridView1.Location = new System.Drawing.Point(1, 41);
+            this.flaskDataGridView1.Location = new System.Drawing.Point(1, 26);
             this.flaskDataGridView1.MultiSelect = false;
             this.flaskDataGridView1.Name = "flaskDataGridView1";
             this.flaskDataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.flaskDataGridView1.RowHeadersVisible = false;
             this.flaskDataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.flaskDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.flaskDataGridView1.Size = new System.Drawing.Size(348, 241);
+            this.flaskDataGridView1.Size = new System.Drawing.Size(348, 256);
             this.flaskDataGridView1.TabIndex = 1;
             this.flaskDataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FlaskDataGridView1_CellDoubleClick);
             this.flaskDataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FlaskDataGridView1_KeyDown);
@@ -98,11 +98,11 @@
             this.ucHeader1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(54)))), ((int)(((byte)(76)))));
             this.ucHeader1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ucHeader1.Location = new System.Drawing.Point(1, 1);
-            this.ucHeader1.MaximumSize = new System.Drawing.Size(0, 40);
-            this.ucHeader1.MinimumSize = new System.Drawing.Size(330, 40);
+            this.ucHeader1.MaximumSize = new System.Drawing.Size(0, 25);
+            this.ucHeader1.MinimumSize = new System.Drawing.Size(330, 25);
             this.ucHeader1.Name = "ucHeader1";
             this.ucHeader1.NaoEhFilho = false;
-            this.ucHeader1.Size = new System.Drawing.Size(348, 40);
+            this.ucHeader1.Size = new System.Drawing.Size(348, 25);
             this.ucHeader1.TabIndex = 0;
             this.ucHeader1.Titulo = "Consulta Geral";
             // 
